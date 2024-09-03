@@ -1,0 +1,33 @@
+---
+title: "First RMarkdown"
+output: pdf_document
+date: "2024-09-02"
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Introduction
+
+Normal Text is just nothing else
+
+[Ctrl + alt + I]
+```{r}
+5
+```
+```{r}
+3.5 + 7.77/2.32 + 6.45
+```
+
+```{r}
+a <- 5 + 92
+a
+```
+## Addidtional section title
+
+Some text some text some text
+
+```{r}
+4 + 8
+```

@@ -1,0 +1,110 @@
+---
+title: "Block 1 - RMD operations"
+author: "Oleg Sechovcov"
+date: "2024-09-02"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+# 0. Basics of formatting
+
+Text.
+
+New paragraph leave on line empty
+
+## 0.0 Same
+
+This is a greek letter alpha: $\alpha$.
+
+Equation for population mean:
+
+$$\mu = \frac{1}{n}\sum_{i=1}^n{x_1}$$
+# 1. Loading the data
+
+Load a csv file
+
+```{r}
+kiwi <- readr::read_csv('kiwi.csv')
+```
+Load a delim file
+
+```{r}
+kiwi2 <- readr::read_delim('kiwi.csv', delim = ',')
+```
+# 2. Data examination
+
+To showcase the data:
+
+
+first 4 rows
+```{r}
+head(kiwi, 4) 
+```
+
+last 6 rows
+```{r}
+tail(kiwi, 6) 
+```
+Format the table
+
+```{r}
+knitr::kable(tail(kiwi,6))
+```
+Find more specific information 
+```{r}
+mean_kiwi_height <- mean(kiwi$`Height(cm)`)
+mean_kiwi_height
+
+median_kiwi_wight <- median(kiwi$`Weight(kg)`)
+median_kiwi_wight
+
+standard_diviation_kiwi_height <- sd(kiwi$`Height(cm)`)
+standard_diviation_kiwi_height
+```
+```{r}
+summary(kiwi)
+```
+
+# 3. Plotting data
+
+ggplot package
+
+```{r}
+ggplot(data = kiwi) +
+  geom_point(mapping = aes(x =`Height(cm)`, y = `Weight(kg)`), colour = 'red')
+```
+```{r}
+ggplot(data = kiwi) +
+  geom_point(mapping = aes(x =`Height(cm)`, y = `Weight(kg)`, colour = Gender))
+```
+
+# 4. Simple math
+
+```{r}
+a <- 25 + 4/23 - 124 * 2
+a
+```
+```{r}
+pi
+```
+```{r}
+sin(pi)
+```
+
+```{r}
+factorial(14)
+```
+
+```{r}
+vector <- c(4,5,7,1,5)
+vector
+text_vector <- c('d','n')
+text_vector
+```
+

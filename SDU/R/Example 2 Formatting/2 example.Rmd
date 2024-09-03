@@ -1,0 +1,33 @@
+---
+title: "Block 1 - RMD operations"
+author: "Oleg Sechovcov"
+date: "2024-09-02"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+# 1. Header 1
+
+Text.
+
+New paragraph leave on line empty
+
+## 1.1 Header 2
+
+This is a greek letter alpha: $\alpha$.
+
+Equation for population mean:
+
+$$\mu = \frac{1}{n}\sum_{i=1}^n{x_1}$$
+
+### 1.1.1 Header 3
+
+## 1.2 Header 2
+
+# 2. Header 1
