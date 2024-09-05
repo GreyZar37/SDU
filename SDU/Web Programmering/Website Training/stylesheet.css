@@ -1,0 +1,53 @@
+/* Standard for skrift */
+/*
+    * Sans-serif
+    * Header 1: 40px
+        * Bold
+    * Header 2: 30px
+        * Bold
+    * Header 3: 20px
+        * Bold
+    * Resume Paragraph 16px
+        * Italic
+    * Pargraph 16px
+*/
+
+/* Headers */
+.h1 {
+    font-family: sans-serif;
+    font-size: 40px;
+    font-weight: bold;
+}
+
+.h2{
+    font-family: sans-serif;
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.h3{
+    font-family: sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+}
+
+/* Paragraphs */
+
+.resumep{
+    font-family: sans-serif;
+    font-size: 16px;
+    font-style: italic;
+}
+
+.p{
+    font-family: sans-serif;
+    font-size: 14px;
+}
+
+.strong{
+    font-family: sans-serif;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+/* Lists */
