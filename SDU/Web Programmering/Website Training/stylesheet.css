@@ -1,3 +1,4 @@
+
 /* Standard for skrift */
 /*
     * Sans-serif
@@ -51,3 +52,30 @@
 }
 
 /* Lists */
+
+=======
+
+.menuHeader{
+background-color: black;
+align-content: center;
+text-align: center;
+
+}
+.menuHeader ul li a{
+    color: white;
+    text-decoration: none;
+    margin: 0px 10px;    
+}
+
+section{
+    background-color: white;
+    border-style: dotted;
+    border: 5px;
+    border-color: black;
+}
+
+img{
+    width: 80%;
+}
+
+
