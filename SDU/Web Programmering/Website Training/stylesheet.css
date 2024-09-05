@@ -55,23 +55,34 @@
 
 .menuHeader{
     background-color: black;
-    align-content: center;
-    text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
+     
 }
 
+.menuHeader ul {
+    display: flex;
+    list-style-type: none; /* Remove default list styles */
+    margin: 0;
+    padding: 0;
+}
 
-.menuHeader ul li a{
+.menuHeader ul a{
+    position: relative;
     color: white;
     text-decoration: none;   
+    font-size: 25px;
+    font-family: Sans-serif;
     padding: 20px;
-   
+    transition: color 0.5s, transform 0.5s;
+}
+.menuHeader ul a:hover{
+    color: rgb(245, 73, 101);
+    transform: translateY(-5px);
 }
 
 .tileMe li{
-    display: inline;
+    display: inline-flex;
     float: left;
 }
 
@@ -82,6 +93,9 @@ section{
     border-width: 20px;
   
     border-color: black;
+
+    margin: 20px;
+    padding: 30px;
 
 }
 
