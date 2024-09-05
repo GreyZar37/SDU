@@ -53,29 +53,41 @@
 
 /* Lists */
 
-=======
-
 .menuHeader{
-background-color: black;
-align-content: center;
-text-align: center;
-
+    background-color: black;
+    align-content: center;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
+
+
 .menuHeader ul li a{
     color: white;
-    text-decoration: none;
-    margin: 0px 10px;    
+    text-decoration: none;   
+    padding: 20px;
+   
 }
+
+.tileMe li{
+    display: inline;
+    float: left;
+}
+
 
 section{
     background-color: white;
-    border-style: dotted;
-    border: 5px;
+    border-style: inset;
+    border-width: 20px;
+  
     border-color: black;
+
 }
 
 img{
-    width: 80%;
+  width: 30%;
+  object-fit: cover;
 }
 
 
