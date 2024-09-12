@@ -1,0 +1,92 @@
+body{
+    display: grid;
+    place-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+
+    user-select: none;
+    background-color: lightyellow;
+    font-family: URW Chancery L, cursive;
+}
+
+.main{
+    display: flex;
+    gap: 200px;
+}
+
+.left-column h3{
+    text-align: center;
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.Banana{
+    
+    width: 400px;
+    transition: transform 0.3s ease-in-out;
+}
+
+.Banana:hover{
+    cursor: pointer;
+    transform: scale(1.1);
+}
+
+.Banana:active{
+    animation: bounce .5s; /* Apply bounce animation on click */
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: scale(1); /* Start and end at the original scale */
+    }
+    50% {
+        transform: scale(1.1); /* Peak of the bounce (scale up more) */
+    }
+}
+
+/* Upgrade sections */
+.upgrade{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 330px;
+    height: 60px;
+    border: 4px solid black;
+
+    padding: 10px 20px;
+    border-radius: 5px;
+
+    background-color: white;
+      /* Correct transition for smooth movement */
+      transition: transform 0.4 ease;
+}
+
+.upgrade:hover{
+    transform: translateY(-5px);
+    background-color: lightgreen;
+}
+
+.upgrade-img{
+    width: 70px;
+}
+.banana-img{
+    width: 40px;
+    height: 20px;
+
+    image-resolution: cover;
+}
+
+.cost-info{
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+.mid-section h4{
+ margin: 0;
+ margin-bottom: 20px;
+}
+.mid-section p{
+    margin: 0;
+}
