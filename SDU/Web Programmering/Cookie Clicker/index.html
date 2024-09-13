@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>Cookie Clicker</title>
+
+    <link rel="stylesheet" href="/stylesheet.css">
+    <script src="https://kit.fontawesome.com/312632a5d0.js" crossorigin="anonymous"></script>
+</head>
+
+<div class="Container">
+    <div class="Cookie">
+       <h1 class="h1"><a onclick="GainCookie()"> Cookies: 0</a></h1>
+        <img src="/Images/purepng.com-american-cookiecookieamericandelicioussnacksweetyummybiscuit-21525886868xdoig.png">
+    </div>
+</div>
+
+<script>
+     var tabContents = document.getElementsByClassName('Cookie');
+     var num = 0;
+
+    function OpenTab(tabName){
+    for (tabContent of tabContents){
+        tabContent.classList.remove("active-tab");
+    }
+    document.getElementById(tabName).classList.add("active-tab")
+}
+
+
+</script>
+
+<body>
