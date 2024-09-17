@@ -14,8 +14,16 @@ function IncrementBanana(){
 }
 
 function IncrementBananaAuto(){
-    parsedBanana += 1; 
+    //parsedBanana += ; 
     banana.innerHTML = parsedBanana;
+}
+
+function GetBananaPrsFromArray(){
+    let totalBananaGain = 0;
+    for (let index = 0; index < clickerArray.length; index++) {
+        totalBananaGain += clickerArray[i].GetBananaPrS;
+    }
+    return totalBananaGain;
 }
 
 function BuyClicker(){
@@ -25,8 +33,6 @@ function BuyClicker(){
         bananaAutoPrS += 1
     }
 }
-
-
 
 class ClickerArray{
     constructor(){
@@ -42,13 +48,12 @@ class ClickerArray{
 
 clickerArray = new ClickerArray()
 
-
-
 class Clicker{
     constructor(bananaPrS, upgradeName, upgradeCost){
         this.bananaPrS = bananaPrS;
         this.upgradeName = upgradeName;
         this.upgradeCost = upgradeCost;
+        this.amount = 1;
     }
     GetName() {
         return this.upgradeName
@@ -57,7 +62,7 @@ class Clicker{
         return this.price
     }
     GetBananaPrS(){
-        return this.bananaPrS
+        return this.bananaPrS * amount;
     }
 }
 
@@ -67,3 +72,4 @@ function CreateClicker(bananaPrS, upgradeName, upgradeCost){
 }
 
 
+ 
