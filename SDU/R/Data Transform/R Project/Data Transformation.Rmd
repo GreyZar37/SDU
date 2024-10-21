@@ -1,0 +1,208 @@
+---
+title: "Data Transformation"
+author: "Oleg Sechovcov"
+date: "2024-09-23"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+library(tidyverse)
+```
+# Filter
+C:\Users\olegs\Documents\SDU - Copy\SDU\R\Data
+
+```{r}
+setwd("C:/Users/olegs/Documents/SDU - Copy/SDU/R/Data")
+```
+
+```{r}
+kiwi <- readr::read_csv('kiwi.csv')
+```
+
+```{r}
+ncol(kiwi)
+nrow(kiwi)
+colnames(kiwi)
+```
+```{r}
+filter(kiwi, Species_code == 'GS', Gender == 'M', `Weight(kg)` > 2.2)
+```
+
+[Ctr] + [Shift] + [M]
+```{r}
+%>% 
+```
+
+```{r}
+kiwi %>% filter(Species_code == 'GS', Gender == 'M', `Weight(kg)` > 2.2)
+```
+```{r}
+kiwi %>% filter(Species_code == 'GS') %>% 
+  filter(Gender == 'M') %>% 
+  filter(`Weight(kg)` > 2.2)
+```
+
+```{r}
+kiwi %>% filter(Species_code != 'GS')
+
+```
+```{r}
+kiwi %>% filter(Species_code != 'Tok' | Species_code == 'NIBr')
+```
+Logical opperators
+& 
+| 
+>
+>=
+<
+<=
+!=
+==
+
+# Select()
+
+```{r}
+head(kiwi, 5)
+```
+```{r}
+kiwi %>%  select(1:4)
+
+```
+```{r}
+kiwi %>% select(Species_code, Gender)
+```
+```{r}
+kiwi %>%  select(-Location)
+```
+
+# Mutate()
+
+BMI = Weight(kg)/Height(m)^2 
+
+```{r}
+Kiwi_BMI <- kiwi %>%  
+  mutate(`Height(m)` = `Height(cm)` / 100) %>% 
+  mutate(BMI = `Weight(kg)` / `Height(m)`^2)
+
+Kiwi_BMI
+```
+
+# summarise(), arrange(), group_by()
+```{r}
+kiwi %>% 
+  group_by(Species_code) %>% 
+  tally()
+```
+```{r}
+kiwi %>% 
+  group_by(Species_code, Gender) %>% 
+  summarise(`mean weight` = mean(`Weight(kg)`), `mean height` = 
+              mean(`Height(cm)`)) %>% 
+  arrange(desc(`mean weight`)) %>% 
+  knitr::kable()
+```
+# Altogehter now
+
+```{r}
+library(gapminder)
+```
+
+```{r}
+head(gapminder, 5)
+```
+
+```{r}
+unique(gapminder$year)
+```
+
+Biggest country (pop) in 1972:
+
+```{r}
+gapminder %>% 
+  filter(year == 1972) %>% 
+  arrange(desc(pop)) %>% 
+  head(1) %>% 
+  select(1,2,5) %>% 
+  knitr::kable()
+```
+
+5 biggest countries in Africa 1987
+
+```{r}
+gapminder %>% 
+  filter(year == 1987) %>% 
+  filter(continent  == 'Africa') %>% 
+  top_n(5, pop) %>% 
+  knitr::kable()
+```
+
+dplyr + ggplot
+
+
+Bar plot of 7 biggest countries in Americas in 1992
+```{r}
+ gapminder %>% 
+  filter(continent == 'Americas') %>% 
+  filter(year == '1992') %>% 
+  arrange(desc(pop)) %>% 
+  head(7) %>% 
+  ggplot() +
+  geom_bar(mapping = aes(x = reorder(country, pop), country, y = pop, fill = country), stat = 'identity')
+  
+```
+
+```{r}
+kiwi %>% 
+  filter(Species_code == 'GS') %>% 
+  ggplot() +
+  geom_boxplot(mapping = aes(x = Gender, y = `Weight(kg)`))
+```
+
+```{r}
+kiwi %>% 
+  ggplot() +
+  geom_boxplot(mapping = aes(x = Species_code, y = `Weight(kg)`, colour = Gender))
+```
+
+# Missing Values
+
+```{r}
+svalbard <- readr::read_csv('svalbard-climate-1912-2017.csv')
+```
+
+```{r}
+svalbard %>% 
+  ggplot() +
+  geom_line(aes(x = YEAR, y = FEB), colour = 'blue') +
+  geom_line(aes(x = YEAR, y = AUG), colour = 'red') 
+```
+
+
+```{r}
+svalbard <- readr::read_csv('svalbard-climate-1912-2017.csv', na = c('NA','999.9'))
+```
+
+```{r}
+svalbard %>% 
+  ggplot() +
+  geom_line(aes(x = YEAR, y = FEB), colour = 'blue') +
+  geom_line(aes(x = YEAR, y = AUG), colour = 'red') 
+```
+```{r}
+mean(svalbard$FEB, na.rm = TRUE)
+sd(svalbard$JAN, na.rm = TRUE)
+median(svalbard$APR, na.rm = TRUE)
+```
+```{r}
+svalbard %>% 
+  filter(!is.na(JAN), YEAR >= 2000)
+```
+
+
+
+

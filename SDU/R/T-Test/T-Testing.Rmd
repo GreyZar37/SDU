@@ -1,0 +1,285 @@
+---
+title: "T-Test"
+author: "Oleg Sechovcov"
+date: "2024-10-01"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+
+
+
+# Statudents-t distribution
+
+dt(x, df)
+pt(x, df)
+qt(p, df)
+rt(n, df)
+
+```{r}
+ggplot(data.frame(x = seq(-4,4, length=100)), aes(x=x)) +
+  stat_function(fun = dt, args = list(df=4), color = 'orange')
+```
+# Hyothesis Testing
+0) Check CLT conditions
+1) Set-up hypothesis
+2) Assume threshold values (alpha significance level)
+3) Calculate
+*   Point estimate
+*   Standard error
+*   Degree of freedom
+*   t_statistic
+*   p-value
+4) Draw conclusions
+
+# One sample t-test
+
+```{r}
+setwd("C:/Users/olegs/Documents/SDU - Copy/SDU/R/Data")
+kiwi <- readr::read_csv('kiwi.csv')
+```
+
+
+We want to check if mean male GS kiwi height is 50 cm
+
+0) Check CLT conditions
+  * Data is independent - YES
+  * Distribution is not strongly skewed - YES
+  
+```{r}
+MGS <- kiwi %>% filter(Gender == 'M', Species_code == 'GS')
+ggplot(MGS) +
+  geom_histogram(aes(x=`Height(cm)`))
+```
+
+
+1) Set-up hypothesis
+$H_0$ mean male GS kiwi height is equal to 50 cm $\mu = 50$
+$H_A$ mean male GS kiwi height is not equal to 50 cm  $\mu \neq 50$
+
+2) Assume threshold values (alpha significance level)
+
+0.05
+
+3) Calculate
+*   Point estimate
+
+```{r}
+(pe_MGS <- mean(MGS$`Height(cm)`))
+```
+*   Standard error
+```{r}
+(sd_MGS <- sd(MGS$`Height(cm)`))
+(SE_MGS <- sd_MGS/sqrt(nrow(MGS)))
+```
+
+*   Degree of freedom
+```{r}
+(df_MGS <- nrow(MGS)-1)
+```
+
+*   t_statistic
+```{r}
+(ts_MGS <- (pe_MGS - 50)/SE_MGS)
+```
+```{r}
+ggplot(data.frame(x = seq(-4,4, length=100)), aes(x=x)) +
+  stat_function(fun = dt, args = list(df= df_MGS), color = 'orange') +
+  geom_vline(xintercept = ts_MGS)
+```
+
+*   p-value
+```{r}
+(pv_MGS <- 2 * pt(ts_MGS, df = df_MGS))
+```
+```{r}
+pv_MGS < 0.05
+```
+4) Draw conclusions
+We reject null hypothesis in favour of the alternative. The
+mean male great spotted height is significantly different from assumed 50 cm
+
+# One sample t-test short
+```{r}
+t.test(MGS$`Height(cm)`, MU=50)
+```
+# Difference of means t-test
+
+kiwi: Is the average weight of female NIBr kiwi equal to the average weight of a
+female Tok Kiwi
+
+0) Check CLT conditions
+
+  * Data is independent - YES
+  * Distribution is not strongly skewed - YES
+  
+```{r}
+FN <- kiwi %>% filter(Gender == 'F', Species_code == 'NIBr')
+FT <- kiwi %>% filter(Gender == 'F', Species_code == 'Tok')
+```
+
+```{r}
+ggplot(FN) +
+  geom_histogram(aes(x=`Weight(kg)`))
+
+ggplot(FT) +
+  geom_histogram(aes(x=`Weight(kg)`))
+```
+
+
+1) Set-up hypothesis
+$H_0$ The average weight of FNK is equal to average weight of a FTK $$\mu_{FNK}-\mu_{FTK}=0$$
+$H_A$ The average weight of FNK is NOT equal to average weight of a FTK   $$\mu_{FNK}-\mu_{FTK} \neq 0$$
+
+2) Assume threshold values (alpha significance level)
+
+0.05
+
+3) Calculate
+*   Point estimate
+```{r}
+(pe_FK <- mean(FN$`Weight(kg)` - mean(FT$`Weight(kg)`)))
+```
+*   Standard error
+$SE = \sqrt{\frac{s_1^2}{n_1} + \frac{s_2^2}{n_2}}$
+
+
+```{r}
+sd_FN <- sd(FN$`Weight(kg)`)
+sd_FT <- sd(FT$`Weight(kg)`)
+
+n_FN <- nrow(FN)
+n_FT <- nrow(FT)
+
+SE_FN <- sd_FN/sqrt(n_FN)
+SE_FT <- sd_FT/sqrt(n_FT)
+
+(SE_FK <- sqrt(SE_FN^2 + SE_FT^2))
+
+```
+*   Degree of freedom
+```{r}
+(df_FN <- nrow(FN) - 1)
+(df_FT <- nrow(FT) - 1)
+
+(df_FK <- min(df_FN,df_FT))
+```
+*   t_statistic
+```{r}
+(ts_FK <- (pe_FK - 0)/SE_FK)
+```
+```{r}
+ggplot(data.frame(x = seq(-4,4, length=100)), aes(x=x))+
+  stat_function(fun=dt, args = list(df = df_FK))+
+  geom_vline(xintercept = ts_FK, color='red')
+```
+
+*   p-value
+```{r}
+(pv_FK <- 2* (1 -pt(ts_FK, df=df_FK)))
+```
+
+4) Draw conclusions
+
+We keep null hypothesis. There is no significant difference between average female
+NIBr weight and average female Tok weight
+
+# Difference of means t-test Short
+
+```{r}
+t.test(FN$`Weight(kg)`, FT$`Weight(kg)`)
+```
+
+
+# Paired data t-test
+
+```{r}
+setwd("C:/Users/olegs/Documents/SDU - Copy/SDU/R/Data")
+ap <- readr::read_delim('antiper1.dat', delim = ';')
+```
+
+```{r}
+nrow(ap)
+```
+```{r}
+head(ap,5)
+```
+
+```{r}
+ggplot(ap)+
+  geom_density(aes(x= DryPowderScore), fill='purple', alpha = 0.3)+
+  geom_density(aes(x= PowderInOilScore), fill='green', alpha = 0.3)
+```
+```{r}
+ap <- ap %>% mutate(diff = PowderInOilScore - DryPowderScore)
+```
+
+```{r}
+ggplot(ap)+
+  geom_density(aes(x=diff))
+```
+0) Check CLT conditions
+
+  * Data is independent - YES
+  * Distribution is not strongly skewed - YES
+
+1) Set-up hypothesis
+
+$H_0$ The average difference in scoring between PowderInOil and DrPowder is equal to 0 $$\mu_{diff}=0$$
+$H_A$ The average difference in scoring between PowderInOil and DrPowder is NOT equal to 0   $$\mu_{diff} \neq 0$$
+
+2) Assume threshold values (alpha significance level)
+
+0.05
+
+3) Calculate
+*   Point estimate
+
+```{r}
+(pe_ap <- mean(ap$diff))
+```
+*   Standard error
+```{r}
+sd_ap <- sd(ap$diff)
+n_ap <- nrow(ap)
+(SE_ap <- sd_ap/sqrt(n_ap))
+
+```
+*   Degree of freedom
+```{r}
+(df_ap <- n_ap -1)
+```
+*   t_statistic
+```{r}
+(ts_ap <- (pe_ap - 0)/SE_ap)
+```
+```{r}
+ggplot(data.frame(x=seq(-4,4, lenght=100)), aes(x=x))+
+  stat_function(fun=dt, args = list(df=df_ap))+
+  geom_vline(xintercept = ts_ap, color='red')
+```
+
+*   p-value
+```{r}
+(pv_ap <- 2* pt(ts_ap, df= df_ap))
+
+```
+4) Draw conclusions
+We reject null hypothesis in favour of alternative. There is a statistically significant difference 
+between two types of antiperspirants
+
+
+# Paired data t-test Short
+
+```{r}
+t.test(ap$diff, mu=0)
+```
+
+

@@ -1,0 +1,49 @@
+---
+title: "Data Transformation Exercise"
+author: "Oleg Sechovcov"
+date: "2024-09-23"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(nycflights13)
+```
+
+```{r}
+nycflights13::flights
+```
+
+# Arrival Delay of two or more hours
+```{r}
+  filter(flights, arr_delay > 120)
+```
+#Flew to Houston
+```{r}
+filter(flights, dest == 'IAH' | dest == 'HOU' )
+```
+#Departed in Summer(July, August, September)
+```{r}
+filter(flights, month == 7 | month == 8|  month == 9)
+```
+
+#Arrived more than two hours late, but did not leave late
+```{r}
+filter(flights, arr_delay > 120,  dep_delay <= 0)
+```
+
+
+#Population  in  Denmark  has  changed  from1952 to 2007
+```{r}
+gapminder %>% 
+  filter(country == 'Denmark', year >= 1952 & year <= 2007) %>% 
+  select(country, year, pop) %>% 
+  arrange(desc(pop)) %>% 
+  ggplot() +
+  geom_bar(mapping = aes(x = reorder(year, pop), y = pop, fill = year), stat =   'identity')
+```
+
