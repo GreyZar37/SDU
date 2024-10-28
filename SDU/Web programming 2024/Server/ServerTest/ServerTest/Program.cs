@@ -4,19 +4,30 @@ using System.Net;
 using System.Text;
 using System.Text.Json;
 using System.Web;
-using System.Data;
+using MySql.Data.MySqlClient;
+using MySqlConnector;
+using MySqlCommand = MySql.Data.MySqlClient.MySqlCommand;
+using MySqlConnection = MySql.Data.MySqlClient.MySqlConnection;
 
 namespace ServerTest
 {
     class Server
     {
-        static void Main(string[] args)
+        const string d_username = "root";
+        const string d_password = "1";
+        const string database = "test";
+        const string server = "localhost";
+        static async Task Main(string[] args)
         {
             // Set up the HTTP listener
             HttpListener listener = new HttpListener();
             listener.Prefixes.Add("http://localhost:8080/");
             listener.Start();
-            Console.WriteLine("Listening for connections on port 8080");
+            
+            string ConnectionString = $"Server={server};Database={database};Uid={d_username};Pwd={d_password};";
+            await using var conn = new MySqlConnection(ConnectionString);
+            await conn.OpenAsync();
+        
             while (true)
             {
                 try
@@ -30,48 +41,33 @@ namespace ServerTest
                         var fromDataValues = HttpUtility.ParseQueryString(jsonRequestData);
 
                         MySqlCommand cmd;
-                        JsonDocument requestData;
-                        try
-                        {
-                            requestData = JsonDocument.Parse(jsonRequestData);
-                        }
-                        catch (JsonException)
-                        {
-                            context.Response.StatusCode = 400; // Bad Request
-                            SendResponse(context, "Invalid JSON format.");
-                            continue;
-                        }
+                        string connStr = "Server=your_server_address;Database=your_database;User=your_username;Password=your_password;";
 
                         switch (path)
                         {
                             case "/register":
-                                if (requestData.RootElement.TryGetProperty("username", out JsonElement usernameElement) &&
-                                    requestData.RootElement.TryGetProperty("password", out JsonElement passwordElement))
+                                string username = fromDataValues.Get("username");
+                                string password = fromDataValues.Get("password");
+                                string insertQuery = $"INSERT INTO users (username, password) VALUES ('{username}', '{password}')";
+                                cmd = new MySqlCommand(insertQuery, conn);
+                                cmd.Parameters.AddWithValue("@username", username);
+                                cmd.Parameters.AddWithValue("@password", password);
+                                
+                                if(cmd.ExecuteNonQuery() > 0)
                                 {
-                                    string username = usernameElement.GetString();
-                                    string password = passwordElement.GetString();
-                                    SendResponse(context, $"Reached register endpoint: {username} {password}");
+                                    SendResponse(context, "User registered successfully");
+                                    ServerStaticHtmlFile(context, "Login.html");
                                 }
                                 else
                                 {
-                                    context.Response.StatusCode = 400; // Bad Request
-                                    SendResponse(context, "Missing username or password in JSON.");
+                                    SendResponse(context, "Failed to register user");
                                 }
                                 break;
 
                             case "/login":
-                                if (requestData.RootElement.TryGetProperty("username", out JsonElement loginUsernameElement) &&
-                                    requestData.RootElement.TryGetProperty("password", out JsonElement loginPasswordElement))
-                                {
-                                    string loginUsername = loginUsernameElement.GetString();
-                                    string loginPassword = loginPasswordElement.GetString();
-                                    SendResponse(context, $"Reached login endpoint: {loginUsername} {loginPassword}");
-                                }
-                                else
-                                {
-                                    context.Response.StatusCode = 400; // Bad Request
-                                    SendResponse(context, "Missing username or password in JSON.");
-                                }
+                              
+                                break;
+                            case "/logout":
                                 break;
 
                             default:

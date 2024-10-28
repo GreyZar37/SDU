@@ -1,0 +1,181 @@
+---
+title: "Foundations for Inference"
+author: "Oleg Sechovcov"
+date: "2024-09-16"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+library(tidyverse)
+
+# Normal Distribution
+
+dnorm(x, mean, sd) - distribution function
+pnorm(x, mean, sd) - probability, 
+qnorm(probability, mean, sd) - given probability what is the value
+rnorm(how_many, mean, sd) - generate data
+
+default values: mean = 0, sd = 1
+
+```{r}
+ggplot(data.frame(x = seq(-10, 10, lenght = 100)), aes(x = x))+
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), color = 'blue')+
+ stat_function(fun = dnorm, args = list(mean = 0, sd = 2), color = 'green') +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 3), color = 'yellow')+
+  stat_function(fun = dnorm, args = list(mean = 2, sd = 1), color = 'red')
+```
+```{r}
+ggplot(data.frame(x = seq(-5, 5, lenght = 100)), aes(x = x))+
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), color = 'blue') +
+  geom_vline(xintercept = 1, color = 'red')
+```
+```{r}
+ggplot(data.frame(x = seq(-5, 5, lenght = 100)), aes(x = x))+
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), color = 'blue') +
+  geom_segment(aes(x = 1, y = 0, xend = 1, yend = dnorm(1)), color = 'red', linetype = 'dashed')
+```
+
+
+
+
+# Sharks
+
+```{r}
+sharks <- readr::read_csv('sharks.csv');
+```
+```{r}
+head(sharks, 5)
+```
+
+```{r}
+ggplot(sharks) + 
+  geom_point(aes(x = `Total Length`, y = `Fork Length` , color = `Fish Sex`))
+```
+
+```{r}
+ggplot(sharks) +
+  geom_density(aes(x = `Total Length`, fill = `Fish Sex`), alpha = 0.3)
+```
+```{r}
+females <- filter(sharks, `Fish Sex` == 'Female')
+```
+
+```{r}
+mean_fs <- mean(females$`Total Length`)
+sd_fs <- sd(females$`Total Length`)
+ggplot(females) +
+  geom_histogram(aes(x = `Total Length`, y = after_stat(density)), fill = 'red', alpha = 0.3,
+                 binwidth = 1) +
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = sd_fs), size = 1)
+```
+# ECDF
+
+```{r}
+ggplot(females) +
+  stat_ecdf(aes(x = `Total Length`), color = 'limegreen') +
+  geom_line(stat = 'function', fun = pnorm, args = list(mean = mean_fs, sd = sd_fs), color = 'purple')
+```
+Q-Q plot
+
+```{r}
+ggplot(females) +
+  stat_qq_line(aes(sample = `Total Length`), color = 'red', size = 1) +
+  stat_qq(aes(sample = `Total Length`))
+```
+# z-scores
+
+150 inches long femal shark.
+
+```{r}
+(z_score <- (150 - mean_fs)/sd_fs)
+```
+```{r}
+pnorm(z_score, mean = 0, sd = 1)
+pnorm(z_score)
+```
+```{r}
+ggplot(data.frame(x = seq(40,220, length = 500)), aes(x=x)) +
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = sd_fs))+
+  geom_segment(aes(x= 150, y = 0,
+                   xend = 150, yend = dnorm(150, mean = mean_fs, sd = sd_fs)), color = 'red') +
+  geom_area(stat = 'function', fun = dnorm, args = list(mean = mean_fs, sd = sd_fs),
+            fill = 'blue', xlim = c(40, 150), alpha = 0.3)
+```
+# SE
+
+Mean female shark Total Length. 
+1155 cases, 40-220 inches.
+```{r}
+mean_fs
+```
+
+Cemtral Limit Theorem:
+Samples are independent
+Sample size is bigger than 30
+Population distribution is  not strongly skewed
+
+$$SE = \frac{\sigma}{\sqrt{n}}$$
+```{r}
+SE <- sd_fs/sqrt(nrow(females))
+SE
+```
+95% confidence interval
+1.96
+qnorm()
+
+```{r}
+mean_fs - 1.96 *SE
+mean_fs + qnorm(0.025) * SE
+
+```
+
+```{r}
+mean_fs + 1.96 *SE
+mean_fs + qnorm(0.975) * SE
+
+```
+We are 95% confident that population mean female shark total length is in between 115.54 inch
+and 118.18 inch
+
+99% confidence interval
+
+```{r}
+mean_fs - 2.58 *SE
+mean_fs + qnorm(0.005) * SE
+
+```
+
+```{r}
+mean_fs + 2.58 *SE
+mean_fs + qnorm(0.995) * SE
+
+```
+We are 99% confident that population mean female shark total length is in between 115.12 inch
+and 118.6 inch
+
+#Distribution of a sample - one sample (ONE!)
+```{r}
+ggplot(data.frame(x = seq(40,220, length = 500)), aes(x=x))+
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = sd_fs)) +
+labs(title = 'Distribution of a sample of female sharks')
+```
+
+
+#Sampling Distribution - multiple samples
+
+
+```{r}
+ggplot(data.frame(x = seq(40,220, length = 500)), aes(x=x))+
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = SE)) +
+labs(title = 'Distribution of a sample of female sharks')
+```
+```{r}
+ggplot(data.frame(x = seq(40,220, length = 500)), aes(x=x))+
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = sd_fs), color ='red') +
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = SE), color = 'green') +
+labs(title = 'Distribution of a sample of female sharks')
+```
+

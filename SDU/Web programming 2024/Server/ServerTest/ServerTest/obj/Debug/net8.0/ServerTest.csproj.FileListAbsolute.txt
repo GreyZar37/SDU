@@ -13,3 +13,43 @@ C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\ServerTest\ServerTe
 C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.pdb
 C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.genruntimeconfig.cache
 C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ref\ServerTest.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\ServerTest.exe
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\ServerTest.deps.json
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\ServerTest.runtimeconfig.json
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\ServerTest.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\ServerTest.pdb
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\BouncyCastle.Cryptography.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\Google.Protobuf.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\K4os.Compression.LZ4.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\K4os.Compression.LZ4.Streams.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\K4os.Hash.xxHash.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\MySql.Data.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\System.Configuration.ConfigurationManager.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\System.IO.Pipelines.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\System.Security.Cryptography.ProtectedData.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\System.Security.Permissions.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\System.Windows.Extensions.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\ZstdSharp.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\runtimes\win-x64\native\comerr64.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\runtimes\win-x64\native\gssapi64.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\runtimes\win-x64\native\k5sprt64.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\runtimes\win-x64\native\krb5_64.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\runtimes\win-x64\native\krbcc64.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.Messages.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Diagnostics.EventLog.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\runtimes\win\lib\net8.0\System.Windows.Extensions.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.csproj.AssemblyReference.cache
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.AssemblyInfoInputs.cache
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.AssemblyInfo.cs
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.csproj.CoreCompileInputs.cache
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.sourcelink.json
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.csproj.Up2Date
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\refint\ServerTest.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.pdb
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ServerTest.genruntimeconfig.cache
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\obj\Debug\net8.0\ref\ServerTest.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\olegs\Documents\SDU - Copy\SDU\Web programming 2024\Server\ServerTest\ServerTest\bin\Debug\net8.0\MySqlConnector.dll

@@ -1,0 +1,208 @@
+---
+title: "Assignment Cost_of_living"
+author: "Oleg Sechovcov"
+date: "2024-10-27"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Assignment Cost_of_living
+```{r}
+library(e1071)
+library(tidyverse)
+
+
+
+setwd("C:/Users/olegs/Documents/SDU - Copy/SDU/R/Data")
+data <- read.csv("Cost_of_living.txt")
+```
+## Introduction
+
+First step, we need to load the data and see what we have.I will be presenting the first 6 rows of the data set.
+```{r}
+head(data, 6)
+```
+The data set contains 8 columns and 440 rows. The Columns are: City, Country, Cost.of.Living.Index, Rent.Index, Cost.Of.Living.Plus.Rent.Index, Groceries.Index, Restaurant.Price.Index, Local.Purchasing.Power.Index.
+
+The data shows the cost of living in different cities around the world. This data set is useful for people who are planning to move to another city or country and want to know the cost of living in that place. For example, if an SDU student wants to take a semester in another county, they can use this data set to compare the cost of living in different cities and choose the one that fits their budget.
+
+## Data Analysis
+
+Now, let's do some data analysis. I will start by checking the summary of the data set.
+```{r}
+summary(data)
+```
+
+This summary shows the minimum, maximum, median, and mean values of each column in the data set. For example, the minimum value of the Cost.of.Living.Index column is 33.19, the maximum value is 141.25, the median value is 74.58, and the mean value is 74.57.
+
+
+### One sample t-test for Cost of Living Plus Rent for the whole world
+#### Check CLT conditions
+  * Data is independent - YES
+  * Distribution is not strongly skewed - YES
+  
+```{r}
+skewness_value <- skewness(data$Cost.of.Living.Plus.Rent.Index)
+skewness_value
+``` 
+The skewness value is not above 1 or below -1, so the distribution is not strongly skewed. Below is a histogram of the Cost of Living Plus Rent Index.
+
+```{r}
+ggplot(data, aes(x=Cost.of.Living.Plus.Rent.Index)) +
+  geom_histogram()
+```
+#### Set-up hypothesis
+Now, we want to check if the mean Cost of Living Plus Rent Index in the world is 40 Before checking it for each country, we will check it for the whole world.
+
+$$H_0: \mu = 40$$
+$$H_1: \mu \neq 40$$
+#### Assume threshold values (alpha significance level)
+We will assume the alpha significance level to be 0.05.
+$$\alpha = 0.05$$
+```{r}
+H0 <- 40
+```
+
+#### Calculate
+*   Point estimate
+
+To calculate the point estimate, we will find the mean of the Cost of Living Plus Rent Index column.The formula is:
+$$\bar{x} = \frac{\sum x}{n}$$
+```{r}
+pe_Cost_Of_Living_Plus_Rent <- mean(data$Cost.of.Living.Plus.Rent.Index)
+pe_Cost_Of_Living_Plus_Rent
+```
+*   Standard error
+To calculate the standard error, we will use the formula:
+$SE = \frac{s}{\sqrt{n}}$
+```{r}
+sd_Cost_Of_Living_Plus_Rent <- sd(data$Cost.of.Living.Plus.Rent.Index)
+SE_Cost_Of_Living_Plus_Rent <- sd_Cost_Of_Living_Plus_Rent/sqrt(nrow(data))
+SE_Cost_Of_Living_Plus_Rent
+```
+This means that that if we kept repeatedly sampling from the population, the mean of those samples would typically differ from the sample mean by about 0.846.
+
+*   Degree of freedom
+To calculate the degree of freedom, we will use the formula:
+$d = n-1$
+```{r}
+df_Cost_Of_Living_Plus_Rent <- nrow(data)-1
+df_Cost_Of_Living_Plus_Rent
+```
+Having 439 degrees of freedom means that we have 439 independent pieces of information to estimate the population parameter.
+
+*   t_statistic
+To calculate the t-statistic, we will use the formula:
+$t = \frac{\bar{x} - \mu}{SE}$
+```{r}
+t_statistic_Cost_Of_Living_Plus_Rent <-  (pe_Cost_Of_Living_Plus_Rent - H0)/SE_Cost_Of_Living_Plus_Rent
+t_statistic_Cost_Of_Living_Plus_Rent
+```
+The t-statistic is -70.96696 which means that the sample mean is 70.96696 standard errors below the hypothesized population mean.Vizualization of the t-distribution is shown below.
+
+```{r}
+x_values <- seq(-4, 4, length = 100)
+
+ggplot(data.frame(x = x_values), aes(x = x)) +
+  stat_function(fun = dt, args = list(df = df_Cost_Of_Living_Plus_Rent), color = "blue") +
+  geom_vline(xintercept = t_statistic_Cost_Of_Living_Plus_Rent, color = "red", linetype = "dashed", size = 1) +
+  labs(
+    title = "T-Distribution with T-Statistic",
+    x = "T-Value",
+    y = "Density"
+  ) +
+  theme_minimal()
+```
+*   p-value
+```{r}
+p_value_Cost_Of_Living_Plus_Rent <- 2*pt(-abs(t_statistic_Cost_Of_Living_Plus_Rent), df_Cost_Of_Living_Plus_Rent)
+p_value_Cost_Of_Living_Plus_Rent
+```
+The p-value is 0.96 which is greater than the alpha significance level of 0.05. This means that we fail to reject the null hypothesis. There is not enough evidence to suggest that the mean Cost of Living Plus Rent Index in the world is different from 40.
+
+#### Conclusion
+The findings imply that as students looking to move to different cities may find the average cost of living plus rent to be manageable if it aligns with this mean.
+
+While the overall average is stable, it’s essential to conduct further analyses on specific regions or cities to understand local cost dynamics, which could differ significantly from the average.
+
+
+
+### Analysis of Variance  (ANOVA)
+
+#### Visualizing the data
+Now, let's perform an analysis of variance (ANOVA) to compare the Cost of Living Plus Rent Index among different countries. We will use the ANOVA test to determine if there are any significant differences in the Cost of Living Plus Rent Index between the countries. Visualizing the data will help us understand the distribution of the Cost of Living Plus Rent Index among different countries.
+```{r}
+ggplot(data, aes(x = Country, y = Cost.of.Living.Plus.Rent.Index)) +
+  geom_boxplot() +
+  coord_flip() +  # Flip coordinates for better visibility
+  labs(title = "Cost of Living Plus Rent Index by Country",
+       x = "Country",
+       y = "Cost of Living Plus Rent Index")
+```
+#### Set-up hypothesis
+
+We will set up the null and alternative hypotheses for the ANOVA test. The null hypothesis states that the means of the Cost of Living Plus Rent Index are equal across all countries, while the alternative hypothesis states that at least one mean is different.
+
+$$H_0: \mu_1 = \mu_2 = \mu_3 = \mu_4 = \mu_5 = \mu_6 = \mu_7 = \mu_8 = \mu_9 = \mu_{10}$$
+$$H_1: \text{At least one mean is different}$$
+```{r}
+H0 <- 0
+```
+
+#### Set-up threshold values (alpha significance level)
+```{r}
+alpha <- 0.05
+```
+
+
+
+#### ANOVA Test
+
+Now, let's perform the ANOVA test to compare the Cost of Living Plus Rent Index among different countries.
+```{r}
+anova_results <- aov(Cost.of.Living.Plus.Rent.Index ~ Country, data = data)
+summary(anova_results)
+```
+The ANOVA test results show that the p-value is less than 2.2e-16, which is less than the alpha significance level of 0.05. This means that we reject the null hypothesis and conclude that there is a significant difference in the Cost of Living Plus Rent Index among different countries.
+
+#### Post-Hoc Analysis
+
+To further investigate which countries have significantly different Cost of Living Plus Rent Index values, we can perform a post-hoc analysis using the Tukey HSD test. Below are the results of the top 6 Tukey HSD test for the Cost of Living Plus Rent Index among different countries.
+```{r}
+tukey_results <- TukeyHSD(anova_results)
+head(tukey_results$Country)
+```
+The Tukey HSD test results show that there are significant differences in the Cost of Living Plus Rent Index among different countries. The top 6 countries with significantly different Cost of Living Plus Rent Index values are: Switzerland, Bermuda, Norway, Iceland, Bahamas, and Luxembourg.
+
+
+#### Conclusion
+The is a significant difference in the Cost of Living Plus Rent Index among different countries. This information can be useful for students or individuals planning to move to a new country and want to compare the cost of living in different countries. It is essential to consider the Cost of Living Plus Rent Index when making decisions about moving to a new country.
+
+
+### 6 cheapest countries to live in
+
+To find the 6 cheapest countries to live in, we will calculate the mean Cost of Living Plus Rent Index for each country and sort the countries in ascending order based on the mean Cost of Living Plus Rent Index. The top 6 countries with the lowest mean Cost of Living Plus Rent Index values will be considered the cheapest countries to live in.
+```{r}
+cheapest_countries <- data %>%
+  group_by(Country) %>%
+  summarize(mean_Cost_of_Living_Plus_Rent = mean(Cost.of.Living.Plus.Rent.Index, na.rm = TRUE)) %>%
+  arrange(mean_Cost_of_Living_Plus_Rent) %>%
+  head(6) 
+cheapest_countries
+```
+Visualizing the 6 cheapest countries to live in based on the mean Cost of Living Plus Rent Index.
+
+```{r}
+ggplot(cheapest_countries, aes(x = reorder(Country, mean_Cost_of_Living_Plus_Rent), y = mean_Cost_of_Living_Plus_Rent)) +
+  geom_bar(stat = "identity", fill = "skyblue") +
+  coord_flip() +
+  labs(title = "6 Cheapest Countries to Live in",
+       x = "Country",
+       y = "Mean Cost of Living Plus Rent Index")
+```
+#### Conclusion
+
+The 6 cheapest countries to live in based on the mean Cost of Living Plus Rent Index are: Venezuela, Syria, Tunisia, Uzbekistan, India,and Pakistan These countries have the lowest cost of living plus rent index values, making them affordable options for students looking to live in a cost-effective environment.

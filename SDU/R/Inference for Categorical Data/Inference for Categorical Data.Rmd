@@ -1,0 +1,291 @@
+---
+title: "Inference for Categorical Data"
+author: "Oleg Sechovcov"
+date: "2024-10-26"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+# One sample proportion test
+
+$$SE = \sqrt{\frac{p \cdot(1-p)}{n}}$$
+0) Check CLT conditions.
+1) Setup hypotheses
+2) Assume threshold for values
+* $\alpha = 0.05$ is common
+3) Calculate the results
+* point estimate: $\hat{p}$
+* standard error: $SE = \sqrt{\frac{p \cdot(1-p)}{n}}$
+* p-value: $2 \cdot P(Z > |z|)$
+4) Draw a conclusion
+
+$H_0$: 50% of NBA players is over 200 cm tall: $p = 0.5$
+
+$H_a$: More than 50% of NBA players is over 200 cm tall: $p > 0.5$
+
+```{r}
+alpha <- 0.05
+```
+
+```{r}
+setwd("C:/Users/olegs/Documents/SDU - Copy/SDU/R/Data")
+nba <- readr::read_csv('nba_ht_wt.csv')
+```
+
+```{r}
+nba <- nba %>% mutate(Height = Height* 2.54)
+```
+
+```{r}
+n_success <- nba %>% filter(Height > 200) %>% nrow()
+
+```
+```{r}
+nba %>% filter(Height <= 200) %>% nrow()
+```
+```{r}
+n_sample <- nrow(nba)
+(point_estimate_nba <-  n_success / n_sample)
+```
+```{r}
+(SE_nba <- sqrt(0.5 * 0.5/n_sample))
+```
+```{r}
+ggplot(data.frame(x = seq(0.4,0.6, length = 100)), aes(x=x)) +
+  stat_function(fun = dnorm, args = list(mean = 0.5, sd = SE_nba)) +
+  geom_vline(xintercept = point_estimate_nba, color = "red") 
+```
+
+```{r}
+(p_value_nba <- (1-pnorm(point_estimate_nba, mean = 0.5, sd = SE_nba)))
+```
+We reject null hypothesis, because p-value is less than 0.05.
+
+
+# Difference of proportions test
+
+0) Check CLT conditions.
+1) Setup hypotheses
+2) Assume threshold for values
+* $\alpha = 0.05$ is common
+3) Calculate the results
+* point estimate: $\hat{p}$
+* standard error: $SE = \sqrt{\frac{p \cdot(1-p)}{n}}$
+* p-value: $2 \cdot P(Z > |z|)$
+4) Draw a conclusion
+
+A clothes producer is looking for a new supplier of zipppers.Two factories are
+frontrunners. The producer wants to decide based on one days production results.
+
+First factory produces 23 935 zippers, out of which 132 were faulty.
+Second factory produces 22 312 zippers, out of which 111 were faulty.
+We want to check if it's safe to assume that they have the same production of faulty
+zippers, and due to that we can choosed based squerly on price
+
+$H_0$: Proportion of faulty zippers is the same in both factories: $p_1 = p_2$
+
+$H_a$: Proportion of faulty zippers is different in both factories: $p_1 \neq p_2$
+
+
+Pooled proportion: $\hat{p} = \frac{x_1 + x_2}{n_1 + n_2}$
+```{r}
+(p_pooled <- (132 + 111) / (23935 + 22312))
+p_pooled * 23935
+p_pooled * 22312
+(1- p_pooled) * 23935
+(1- p_pooled) * 22312
+```
+```{r}
+alpha <- 0.05
+```
+
+```{r}
+proportion1 <- 132 / 23935
+proportion2 <- 111 / 22312
+(point_estimate_zippers <- proportion1 - proportion2)
+```
+$$SE = \sqrt{\hat{p} \cdot(1-\hat{p}) \cdot \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}$$
+```{r}
+(SE_zippers <- sqrt(p_pooled * (1-p_pooled) * (1/23935 + 1/22312)))
+```
+```{r}
+ggplot(data.frame(x = seq(-0.0025,0.0025, length = 100)), aes(x=x)) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = SE_zippers)) +
+  geom_vline(xintercept = point_estimate_zippers, color = "red") 
+```
+
+```{r}
+(p_value_zippers <- 2 * (1 - pnorm(point_estimate_zippers, mean = 0, sd = SE_zippers)))
+```
+```{r}
+p_value_zippers > alpha
+```
+We accept Null hypothesis, because p-value is greater than 0.05. There is no evidence that the proportion of faulty zippers is different in both factories.
+
+
+# $\chi^2$ distribution
+
+```{r}
+ggplot(data.frame(x=seq(0,30,length=100)), aes(x=x))+
+  stat_function(fun = dchisq, args = list(df = 2), color = 'blue')+
+  stat_function(fun = dchisq, args = list(df = 3), color = 'green')+
+  stat_function(fun = dchisq, args = list(df = 5), color = 'yellow')+
+    stat_function(fun = dchisq, args = list(df = 7), color = 'orange')+
+      stat_function(fun = dchisq, args = list(df = 11), color = 'red')+
+        stat_function(fun = dchisq, args = list(df = 19), color = 'purple')
+
+
+
+
+```
+
+
+# $\chi^2$ goodness of fit test
+
+0) Check conditions.
+1) Setup hypotheses
+2) Setup threshold 
+* $\alpha = 0.05$ is common
+3) Calculate chi^2 statistic
+4) Calculate p-value
+5) Draw a conclusion
+
+Sample of 669 Haribo Gummy Bears
+```{r}
+(gummy_bears <- c(83, 142, 100, 103, 104, 137))
+```
+$H_0$: The distribution of flavors is equal
+
+$H_a$: The distribution of flavors is not equal
+
+```{r}
+alpha <- 0.05
+```
+
+```{r}
+(expected <- sum(gummy_bears) / length(gummy_bears))
+```
+$$Z_n = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}$$
+$$X^2 = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}$$
+```{r}
+(gummy_Z <- (gummy_bears - expected) / sqrt(expected))
+```
+
+```{r}
+(chi_score <- sum(gummy_Z^2))
+```
+degrees of freedom: df = 5
+
+```{r}
+ggplot(data.frame(x=seq(0,30,length=100)), aes(x=x))+
+  stat_function(fun = dchisq, args = list(df = 5), color = 'blue')+
+  geom_vline(xintercept = chi_score, color = "red")
+```
+```{r}
+(p_value <- 1 - pchisq(chi_score, df = 5))
+```
+```{r}
+p_value > alpha
+```
+We reject null hypothesis, because p-value is less than 0.05. There is evidence that the distribution of flavors is not equal.
+
+
+## Just run the test with no calculations
+
+```{r}
+chisq.test(x= gummy_bears, p = rep(c(expected), length(gummy_bears)), rescale.p = TRUE)
+```
+# $\chi^2$ test for Independence
+
+```{r}
+(movies_pizza <- tribble(
+  ~Movie, ~Pepperoni, ~Mushrooms, ~Kebab,
+  "Frozen 2", 20, 10, 5,
+  "Joker", 15, 12, 15,
+  "Someone Great", 8, 13,2
+))
+
+```
+0) Check conditions.
+1) Setup hypotheses
+2) Get the observed count for each category
+3) Calculate expected count for each category
+4) Calculate test statistic
+6) Calculate p-value
+5) Draw a conclusion
+
+$H_0$: There is no association between movie and pizza topping
+
+$H_a$: There is an association between movie and pizza topping
+
+```{r}
+p_total <- sum(movies_pizza$Pepperoni)
+m_total <- sum(movies_pizza$Mushrooms)
+k_total <- sum(movies_pizza$Kebab)
+total <- p_total + m_total + k_total
+```
+
+```{r}
+(movies_pizza <- movies_pizza %>% 
+        mutate(P_exp = (Pepperoni + Mushrooms + Kebab) * p_total/total)  %>% 
+        mutate(M_exp = (Pepperoni + Mushrooms + Kebab) * m_total/total) %>% 
+        mutate (K_exp = (Pepperoni + Mushrooms + Kebab) * k_total/total))
+```
+
+```{r}
+(movies_pizza <- movies_pizza %>% 
+  mutate(P_Z = ((Pepperoni - P_exp) / sqrt(P_exp))^2) %>% 
+  mutate(M_Z = ((Mushrooms - M_exp) / sqrt(M_exp))^2) %>%
+  mutate(K_Z = ((Kebab - K_exp) / sqrt(K_exp))^2))
+ 
+```
+```{r}
+(chi_score_mp <- sum(movies_pizza$P_Z) + sum(movies_pizza$M_Z) + sum(movies_pizza$K_Z))
+```
+df = 4
+
+```{r}
+ggplot(data.frame(x=seq(0,15,length=100)), aes(x=x))+
+  stat_function(fun = dchisq, args = list(df = 4), color = 'blue')+
+  geom_vline(xintercept = chi_score_mp, color = "red")
+```
+```{r}
+alpha <- 0.05
+
+```
+
+```{r}
+(p_value_mp <- 1 - pchisq(chi_score_mp, df = 4))
+```
+```{r}
+p_value_mp > alpha
+```
+We reject null hypothesis, because p-value is less than 0.05. There is evidence that there is an association between movie and pizza topping.
+
+
+
+## Just run the test with no calculations
+
+
+```{r}
+(movies_pizza <- tribble(
+  ~Movie, ~Pepperoni, ~Mushrooms, ~Kebab,
+  "Frozen 2", 20, 10, 5,
+  "Joker", 15, 12, 15,
+  "Someone Great", 8, 13,2
+))
+
+```
+
+
+```{r}
+movies_pizza %>% select(-Movie) %>% chisq.test()
+```
+
+
