@@ -145,3 +145,11 @@ C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\As
 C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\Assigment Web\obj\Debug\net8.0\Assigment Web.pdb
 C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\Assigment Web\obj\Debug\net8.0\Assigment Web.genruntimeconfig.cache
 C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\Assigment Web\obj\Debug\net8.0\ref\Assigment Web.dll
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\Assigment Web\bin\Debug\net8.0\EntityFramework.SqlServer.dll
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\Assigment Web\bin\Debug\net8.0\EntityFramework.dll
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\Assigment Web\bin\Debug\net8.0\System.Data.SqlClient.dll
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\Assigment Web\bin\Debug\net8.0\runtimes\win-arm64\native\sni.dll
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\Assigment Web\bin\Debug\net8.0\runtimes\win-x64\native\sni.dll
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\Assigment Web\bin\Debug\net8.0\runtimes\win-x86\native\sni.dll
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\Assigment Web\bin\Debug\net8.0\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Assigment\Assigment Web\Assigment Web\bin\Debug\net8.0\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
