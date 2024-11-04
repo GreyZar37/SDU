@@ -1,0 +1,156 @@
+---
+title: "Regression"
+author: "Oleg Sechovcov"
+date: "2024-11-04"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## R Markdown
+
+```{r}
+library(tidyverse)
+```
+#Weights and Heights USA
+
+```{r}
+setwd("C:/Users/olegs/Documents/SDU - Copy/SDU/R/Data")
+data <- readr::read_csv('weight-height.csv')
+```
+# Linear Regression for Weights and Heights
+```{r}
+data <- data %>% 
+  mutate(Height = Height * 2.54,
+         Weight = Weight * 0.453592)
+```
+
+
+```{r}
+ggplot(data) +
+  geom_point(aes(x = Height, y = Weight, color = Gender))+
+  geom_smooth(aes(x = Height, y = Weight), method = lm)+
+     geom_smooth(aes(x = Height, y = Weight, color = Gender), method = lm)
+
+
+```
+
+```{r}
+male <- data %>% filter(Gender == 'Male')
+```
+
+```{r}
+ggplot(male) + 
+  geom_point(aes(x = Height, y = Weight))+
+  geom_smooth(aes(x = Height, y = Weight), method = lm)
+```
+```{r}
+fit_males <- lm(Weight ~ Height, data = male)
+plot(fit_males)
+```
+```{r}
+summary(fit_males)
+```
+```{r}
+male$residuals <- residuals(fit_males)
+```
+
+```{r}
+ggplot(male) + 
+  geom_histogram(aes(x = residuals))
+```
+```{r}
+ggplot(male) +
+  geom_point(aes(x=Height, y=residuals))+
+  geom_hline(yintercept = 0, color = 'red', linetype = 'dashed')
+```
+```{r}
+cor(male$Height, male$Weight)
+```
+A male is 190 cm tall, now we can predict their weight
+
+```{r}
+summary(fit_males)$coefficients[1] + summary(fit_males)$coefficients[2] * 190
+
+```
+
+# Iris Data
+```{r}
+iris
+```
+```{r}
+ggplot(iris) +
+  geom_point(aes(x = Petal.Length, y = Petal.Width, color = Species))
+```
+```{r}
+versi <- iris %>% filter(Species == 'versicolor')
+```
+
+```{r}
+ggplot(versi) +
+  geom_point(aes(x = Petal.Length, y = Petal.Width)) +
+  geom_smooth(aes(x = Petal.Length, y = Petal.Width), method = lm)
+```
+```{r}
+versi_fit <- lm(Petal.Width ~ Petal.Length, data = versi)
+```
+
+```{r}
+plot(versi_fit)
+```
+```{r}
+cor(versi$Petal.Length, versi$Petal.Width)
+```
+```{r}
+summary(versi_fit)
+```
+```{r}
+versi$residuals <- residuals(versi_fit)
+```
+
+```{r}
+versi$predicted <- predict(versi_fit)
+```
+
+```{r}
+ggplot(data = versi, aes(x= Petal.Length, y = Petal.Width)) +
+  geom_point(aes(color = abs(residuals), size = abs(residuals))) +
+  geom_smooth(color = 'darkgrey', method = lm, se = FALSE) +
+  geom_segment(aes(xend = Petal.Length, yend = predicted), alpha = 0.5, color = 'red')+
+  geom_point(aes(color=abs(residuals), size = abs(residuals))) +
+  labs(x = 'Petal Length', 
+       y = 'Petal Width', 
+       title = 'Residuals vs Predicted Values') 
+```
+# Kiwi data
+
+```{r}
+setwd("C:/Users/olegs/Documents/SDU - Copy/SDU/R/Data")
+kiwi <- readr::read_csv('kiwi.csv')
+```
+```{r}
+GSF <- kiwi %>% filter(Species_code == 'GS', Gender=='F')
+```
+
+```{r}
+ggplot(GSF) +
+  geom_point(aes(x = `Height(cm)`, y = `Weight(kg)`))
+```
+```{r}
+cor(GSF$`Height(cm)`, GSF$`Weight(kg)`)
+```
+```{r}
+GSF_fit <- lm(`Weight(kg)` ~ `Height(cm)`, data = GSF)
+```
+
+```{r}
+summary(GSF_fit)
+```
+```{r}
+(T_score <- ((-0.01075 - 0) / 0.01856  ))
+(dof <- 79)
+2*(pt(T_score, df = dof))
+```
+

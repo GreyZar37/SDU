@@ -1,0 +1,448 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\home\\delivery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:views\\home\\delivery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:views\\shared\\_layout.cshtml.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\home\\information.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:views\\home\\information.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:models\\usercontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:views\\shared\\error.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:webapplication1.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:properties\\launchsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:views\\shared\\_validationscriptspartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu - copy\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\migrations\\20241030141045_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:migrations\\20241030141045_initialcreate.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "UserController.cs",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeDocumentMoniker": "Controllers\\UserController.cs",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Controllers\\UserController.cs",
+              "RelativeToolTip": "Controllers\\UserController.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAxwA0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T14:52:31.93Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "User.cs",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Models\\User.cs",
+              "RelativeDocumentMoniker": "Models\\User.cs",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Models\\User.cs",
+              "RelativeToolTip": "Models\\User.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAQwBEAAAAaAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T12:32:19.832Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Program.cs",
+              "RelativeDocumentMoniker": "Program.cs",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Program.cs",
+              "RelativeToolTip": "Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-29T15:06:17.874Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T12:30:46.052Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAcAAAAAAAAAAAAIwBcAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T11:59:47.083Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "Information.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Home\\Information.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Information.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Home\\Information.cshtml",
+              "RelativeToolTip": "Views\\Home\\Information.cshtml",
+              "ViewState": "AgIAAAwAAAAAAAAAAAAAABcAAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T11:58:15.761Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Delivery.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Home\\Delivery.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Delivery.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Home\\Delivery.cshtml",
+              "RelativeToolTip": "Views\\Home\\Delivery.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAABDAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-30T12:21:17.576Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Home\\Index.cshtml",
+              "RelativeToolTip": "Views\\Home\\Index.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABwAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T14:47:04.78Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "UserContext.cs",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Models\\UserContext.cs",
+              "RelativeDocumentMoniker": "Models\\UserContext.cs",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Models\\UserContext.cs",
+              "RelativeToolTip": "Models\\UserContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T12:34:35.243Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "_Layout.cshtml.css",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml.css",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Shared\\_Layout.cshtml.css",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABUAAAAbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-29T14:59:14.079Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABAAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T14:57:58.797Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 15,
+              "Title": "Error.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Shared\\Error.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\Error.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Shared\\Error.cshtml",
+              "RelativeToolTip": "Views\\Shared\\Error.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAABCAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T15:44:23.624Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 13,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\_ViewStart.cshtml",
+              "RelativeToolTip": "Views\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T14:57:47.305Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 14,
+              "Title": "_ViewImports.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\_ViewImports.cshtml",
+              "RelativeDocumentMoniker": "Views\\_ViewImports.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\_ViewImports.cshtml",
+              "RelativeToolTip": "Views\\_ViewImports.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T14:57:48.034Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\appsettings.json",
+              "RelativeDocumentMoniker": "appsettings.json",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\appsettings.json",
+              "RelativeToolTip": "appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAxAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-30T12:39:01.759Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Privacy.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Home\\Privacy.cshtml",
+              "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Home\\Privacy.cshtml",
+              "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T15:47:36.898Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "20241030141045_InitialCreate.cs",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Migrations\\20241030141045_InitialCreate.cs",
+              "RelativeDocumentMoniker": "Migrations\\20241030141045_InitialCreate.cs",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Migrations\\20241030141045_InitialCreate.cs",
+              "RelativeToolTip": "Migrations\\20241030141045_InitialCreate.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-30T14:10:45.137Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "WebApplication1.csproj",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\WebApplication1.csproj",
+              "RelativeDocumentMoniker": "WebApplication1.csproj",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\WebApplication1.csproj",
+              "RelativeToolTip": "WebApplication1.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-10-30T12:39:48.997Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 17,
+              "Title": "launchSettings.json",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Properties\\launchSettings.json",
+              "RelativeDocumentMoniker": "Properties\\launchSettings.json",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Properties\\launchSettings.json",
+              "RelativeToolTip": "Properties\\launchSettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-10-30T12:41:30.294Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-30T12:12:59.513Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "bootstrap.css",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap.css",
+              "ViewState": "AgIAAK8rAAAAAAAAAAAQwMcrAAARAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-29T14:53:04.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "wwwroot\\css\\site.css",
+              "ViewState": "AgIAADAAAAAAAAAAAAAAAEMAAAASAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-29T14:47:41.102Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 20,
+              "Title": "_ValidationScriptsPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeDocumentMoniker": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "RelativeToolTip": "Views\\Shared\\_ValidationScriptsPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-29T15:16:33.798Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "bootstrap-utilities.css",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-utilities.css",
+              "ViewState": "AgIAANUAAAAAAAAAAIBJwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-29T14:53:19.055Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "bootstrap.js",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-29T14:53:32.86Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "bootstrap-reboot.css",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+              "RelativeDocumentMoniker": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+              "RelativeToolTip": "wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-29T14:53:35.839Z"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
