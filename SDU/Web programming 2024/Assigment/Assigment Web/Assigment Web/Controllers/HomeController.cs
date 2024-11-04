@@ -18,7 +18,7 @@ namespace Assigment_Web.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public IActionResult Users()
         {
             return View();
         }

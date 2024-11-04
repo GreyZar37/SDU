@@ -3,20 +3,56 @@
   "WorkspaceRootPath": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\views\\home\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\views\\home\\users.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\views\\home\\privacy.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\data\\applicationdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\views\\shared\\_loginpartial.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\areas\\identity\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\areas\\identity\\pages\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\wwwroot\\css\\site.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\views\\_viewimports.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\assigment\\assigment web\\assigment web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{DDE50846-E4AF-4862-9843-0DF571BC3D47}|Assigment Web\\Assigment Web.csproj|solutionrelative:assigment web\\views\\_viewstart.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -26,24 +62,37 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "Privacy.cshtml",
-              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\Home\\Privacy.cshtml",
-              "RelativeDocumentMoniker": "Assigment Web\\Views\\Home\\Privacy.cshtml",
-              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\Home\\Privacy.cshtml",
-              "RelativeToolTip": "Assigment Web\\Views\\Home\\Privacy.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-01T09:15:16.048Z",
+              "DocumentIndex": 5,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Program.cs",
+              "RelativeDocumentMoniker": "Assigment Web\\Program.cs",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Program.cs",
+              "RelativeToolTip": "Assigment Web\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T06:11:26.518Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
+              "Title": "ErrorViewModel.cs",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Models\\ErrorViewModel.cs",
+              "RelativeDocumentMoniker": "Assigment Web\\Models\\ErrorViewModel.cs",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Models\\ErrorViewModel.cs",
+              "RelativeToolTip": "Assigment Web\\Models\\ErrorViewModel.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T06:04:54.939Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Assigment Web\\Views\\Home\\Index.cshtml",
@@ -55,12 +104,112 @@
               "EditorCaption": ""
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "_ViewStart.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "RelativeDocumentMoniker": "Assigment Web\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "RelativeToolTip": "Assigment Web\\Areas\\Identity\\Pages\\_ViewStart.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T06:11:12.275Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Assigment Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Assigment Web\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAmwBIAAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T05:56:31.392Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Users.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\Home\\Users.cshtml",
+              "RelativeDocumentMoniker": "Assigment Web\\Views\\Home\\Users.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\Home\\Users.cshtml",
+              "RelativeToolTip": "Assigment Web\\Views\\Home\\Users.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-01T09:15:16.048Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Assigment Web\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Assigment Web\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAA4AAAAAAAAAAAAMwBQAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T05:48:05.671Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "_LoginPartial.cshtml",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeDocumentMoniker": "Assigment Web\\Views\\Shared\\_LoginPartial.cshtml",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\Shared\\_LoginPartial.cshtml",
+              "RelativeToolTip": "Assigment Web\\Views\\Shared\\_LoginPartial.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-10-22T05:47:14.872Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ApplicationDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Data\\ApplicationDbContext.cs",
+              "RelativeDocumentMoniker": "Assigment Web\\Data\\ApplicationDbContext.cs",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Data\\ApplicationDbContext.cs",
+              "RelativeToolTip": "Assigment Web\\Data\\ApplicationDbContext.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-10-22T05:47:54.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "site.css",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\wwwroot\\css\\site.css",
+              "RelativeDocumentMoniker": "Assigment Web\\wwwroot\\css\\site.css",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\wwwroot\\css\\site.css",
+              "RelativeToolTip": "Assigment Web\\wwwroot\\css\\site.css",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2024-10-22T05:53:01.056Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "site.js",
+              "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\wwwroot\\js\\site.js",
+              "RelativeDocumentMoniker": "Assigment Web\\wwwroot\\js\\site.js",
+              "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\wwwroot\\js\\site.js",
+              "RelativeToolTip": "Assigment Web\\wwwroot\\js\\site.js",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-10-22T05:52:53.95Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
               "Title": "_ViewStart.cshtml",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\_ViewStart.cshtml",
               "RelativeDocumentMoniker": "Assigment Web\\Views\\_ViewStart.cshtml",
@@ -68,19 +217,21 @@
               "RelativeToolTip": "Assigment Web\\Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-01T09:15:06.746Z"
+              "WhenOpened": "2024-10-01T09:15:06.746Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 11,
               "Title": "_ViewImports.cshtml",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\_ViewImports.cshtml",
               "RelativeDocumentMoniker": "Assigment Web\\Views\\_ViewImports.cshtml",
               "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\Assigment\\Assigment Web\\Assigment Web\\Views\\_ViewImports.cshtml",
               "RelativeToolTip": "Assigment Web\\Views\\_ViewImports.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-01T09:15:04.312Z"
+              "WhenOpened": "2024-10-01T09:15:04.312Z",
+              "EditorCaption": ""
             }
           ]
         }
