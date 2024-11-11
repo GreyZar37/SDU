@@ -1,0 +1,598 @@
+% Options for packages loaded elsewhere
+\PassOptionsToPackage{unicode}{hyperref}
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[
+]{article}
+\usepackage{amsmath,amssymb}
+\usepackage{iftex}
+\ifPDFTeX
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provide euro and other symbols
+\else % if luatex or xetex
+  \usepackage{unicode-math} % this also loads fontspec
+  \defaultfontfeatures{Scale=MatchLowercase}
+  \defaultfontfeatures[\rmfamily]{Ligatures=TeX,Scale=1}
+\fi
+\usepackage{lmodern}
+\ifPDFTeX\else
+  % xetex/luatex font selection
+\fi
+% Use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\IfFileExists{microtype.sty}{% use microtype if available
+  \usepackage[]{microtype}
+  \UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\makeatletter
+\@ifundefined{KOMAClassName}{% if non-KOMA class
+  \IfFileExists{parskip.sty}{%
+    \usepackage{parskip}
+  }{% else
+    \setlength{\parindent}{0pt}
+    \setlength{\parskip}{6pt plus 2pt minus 1pt}}
+}{% if KOMA class
+  \KOMAoptions{parskip=half}}
+\makeatother
+\usepackage{xcolor}
+\usepackage[margin=1in]{geometry}
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{graphicx}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+% Set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+\setlength{\emergencystretch}{3em} % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{-\maxdimen} % remove section numbering
+\ifLuaTeX
+  \usepackage{selnolig}  % disable illegal ligatures
+\fi
+\usepackage{bookmark}
+\IfFileExists{xurl.sty}{\usepackage{xurl}}{} % add URL line breaks if available
+\urlstyle{same}
+\hypersetup{
+  pdftitle={Assignment Cost\_of\_living},
+  pdfauthor={Oleg Sechovcov},
+  hidelinks,
+  pdfcreator={LaTeX via pandoc}}
+
+\title{Assignment Cost\_of\_living}
+\author{Oleg Sechovcov}
+\date{2024-10-27}
+
+\begin{document}
+\maketitle
+
+\section{Assignment Cost\_of\_living}\label{assignment-cost_of_living}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{library}\NormalTok{(e1071)}
+\FunctionTok{library}\NormalTok{(tidyverse)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## -- Attaching core tidyverse packages ------------------------ tidyverse 2.0.0 --
+## v dplyr     1.1.4     v readr     2.1.5
+## v forcats   1.0.0     v stringr   1.5.1
+## v ggplot2   3.5.1     v tibble    3.2.1
+## v lubridate 1.9.3     v tidyr     1.3.1
+## v purrr     1.0.2     
+## -- Conflicts ------------------------------------------ tidyverse_conflicts() --
+## x dplyr::filter() masks stats::filter()
+## x dplyr::lag()    masks stats::lag()
+## i Use the conflicted package (<http://conflicted.r-lib.org/>) to force all conflicts to become errors
+\end{verbatim}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{setwd}\NormalTok{(}\StringTok{"C:/Users/olegs/Documents/SDU/SDU/R/Data"}\NormalTok{)}
+\NormalTok{data }\OtherTok{\textless{}{-}} \FunctionTok{read.csv}\NormalTok{(}\StringTok{"Cost\_of\_living.txt"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\subsection{Introduction}\label{introduction}
+
+First step, we need to load the data and see what we have.I will be
+presenting the first 6 rows of the data set.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{head}\NormalTok{(data, }\DecValTok{6}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##        City     Country Cost.of.Living.Index Rent.Index
+## 1    Zurich Switzerland               128.29      61.66
+## 2     Basel Switzerland               125.54      45.76
+## 3  Lausanne Switzerland               124.02      50.64
+## 4    Geneva Switzerland               118.98      68.47
+## 5      Bern Switzerland               116.03      40.52
+## 6 Stavanger      Norway               102.27      36.10
+##   Cost.of.Living.Plus.Rent.Index Groceries.Index Restaurant.Price.Index
+## 1                          96.42          127.96                 124.73
+## 2                          87.38          124.99                 123.11
+## 3                          88.92          127.26                 123.61
+## 4                          94.82          112.88                 119.58
+## 5                          79.91          107.58                 115.56
+## 6                          70.62           90.99                 112.45
+##   Local.Purchasing.Power.Index
+## 1                       126.90
+## 2                       121.47
+## 3                       110.52
+## 4                       111.16
+## 5                       131.89
+## 6                        87.58
+\end{verbatim}
+
+The data set contains 8 columns and 440 rows. The Columns are: City,
+Country, Cost.of.Living.Index, Rent.Index,
+Cost.Of.Living.Plus.Rent.Index, Groceries.Index, Restaurant.Price.Index,
+Local.Purchasing.Power.Index.
+
+The data shows the cost of living in different cities around the world.
+This data set is useful for people who are planning to move to another
+city or country and want to know the cost of living in that place. For
+example, if an SDU student wants to take a semester in another county,
+they can use this data set to compare the cost of living in different
+cities and choose the one that fits their budget.
+
+\subsection{Data Analysis}\label{data-analysis}
+
+Now, let's do some data analysis. I will start by checking the summary
+of the data set.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{summary}\NormalTok{(data)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##      City             Country          Cost.of.Living.Index   Rent.Index    
+##  Length:440         Length:440         Min.   : 19.77       Min.   :  3.46  
+##  Class :character   Class :character   1st Qu.: 37.09       1st Qu.: 10.62  
+##  Mode  :character   Mode  :character   Median : 52.45       Median : 20.17  
+##                                        Mean   : 54.82       Mean   : 23.75  
+##                                        3rd Qu.: 70.67       3rd Qu.: 32.50  
+##                                        Max.   :128.29       Max.   :115.58  
+##  Cost.of.Living.Plus.Rent.Index Groceries.Index  Restaurant.Price.Index
+##  Min.   : 12.38                 Min.   : 19.66   Min.   : 10.66        
+##  1st Qu.: 24.59                 1st Qu.: 30.82   1st Qu.: 30.21        
+##  Median : 37.75                 Median : 44.77   Median : 47.55        
+##  Mean   : 39.96                 Mean   : 47.50   Mean   : 51.21        
+##  3rd Qu.: 52.09                 3rd Qu.: 61.03   3rd Qu.: 70.83        
+##  Max.   :103.02                 Max.   :127.96   Max.   :124.73        
+##  Local.Purchasing.Power.Index
+##  Min.   :  2.36              
+##  1st Qu.: 42.27              
+##  Median : 66.64              
+##  Mean   : 70.80              
+##  3rd Qu.: 95.52              
+##  Max.   :163.27
+\end{verbatim}
+
+This summary shows the minimum, maximum, median, and mean values of each
+column in the data set. For example, the minimum value of the
+Cost.of.Living.Index column is 33.19, the maximum value is 141.25, the
+median value is 74.58, and the mean value is 74.57.
+
+\subsubsection{One sample t-test for Cost of Living Plus Rent for the
+whole
+world}\label{one-sample-t-test-for-cost-of-living-plus-rent-for-the-whole-world}
+
+\paragraph{Check CLT conditions}\label{check-clt-conditions}
+
+\begin{itemize}
+\tightlist
+\item
+  Data is independent - YES
+\item
+  Distribution is not strongly skewed - YES
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{skewness\_value }\OtherTok{\textless{}{-}} \FunctionTok{skewness}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Cost.of.Living.Plus.Rent.Index)}
+\NormalTok{skewness\_value}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.6359417
+\end{verbatim}
+
+The skewness value is not above 1 or below -1, so the distribution is
+not strongly skewed. Below is a histogram of the Cost of Living Plus
+Rent Index.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x=}\NormalTok{Cost.of.Living.Plus.Rent.Index)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_histogram}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## `stat_bin()` using `bins = 30`. Pick better value with `binwidth`.
+\end{verbatim}
+
+\includegraphics{Assigment-Cost_of_living_files/figure-latex/unnamed-chunk-5-1.pdf}
+\#\#\#\# Set-up hypothesis Now, we want to check if the mean Cost of
+Living Plus Rent Index in the world is 40 Before checking it for each
+country, we will check it for the whole world.
+
+\[H_0: \mu = 40\] \[H_1: \mu \neq 40\] \#\#\#\# Assume threshold values
+(alpha significance level) We will assume the alpha significance level
+to be 0.05. \[\alpha = 0.05\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{H0 }\OtherTok{\textless{}{-}} \DecValTok{40}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Calculate}\label{calculate}
+
+\begin{itemize}
+\tightlist
+\item
+  Point estimate
+\end{itemize}
+
+To calculate the point estimate, we will find the mean of the Cost of
+Living Plus Rent Index column.The formula is:
+\[\bar{x} = \frac{\sum x}{n}\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{pe\_Cost\_Of\_Living\_Plus\_Rent }\OtherTok{\textless{}{-}} \FunctionTok{mean}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Cost.of.Living.Plus.Rent.Index)}
+\NormalTok{pe\_Cost\_Of\_Living\_Plus\_Rent}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 39.95932
+\end{verbatim}
+
+\begin{itemize}
+\tightlist
+\item
+  Standard error To calculate the standard error, we will use the
+  formula: \(SE = \frac{s}{\sqrt{n}}\)
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{sd\_Cost\_Of\_Living\_Plus\_Rent }\OtherTok{\textless{}{-}} \FunctionTok{sd}\NormalTok{(data}\SpecialCharTok{$}\NormalTok{Cost.of.Living.Plus.Rent.Index)}
+\NormalTok{SE\_Cost\_Of\_Living\_Plus\_Rent }\OtherTok{\textless{}{-}}\NormalTok{ sd\_Cost\_Of\_Living\_Plus\_Rent}\SpecialCharTok{/}\FunctionTok{sqrt}\NormalTok{(}\FunctionTok{nrow}\NormalTok{(data))}
+\NormalTok{SE\_Cost\_Of\_Living\_Plus\_Rent}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.8460371
+\end{verbatim}
+
+This means that that if we kept repeatedly sampling from the population,
+the mean of those samples would typically differ from the sample mean by
+about 0.846.
+
+\begin{itemize}
+\tightlist
+\item
+  Degree of freedom To calculate the degree of freedom, we will use the
+  formula: \(d = n-1\)
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{df\_Cost\_Of\_Living\_Plus\_Rent }\OtherTok{\textless{}{-}} \FunctionTok{nrow}\NormalTok{(data)}\SpecialCharTok{{-}}\DecValTok{1}
+\NormalTok{df\_Cost\_Of\_Living\_Plus\_Rent}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 439
+\end{verbatim}
+
+Having 439 degrees of freedom means that we have 439 independent pieces
+of information to estimate the population parameter.
+
+\begin{itemize}
+\tightlist
+\item
+  t\_statistic To calculate the t-statistic, we will use the formula:
+  \(t = \frac{\bar{x} - \mu}{SE}\)
+\end{itemize}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{t\_statistic\_Cost\_Of\_Living\_Plus\_Rent }\OtherTok{\textless{}{-}}\NormalTok{  (pe\_Cost\_Of\_Living\_Plus\_Rent }\SpecialCharTok{{-}}\NormalTok{ H0)}\SpecialCharTok{/}\NormalTok{SE\_Cost\_Of\_Living\_Plus\_Rent}
+\NormalTok{t\_statistic\_Cost\_Of\_Living\_Plus\_Rent}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] -0.04808515
+\end{verbatim}
+
+The t-statistic is -70.96696 which means that the sample mean is
+70.96696 standard errors below the hypothesized population
+mean.Vizualization of the t-distribution is shown below.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{x\_values }\OtherTok{\textless{}{-}} \FunctionTok{seq}\NormalTok{(}\SpecialCharTok{{-}}\DecValTok{4}\NormalTok{, }\DecValTok{4}\NormalTok{, }\AttributeTok{length =} \DecValTok{100}\NormalTok{)}
+
+\FunctionTok{ggplot}\NormalTok{(}\FunctionTok{data.frame}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x\_values), }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ x)) }\SpecialCharTok{+}
+  \FunctionTok{stat\_function}\NormalTok{(}\AttributeTok{fun =}\NormalTok{ dt, }\AttributeTok{args =} \FunctionTok{list}\NormalTok{(}\AttributeTok{df =}\NormalTok{ df\_Cost\_Of\_Living\_Plus\_Rent), }\AttributeTok{color =} \StringTok{"blue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{geom\_vline}\NormalTok{(}\AttributeTok{xintercept =}\NormalTok{ t\_statistic\_Cost\_Of\_Living\_Plus\_Rent, }\AttributeTok{color =} \StringTok{"red"}\NormalTok{, }\AttributeTok{linetype =} \StringTok{"dashed"}\NormalTok{, }\AttributeTok{size =} \DecValTok{1}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}
+    \AttributeTok{title =} \StringTok{"T{-}Distribution with T{-}Statistic"}\NormalTok{,}
+    \AttributeTok{x =} \StringTok{"T{-}Value"}\NormalTok{,}
+    \AttributeTok{y =} \StringTok{"Density"}
+\NormalTok{  ) }\SpecialCharTok{+}
+  \FunctionTok{theme\_minimal}\NormalTok{()}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## Warning: Using `size` aesthetic for lines was deprecated in ggplot2 3.4.0.
+## i Please use `linewidth` instead.
+## This warning is displayed once every 8 hours.
+## Call `lifecycle::last_lifecycle_warnings()` to see where this warning was
+## generated.
+\end{verbatim}
+
+\includegraphics{Assigment-Cost_of_living_files/figure-latex/unnamed-chunk-11-1.pdf}
+* p-value
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{p\_value\_Cost\_Of\_Living\_Plus\_Rent }\OtherTok{\textless{}{-}} \DecValTok{2}\SpecialCharTok{*}\FunctionTok{pt}\NormalTok{(}\SpecialCharTok{{-}}\FunctionTok{abs}\NormalTok{(t\_statistic\_Cost\_Of\_Living\_Plus\_Rent), df\_Cost\_Of\_Living\_Plus\_Rent)}
+\NormalTok{p\_value\_Cost\_Of\_Living\_Plus\_Rent}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## [1] 0.9616703
+\end{verbatim}
+
+The p-value is 0.96 which is greater than the alpha significance level
+of 0.05. This means that we fail to reject the null hypothesis. There is
+not enough evidence to suggest that the mean Cost of Living Plus Rent
+Index in the world is different from 40.
+
+\paragraph{Conclusion}\label{conclusion}
+
+The findings imply that as students looking to move to different cities
+may find the average cost of living plus rent to be manageable if it
+aligns with this mean.
+
+While the overall average is stable, it's essential to conduct further
+analyses on specific regions or cities to understand local cost
+dynamics, which could differ significantly from the average.
+
+\subsubsection{Analysis of Variance
+(ANOVA)}\label{analysis-of-variance-anova}
+
+\paragraph{Visualizing the data}\label{visualizing-the-data}
+
+Now, let's perform an analysis of variance (ANOVA) to compare the Cost
+of Living Plus Rent Index among different countries. We will use the
+ANOVA test to determine if there are any significant differences in the
+Cost of Living Plus Rent Index between the countries. Visualizing the
+data will help us understand the distribution of the Cost of Living Plus
+Rent Index among different countries.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(data, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =}\NormalTok{ Country, }\AttributeTok{y =}\NormalTok{ Cost.of.Living.Plus.Rent.Index)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_boxplot}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+}  \CommentTok{\# Flip coordinates for better visibility}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"Cost of Living Plus Rent Index by Country"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Country"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Cost of Living Plus Rent Index"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assigment-Cost_of_living_files/figure-latex/unnamed-chunk-13-1.pdf}
+\#\#\#\# Set-up hypothesis
+
+We will set up the null and alternative hypotheses for the ANOVA test.
+The null hypothesis states that the means of the Cost of Living Plus
+Rent Index are equal across all countries, while the alternative
+hypothesis states that at least one mean is different.
+
+\[H_0: \mu_1 = \mu_2 = \mu_3 = \mu_4 = \mu_5 = \mu_6 = \mu_7 = \mu_8 = \mu_9 = \mu_{10}\]
+\[H_1: \text{At least one mean is different}\]
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{H0 }\OtherTok{\textless{}{-}} \DecValTok{0}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{Set-up threshold values (alpha significance
+level)}\label{set-up-threshold-values-alpha-significance-level}
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{alpha }\OtherTok{\textless{}{-}} \FloatTok{0.05}
+\end{Highlighting}
+\end{Shaded}
+
+\paragraph{ANOVA Test}\label{anova-test}
+
+Now, let's perform the ANOVA test to compare the Cost of Living Plus
+Rent Index among different countries.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{anova\_results }\OtherTok{\textless{}{-}} \FunctionTok{aov}\NormalTok{(Cost.of.Living.Plus.Rent.Index }\SpecialCharTok{\textasciitilde{}}\NormalTok{ Country, }\AttributeTok{data =}\NormalTok{ data)}
+\FunctionTok{summary}\NormalTok{(anova\_results)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##              Df Sum Sq Mean Sq F value Pr(>F)    
+## Country     107 122200  1142.1   23.61 <2e-16 ***
+## Residuals   332  16060    48.4                   
+## ---
+## Signif. codes:  0 '***' 0.001 '**' 0.01 '*' 0.05 '.' 0.1 ' ' 1
+\end{verbatim}
+
+The ANOVA test results show that the p-value is less than 2.2e-16, which
+is less than the alpha significance level of 0.05. This means that we
+reject the null hypothesis and conclude that there is a significant
+difference in the Cost of Living Plus Rent Index among different
+countries.
+
+\paragraph{Post-Hoc Analysis}\label{post-hoc-analysis}
+
+To further investigate which countries have significantly different Cost
+of Living Plus Rent Index values, we can perform a post-hoc analysis
+using the Tukey HSD test. Below are the results of the top 6 Tukey HSD
+test for the Cost of Living Plus Rent Index among different countries.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{tukey\_results }\OtherTok{\textless{}{-}} \FunctionTok{TukeyHSD}\NormalTok{(anova\_results)}
+\FunctionTok{head}\NormalTok{(tukey\_results}\SpecialCharTok{$}\NormalTok{Country)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##                       diff        lwr      upr     p adj
+## Algeria-Albania    -4.3800 -47.517077 38.75708 1.0000000
+## Argentina-Albania  -2.6500 -45.787077 40.48708 1.0000000
+## Armenia-Albania    -2.5900 -45.727077 40.54708 1.0000000
+## Australia-Albania  30.2440  -1.747312 62.23531 0.1127634
+## Austria-Albania    25.8375  -8.265353 59.94035 0.7121222
+## Azerbaijan-Albania -3.8900 -47.027077 39.24708 1.0000000
+\end{verbatim}
+
+The Tukey HSD test results show that there are significant differences
+in the Cost of Living Plus Rent Index among different countries. The top
+6 countries with significantly different Cost of Living Plus Rent Index
+values are: Switzerland, Bermuda, Norway, Iceland, Bahamas, and
+Luxembourg.
+
+\paragraph{Conclusion}\label{conclusion-1}
+
+The is a significant difference in the Cost of Living Plus Rent Index
+among different countries. This information can be useful for students
+or individuals planning to move to a new country and want to compare the
+cost of living in different countries. It is essential to consider the
+Cost of Living Plus Rent Index when making decisions about moving to a
+new country.
+
+\subsubsection{6 cheapest countries to live
+in}\label{cheapest-countries-to-live-in}
+
+To find the 6 cheapest countries to live in, we will calculate the mean
+Cost of Living Plus Rent Index for each country and sort the countries
+in ascending order based on the mean Cost of Living Plus Rent Index. The
+top 6 countries with the lowest mean Cost of Living Plus Rent Index
+values will be considered the cheapest countries to live in.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{cheapest\_countries }\OtherTok{\textless{}{-}}\NormalTok{ data }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{group\_by}\NormalTok{(Country) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{summarize}\NormalTok{(}\AttributeTok{mean\_Cost\_of\_Living\_Plus\_Rent =} \FunctionTok{mean}\NormalTok{(Cost.of.Living.Plus.Rent.Index, }\AttributeTok{na.rm =} \ConstantTok{TRUE}\NormalTok{)) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{arrange}\NormalTok{(mean\_Cost\_of\_Living\_Plus\_Rent) }\SpecialCharTok{\%\textgreater{}\%}
+  \FunctionTok{head}\NormalTok{(}\DecValTok{6}\NormalTok{) }
+\NormalTok{cheapest\_countries}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+## # A tibble: 6 x 2
+##   Country    mean_Cost_of_Living_Plus_Rent
+##   <chr>                              <dbl>
+## 1 Pakistan                            14.5
+## 2 India                               16.0
+## 3 Uzbekistan                          17.6
+## 4 Tunisia                             17.8
+## 5 Syria                               18.2
+## 6 Venezuela                           18.2
+\end{verbatim}
+
+Visualizing the 6 cheapest countries to live in based on the mean Cost
+of Living Plus Rent Index.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\FunctionTok{ggplot}\NormalTok{(cheapest\_countries, }\FunctionTok{aes}\NormalTok{(}\AttributeTok{x =} \FunctionTok{reorder}\NormalTok{(Country, mean\_Cost\_of\_Living\_Plus\_Rent), }\AttributeTok{y =}\NormalTok{ mean\_Cost\_of\_Living\_Plus\_Rent)) }\SpecialCharTok{+}
+  \FunctionTok{geom\_bar}\NormalTok{(}\AttributeTok{stat =} \StringTok{"identity"}\NormalTok{, }\AttributeTok{fill =} \StringTok{"skyblue"}\NormalTok{) }\SpecialCharTok{+}
+  \FunctionTok{coord\_flip}\NormalTok{() }\SpecialCharTok{+}
+  \FunctionTok{labs}\NormalTok{(}\AttributeTok{title =} \StringTok{"6 Cheapest Countries to Live in"}\NormalTok{,}
+       \AttributeTok{x =} \StringTok{"Country"}\NormalTok{,}
+       \AttributeTok{y =} \StringTok{"Mean Cost of Living Plus Rent Index"}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Assigment-Cost_of_living_files/figure-latex/unnamed-chunk-19-1.pdf}
+\#\#\#\# Conclusion
+
+The 6 cheapest countries to live in based on the mean Cost of Living
+Plus Rent Index are: Venezuela, Syria, Tunisia, Uzbekistan, India,and
+Pakistan These countries have the lowest cost of living plus rent index
+values, making them affordable options for students looking to live in a
+cost-effective environment.
+
+\end{document}

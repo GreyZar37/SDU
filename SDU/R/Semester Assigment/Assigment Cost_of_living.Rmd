@@ -15,8 +15,7 @@ library(e1071)
 library(tidyverse)
 
 
-
-setwd("C:/Users/olegs/Documents/SDU - Copy/SDU/R/Data")
+setwd("C:/Users/olegs/Documents/SDU/SDU/R/Data")
 data <- read.csv("Cost_of_living.txt")
 ```
 ## Introduction

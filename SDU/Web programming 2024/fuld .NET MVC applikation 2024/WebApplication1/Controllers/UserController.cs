@@ -12,7 +12,7 @@ namespace WebApplication1.Controllers
 
         public UserController(UserContext context)
         {
-            _context = context;
+            _context = context; 
         }
 
         // GET: User/Create
@@ -24,7 +24,7 @@ namespace WebApplication1.Controllers
         // POST: User/Create
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create(User user)
+        public async Task<IActionResult> Create(Users user)
         {
             if (ModelState.IsValid)
             {
@@ -37,7 +37,7 @@ namespace WebApplication1.Controllers
                 await _context.SaveChangesAsync();
 
                 // Redirect to a confirmation or home page
-                return RedirectToAction("Index", "Information");
+                return RedirectToAction("Information", "Home");
             }
             return View(user); // Return form with validation errors if any
         }
@@ -60,11 +60,11 @@ namespace WebApplication1.Controllers
                 _context.Update(user);
                 await _context.SaveChangesAsync();
 
-                return RedirectToAction("Index", "Information");
+                return RedirectToAction("Delivery", "Home");
             }
 
             ModelState.AddModelError("", "Invalid login attempt.");
-            return View("Login"); // Ensure a corresponding Login.cshtml view is present
+            return View("Index"); // Ensure a corresponding Login.cshtml view is present
         }
     }
 }

@@ -3,29 +3,33 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApplication1.Models
 {
-    public class User
+    public class Users
     {
         // Primary Key
         [Key]
-        public int UserId { get; set; }  // Use 'UserId' for better readability
+        public int UserId { get; set; } 
 
         [Required]
         [StringLength(50)]
-        [Column("username", TypeName = "varchar")]
+        [Column("Username", TypeName = "varchar")]
         public string Username { get; set; }
 
         [Required]
+        [Column("Password", TypeName = "varchar")]
         [StringLength(50)]
         public string Password { get; set; }
 
         [Required]
-        [EmailAddress] // This ensures the value is a valid email format
+        [Column("Email", TypeName = "varchar")]
+        [EmailAddress] 
         [StringLength(355)]
         public string Email { get; set; }
 
-        [Required]
-        public DateTime CreatedOn { get; set; } // Use DateTime for timestamp
+        [Column("CreatedOn", TypeName = "timestamptz")]
 
-        public DateTime? LastLogin { get; set; } // Nullable to allow no last login value
+        public DateTime CreatedOn { get; set; }
+
+        [Column("LastLogin", TypeName = "timestamptz")]
+        public DateTime? LastLogin { get; set; }
     }
 }
