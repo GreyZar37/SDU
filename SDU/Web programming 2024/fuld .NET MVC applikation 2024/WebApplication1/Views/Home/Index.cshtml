@@ -3,13 +3,11 @@
 }
 
 <div class="text-center">
-   
     <div class="containers">
         <div class="left-container">
             <img src="~/Images/images.png" alt="add" class="add-image">
         </div>
         <div class="middle-container">
-
             <h1 class="display-4">Dear Valued Participant!</h1>
             <p>
                 We are thrilled to announce that you have been randomly selected as the grand prize winner of our exclusive iPhone Giveaway!
@@ -20,7 +18,7 @@
 
             <div class="forums-containers">
                 <h2>Register a new user<br><br></h2>
-                <form class="register-form" asp-action="Create" asp-controller="User" method="post">
+                <form class="register-form" asp-action="Create" asp-controller="User" method="post" onsubmit="return validateRegistrationForm()">
                     <label for="username">Username:</label><br>
                     <input type="text" id="username" name="username" required><br><br>
 
@@ -35,11 +33,10 @@
             </div>
 
             <div class="forums-containers">
-
                 <h2>Login<br><br></h2>
                 <p>If you already have an account, you can login and track your Iphone delivery</p>
 
-                <form class="login-form" asp-action="Login" asp-controller="User" method="post">
+                <form class="login-form" asp-action="Login" asp-controller="User" method="post" onsubmit="return validateLoginForm()">
                     <label for="username">Username:</label><br>
                     <input type="text" id="login-username" name="username" required><br><br>
 
@@ -56,3 +53,4 @@
         </div>
     </div>
 </div>
+

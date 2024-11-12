@@ -57,6 +57,12 @@ namespace WebApplication1.Controllers
 
                 // Update last login timestamp
                 user.LastLogin = DateTime.UtcNow;
+
+                DateTime endDate = new DateTime(2024, 11, 14);
+                int deliveryDays = CalculateBusinessDays(user.CreatedOn, endDate);
+                TempData["DeliveryDays"] = deliveryDays;
+                
+
                 _context.Update(user);
                 await _context.SaveChangesAsync();
 
@@ -65,6 +71,24 @@ namespace WebApplication1.Controllers
 
             ModelState.AddModelError("", "Invalid login attempt.");
             return View("Index"); // Ensure a corresponding Login.cshtml view is present
+        }
+
+        private int CalculateBusinessDays(DateTime start, DateTime end)
+        {
+            int businessDays = 0;
+
+            // Loop through each day
+            while (start <= end)
+            {
+                // Check if it's a weekday (Mon=1 to Fri=5)
+                if (start.DayOfWeek >= DayOfWeek.Monday && start.DayOfWeek <= DayOfWeek.Friday)
+                {
+                    businessDays++;
+                }
+                start = start.AddDays(1);
+            }
+
+            return businessDays;
         }
     }
 }

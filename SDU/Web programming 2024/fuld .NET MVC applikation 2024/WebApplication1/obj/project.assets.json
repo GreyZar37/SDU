@@ -4683,11 +4683,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\WebApplication1.csproj",
+      "projectUniqueName": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\WebApplication1.csproj",
       "projectName": "WebApplication1",
-      "projectPath": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\WebApplication1.csproj",
+      "projectPath": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\WebApplication1.csproj",
       "packagesPath": "C:\\Users\\olegs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\obj\\",
+      "outputPath": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\olegs\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4772,7 +4772,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.400/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
