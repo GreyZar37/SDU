@@ -1,0 +1,226 @@
+
+/* Variables */
+:root {
+     
+    /* Colors */
+    --background-color-primary: #1C1F26;
+    --background-color-secondary: #FFFFFF;
+    
+    --text-color-primary-on-white: #1c222b;
+    --text-color-secondary-on-white: #424c5a;
+
+    --text-color-primary-on-black: #FFFFFF;
+    --text-color-secondary-on-black: #acacac;
+    
+    --highlight-color-primary: #FF6B35;
+    --highlight-color-secondary: #007BFF;
+
+    /* Fonts */
+    --font-primary: 'Roboto', sans-serif;
+    --font-secondary: 'Open Sans', sans-serif;
+    --font-tertiary: 'Montserrat', sans-serif;
+
+    /* Spacing */
+
+    --Spacing-tiny: 0.5rem;
+    --spacing-small: 1rem;
+    --spacing-medium: 2rem;
+    --spacing-large: 3rem;
+
+    /* Font Sizes */
+
+    --font-size-small: 1rem;
+    --font-size-medium: 1.5rem;
+    --font-size-large: 2rem;
+    --font-size-xlarge: 3rem;
+    --font-size-xxlarge: 4rem;
+
+
+}
+
+
+body{
+    font-family: var(--font-primary);
+    padding: 0;
+    margin: 0;
+}
+
+.title {
+    font-family: var(--font-primary);
+
+    font-size: var(--font-size-xxlarge);
+    margin: var(--spacing-small);
+}
+.subtitle {
+    font-family: var(--font-tertiary);
+
+     color: var(--text-color-secondary-on-black);
+     font-size: var(--font-size-medium)
+}
+.link-button{
+    color: var(--text-color-primary-on-black);
+    background: var(--highlight-color-secondary);
+    border-radius: 5px;
+    padding: var(--Spacing-tiny);
+    text-decoration: none;
+    margin: var(--spacing-small);
+}
+
+.two-column-container{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    margin: var(--spacing-medium);
+}
+
+.left-column{
+    width: 50%;
+    padding: var(--spacing-medium);
+}
+
+.right-column{
+    width: 50%;
+    padding: var(--spacing-medium);
+}
+
+
+/*Header*/
+
+.header {
+    display: flex;
+    align-items: center;
+    background-color: var(--background-color-primary);
+}
+
+.header-title {
+    color: var(--text-color-primary-on-black);
+    white-space: nowrap;
+}
+
+.nav-list {
+    display: flex;
+    align-items: center;
+    width: 100%;
+
+    margin-left: var(--spacing-large);
+    
+}
+
+.header ul li {
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 20px;
+    display: inline;
+    
+}
+
+.header ul li a {
+    text-decoration: none;
+    color: var(--text-color-primary-on-black);
+    
+}
+
+.logo {
+    width: 75px;
+    height: 75px;
+    object-fit: fill;
+    margin: var(--spacing-small);
+    
+}
+
+.nav-button-highlighted {
+    background-color: var(--highlight-color-secondary);
+    color: var(--text-color-primary-on-black);
+    padding: var(--Spacing-tiny);
+    border-radius: 5px;
+    margin-left: var(--spacing-small);
+    
+}
+
+/* Hero container*/
+.hero-section {
+    display: flex;
+    height: 100vh;
+    flex-direction: column;
+    background-image: url(/Assets/Images/how-hot-is-too-hot-for-pc-hardware-v0-u9gxc_Iitl5IiZcCA-h88cPGfpnm3dEMx_9dHN-lChc.webp);
+    background-size: cover;
+    background-position: center;
+    box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+    justify-content: space-around;
+}
+
+.hero-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--background-color-primary);
+    padding: var(--spacing-medium);
+    background: rgba(28, 31, 38, 0.1);
+    backdrop-filter: blur(50px);
+
+    color: var(--text-color-primary-on-black);
+}
+
+/* About Section */
+.about-website-section{
+    background-color: var(--background-color-primary);
+    padding: var(--spacing-small);
+}
+
+.about-website-section p{
+    color: var(--text-color-secondary-on-black);
+    font-size: var(--font-size-medium);
+    margin: var(--spacing-small);
+}
+
+.about-website-section h1{
+    color: var(--text-color-primary-on-black);
+    font-size: var(--font-size-xxlarge);
+    margin-bottom: var(--spacing-medium);
+}
+
+
+/* all-in-one-website-section */
+
+.all-in-one-website-section{
+    padding: var(--spacing-small);
+
+}
+
+.all-in-one-website-section img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    margin: var(--spacing-small);
+    
+}
+
+.all-in-one-website-section p{
+    color: var(--text-color-secondary-on-white);
+    font-size: var(--font-size-medium);
+    margin: var(--spacing-small);
+}
+
+.all-in-one-website-section h1{
+    color: var(--text-color-primary-on-white);
+    margin: var(--spacing-small);
+}
+
+.small-banners{
+    display: flex;
+    justify-content: space-around;
+    margin: var(--spacing-medium);
+}
+
+.small-banners img{
+    width: 200px;
+    height: 200px;
+    object-fit: fill;
+    margin: var(--spacing-small);
+}
+
+.small-banners h1{
+    color: var(--text-color-primary-on-white);
+    font-size: var(--font-size-large);
+    margin: var(--spacing-small);
+}
