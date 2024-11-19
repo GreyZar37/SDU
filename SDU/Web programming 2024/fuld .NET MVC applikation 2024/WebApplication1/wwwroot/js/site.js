@@ -1,46 +1,79 @@
-﻿// Registration Form Validation
-    function validateRegistrationForm() {
-    // Username Validation: check if it is not empty
+﻿function validateRegistrationForm() {
+
     const username = document.getElementById("username").value;
-    if (username == "") {
-        alert("Username must not be empty.");
-    return false;
+    if (username.length < 3) {
+        alert("Username must be longer.");
+        return false;
     }
 
-    // Password Validation: Check if password contains at least one number, one letter, and one special character, and is at least 8 characters long
     const password = document.getElementById("password").value;
-    const passwordRegex = /^(?=.*[A-Za-z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8, 20}$/;
-    if (!passwordRegex.test(password)) {
-        alert("Password must be at least 8 characters long and contain at least one letter, one number, and one special character.");
-    return false;
+
+    if (password.length < 5) {
+        alert("Password must be at least 5 characters long.");
+        return false;
+
     }
 
-    // Email Validation: Using a simple email RegEx pattern
+
+    var passwordRegex = /[a-zA-Z]+/;
+
+    if (!passwordRegex.test(password)) {
+        alert("Password must have a letter");
+        return false;
+
+    }
+    passwordRegex = /[0-9]+/;
+    if (!passwordRegex.test(password)) {
+        alert("Password must have a number");
+        return false;
+
+    }
+
+    passwordRegex = /[!@#$%^&*]+/;
+    if (!passwordRegex.test(password)) {
+        alert("Password must have a special character");
+        return false;
+    }
+
+    
     const email = document.getElementById("email").value;
     const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/;
     if (!emailRegex.test(email)) {
         alert("Please enter a valid email address.");
-    return false;
+        return false;
     }
 
-    return true; // If all validations pass
+    return true;
 }
 
-    // Login Form Validation
-    function validateLoginForm() {
-    // Username Validation: check if it is not empty
+function validateLoginForm() {
     const loginUsername = document.getElementById("login-username").value;
     if (loginUsername == "") {
         alert("Username must not be empty.");
-    return false;
+        return false;
     }
 
-    // Password Validation: Check if password is not empty
     const loginPassword = document.getElementById("login-password").value;
     if (loginPassword == "") {
         alert("Password must not be empty.");
-    return false;
+        return false;
     }
 
-    return true; // If all validations pass
+    return true;
 }
+
+function getDeliveryInfoAjax() {
+    const xhttp = new XMLHttpRequest();
+    xhttp.onreadystatechange = function () {
+        if (this.readyState == 4 && this.status == 200) {
+            const response = JSON.parse(this.responseText);
+
+            document.getElementById("delivery-time").innerHTML = response.deliveryDays;
+            document.getElementById("tracking-number").innerHTML = response.trackingLabel;
+        }
+    };
+    xhttp.open("GET", "/User/GetDeliveryInfo", true);
+    xhttp.send();
+}
+
+setInterval(getDeliveryInfoAjax, 2000);

@@ -5,7 +5,6 @@ namespace WebApplication1.Models
 {
     public class Users
     {
-        // Primary Key
         [Key]
         public int UserId { get; set; } 
 
@@ -24,6 +23,10 @@ namespace WebApplication1.Models
         [EmailAddress] 
         [StringLength(355)]
         public string Email { get; set; }
+
+        [Column("TrackingNumber", TypeName = "varchar")]
+        [StringLength(355)]
+        public string? TrackingNumber { get; set; }
 
         [Column("CreatedOn", TypeName = "timestamptz")]
 
