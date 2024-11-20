@@ -189,8 +189,7 @@ body{
 
 .all-in-one-website-section img{
     width: 100%;
-    height: 100%;
-    object-fit: fill;
+    object-fit: cover;
     margin: var(--spacing-small);
     
 }
@@ -208,9 +207,18 @@ body{
 
 .small-banners{
     display: flex;
-    justify-content: space-around;
-    margin: var(--spacing-medium);
 }
+
+.small-banners .left-column, .small-banners .right-column{
+    padding: 0px;
+
+    display: flex;
+    flex-direction: column;
+
+    justify-content: space-between;
+}
+
+
 
 .small-banners img{
     width: 200px;
@@ -223,4 +231,39 @@ body{
     color: var(--text-color-primary-on-white);
     font-size: var(--font-size-large);
     margin: var(--spacing-small);
+}
+
+/* Choose path section */
+
+.grid-container{
+    display: grid;
+    justify-items: center;
+
+    margin: var(--spacing-medium);
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: var(--spacing-small);
+    background-image: url(/Assets/Images/how-hot-is-too-hot-for-pc-hardware-v0-u9gxc_Iitl5IiZcCA-h88cPGfpnm3dEMx_9dHN-lChc.webp);
+    
+    background-position: center;
+    background-size: cover;
+
+
+}
+.grid-content {
+    width: 100%;
+    height: 100%;
+    justify-items: center;
+    backdrop-filter: blur(50px);
+    transition: transform 0.3s ease-in-out;
+}
+
+.grid-content:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+
+.grid-content p{
+   margin: var(--spacing-large);
 }
