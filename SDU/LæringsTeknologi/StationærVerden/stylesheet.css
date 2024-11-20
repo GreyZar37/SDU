@@ -264,6 +264,9 @@ body{
 }
 
 
-.grid-content p{
+.grid-content p, .grid-content h1{
+   color: var(--text-color-primary-on-black);
+   font-size: var(--font-size-large);
    margin: var(--spacing-large);
 }
+
