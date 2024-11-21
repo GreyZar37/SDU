@@ -117,7 +117,20 @@ body{
 .header ul li a {
     text-decoration: none;
     color: var(--text-color-primary-on-black);
-    
+    transition: color  0.1s ease-in-out;
+}
+
+.header .nav-button a:hover {
+    color: var(--highlight-color-secondary);
+}
+
+
+.nav-button-highlighted {
+    background-color: var(--highlight-color-secondary);
+    color: var(--text-color-primary-on-black);
+    padding: var(--Spacing-tiny);
+    border-radius: 5px;
+    margin-left: var(--spacing-small);
 }
 
 .logo {
@@ -128,21 +141,12 @@ body{
     
 }
 
-.nav-button-highlighted {
-    background-color: var(--highlight-color-secondary);
-    color: var(--text-color-primary-on-black);
-    padding: var(--Spacing-tiny);
-    border-radius: 5px;
-    margin-left: var(--spacing-small);
-    
-}
 
 /* Hero container*/
 .hero-section {
     display: flex;
     height: 100vh;
     flex-direction: column;
-    background-image: url(/Assets/Images/how-hot-is-too-hot-for-pc-hardware-v0-u9gxc_Iitl5IiZcCA-h88cPGfpnm3dEMx_9dHN-lChc.webp);
     background-size: cover;
     background-position: center;
     box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
@@ -155,8 +159,8 @@ body{
     align-items: center;
     background-color: var(--background-color-primary);
     padding: var(--spacing-medium);
-    background: rgba(28, 31, 38, 0.1);
-    backdrop-filter: blur(50px);
+    background: rgba(28, 31, 38, 0.696);
+    backdrop-filter: blur(15px);
 
     color: var(--text-color-primary-on-black);
 }
@@ -178,7 +182,9 @@ body{
     font-size: var(--font-size-xxlarge);
     margin-bottom: var(--spacing-medium);
 }
-
+.about-website-section img{
+    width: 100%;
+}
 
 /* all-in-one-website-section */
 
@@ -255,6 +261,7 @@ body{
     height: 100%;
     justify-items: center;
     backdrop-filter: blur(50px);
+    background: rgba(0, 0, 0, 0.368);
     transition: transform 0.3s ease-in-out;
 }
 
@@ -266,7 +273,132 @@ body{
 
 .grid-content p, .grid-content h1{
    color: var(--text-color-primary-on-black);
-   font-size: var(--font-size-large);
    margin: var(--spacing-large);
 }
+.grid-content p{
+    font-size: var(--font-size-medium);
+}
+.grid-content h1{
+    font-size: var(--font-size-large);
 
+}
+
+/* Discover Section */
+
+.discover-section{
+    display: flex;
+    justify-content: center;
+    background-color: var(--background-color-secondary);
+}
+
+.grid-container-banner{
+    display: flex;
+
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+    padding: var(--spacing-small);
+    
+    background-position: center;
+    background-size: cover;
+
+}
+
+
+
+.grid-container-banner .grid-content{
+    width: 100%;
+    height: 500px;
+    border-radius: 5px;
+}
+
+.grid-container-banner .grid-content p{
+    font-size: var(--font-size-medium);
+}
+
+.glass-panel{
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    backdrop-filter: blur(5px);
+    z-index: -1;
+}
+
+.post-section{
+    display: flex;
+    background-color: var(--background-color-primary);
+    color: var(--text-color-primary-on-black);
+    padding: var(--spacing-small);
+}
+
+/* Footer */
+
+.Footer{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    background-color: var(--background-color-primary);
+    color: var(--text-color-primary-on-black);
+    padding: var(--spacing-small);
+}
+
+.footer-content{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.footer-content h2{
+    font-size: var(--font-size-small);
+    margin: var(--spacing-medium);
+}
+
+/* Lessons Section */
+
+.lessons-container .two-column-container .left-column{
+     background-color: var(--background-color-primary);
+     padding: var(--spacing-medium);
+}
+
+.dropbtn {
+    background-color: var(--background-color-secondary);
+    color: var(--text-color-primary-on-white);
+    padding: var(--Spacing-tiny);
+    font-size: var(--font-size-small);
+    border: none;
+    cursor: pointer;
+    width: 100%;
+}
+
+.dropdown-content{
+    display: none;
+    position: relative;
+    background-color: var(--background-color-secondary);
+    width: 100%;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content {
+    position: relative;
+    justify-content: center;
+    background-color: var(--background-color-primary);
+    border: 5px solid var(--background-color-secondary);
+    min-width: 160px;
+    z-index: 1;
+  }
+
+    .dropdown-content a {
+        color: var(--text-color-primary-on-black);
+        box-shadow: inset 0px 0px 0px 1px var(--background-color-secondary);
+        padding: 12px 16px;
+        text-decoration: none;
+        display: flex;
+    }
+
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
