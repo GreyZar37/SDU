@@ -1,0 +1,364 @@
+---
+title: "Untitled20230105_Exam"
+author: "Oleg"
+date: "2024-11-25"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+```{r}
+
+library(tidyverse)
+library(gapminder)
+
+
+setwd("C:/Users/olegs/Documents/SDU/SDU/R/20230105_Exam_full/data")
+candles_data <- read.csv("candles_revenue.csv")
+gym_data <- read.csv("gym_figskate.csv")
+population_data <- read.csv("population_2020.csv")
+University_data <- read.csv("UniversityStudentsMonthlyExpenses.csv")
+```
+# 1 Gymnastics and figure skating.
+
+## Summary
+
+First we want to know what dataset we are working with. We have 3143 rows and 11 columns
+
+```{r}
+summary(gym_data)
+```
+
+```{r}
+head(gym_data, 6)
+```
+Here we get top 6 rows of the gym dataset. We can now see the columns, and their values for each row.
+
+## Filter the dataset
+
+Creating a filter data for females from 1996-2016
+```{r}
+f_gym_data <- filter(gym_data, Sex == 'F', `Year` > 1995 & `Year` < 2017)
+
+f_gym_data
+```
+
+## Plotting the dataset
+
+To plot the dataset, I use ggplot and boxplot. This will make the same boxplot as in the exams paper.
+```{r}
+ggplot(f_gym_data) +
+  geom_boxplot(mapping = aes(x=`Games`, y=`Age`, fill = Season, alpha = 0.2))
+```
+## Plot description
+
+The plot suggest that the dataset have a couple of outliers. The plot have 11 boxes ranging from 1996 to 2016, showcasing the age of female participants based on year. The youngest female participants were in 1996, at the age of around 14 years old. The colors on the boxplots shows the difference based on winter and summer seasons. We can see that in summer, there are more young female praticipants than in the winters. 
+
+### Filter the dataset
+
+First we want to filter the dataset: for height, males in 1972 Sapporo Olympics and 2002 Salt Lake City. 
+
+```{r}
+salt_m_gym_data <- filter(gym_data, Sex =='M', City =='Salt Lake City', `Year` == 2002)
+salt_m_gym_data
+```
+```{r}
+Sapporo_m_gym_data <- filter(gym_data, Sex =='M', City =='Sapporo', `Year` == 1972)
+Sapporo_m_gym_data
+```
+
+
+### Preforming T-test 
+
+0) Check CLT conditions.
+
+Samples are independent: YES
+Sample size is bigger or equal to 30: NO
+Population distribution is not strongly skewed: YES
+
+```{r}
+ggplot(salt_m_gym_data, aes(x=`Height`)) +
+  geom_density()
+```
+```{r}
+(skewness(salt_m_gym_data$`Height`))
+```
+
+```{r}
+ggplot(Sapporo_m_gym_data, aes(x=`Height`)) +
+  geom_density()
+```
+```{r}
+(skewness(Sapporo_m_gym_data$`Height`))
+```
+As we can see the Salt and Sapporo are both not strongly skewed because the skewness values are not below -1 or above 1
+
+1) Setup hypotheses
+
+Is there significant difference in between average male height from Sapporo and Salt Lake City Olympics?
+
+$$H_0: \mu_1 = \mu_2$$ 
+```{r}
+H_0 <- 0
+```
+
+$$H_1: \mu_1 \neq \mu_2$$ 
+
+2) Assume threshold for values
+* $$\alpha = 0.05$$ is common
+
+3) Calculate the results
+```{r}
+t_test <- t.test(Sapporo_m_gym_data$`Height`, salt_m_gym_data$`Height`)
+t_test
+```
+
+
+```{r}
+combined_data <- bind_rows(
+  Sapporo_m_gym_data %>% mutate(Group = "Sapporo"),
+  salt_m_gym_data %>% mutate(Group = "Salt")
+)
+
+# Create boxplot
+ggplot(data = combined_data, aes(x = Group, y = Height)) +
+  geom_boxplot() +
+  labs(title = "Comparison of Heights", y = "Height", x = "Group") +
+  theme_minimal()
+```
+
+4) Draw a conclusion
+
+As we can see, there is a significant difference in height.The P-value is 0.4176 which is above the alpha significance value. Therefore we reject the null hypothesis for the favor of the alternative. 
+
+
+# 2 Candles Market
+
+
+```{r}
+summary(population_data)
+```
+```{r}
+summary(candles_data)
+```
+
+## Joining the dataset¨
+
+First we need to rebname the names to match eachother. This is crusial to make the join function possible
+
+```{r}
+library(dplyr)
+# Rename columns in the population dataset
+population_data <- population_data %>%
+  rename(Country = Country)
+
+# Rename columns in the candles dataset (if necessary)
+candles_data <- candles_data %>%
+  rename(Country = Country.Name)
+```
+
+Now we use the right_join function to join the two dataset
+
+```{r}
+CP_data <- right_join(population_data,candles_data)
+```
+```{r}
+CP_data
+```
+
+## Calculate revenue
+
+Filter all countries for the value Europe
+```{r}
+CP_data_Europe <- filter(CP_data, Continent=='Europe')
+```
+
+
+```{r}
+CP_data_Europe %>%
+select(Country, `Pop..2020`, Continent, `X2020`) %>%
+mutate(`Revenue per capita in EUR` = `X2020`/`Pop..2020`) %>%
+select(1,5) %>%
+top_n(5, `Revenue per capita in EUR`) %>%
+arrange(desc(`Revenue per capita in EUR`)) %>% knitr::kable()
+```
+
+
+
+
+## Survey distribution
+
+1. Set up hypothesis
+The survey distribution is the same as the revenue distribution
+$$H_0: \mu_1 = \mu_2$$ 
+```{r}
+H_0 <- 0
+```
+
+The survey distribution is NOT the same as the revenue distribution
+$$H_1: \mu_1 \neq \mu_2$$ 
+
+2. Check conditions
+
+Independence: YES
+Sample size: 
+
+3. Get the observed count for each category
+
+We have one way table 
+
+Denmark: 256
+Finland: 179
+Iceland: 98
+Norway: 193
+Sweden: 274
+
+```{r}
+survey <- data.frame(
+  Country = c('Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden'),
+  n = as.integer(c(256, 179, 98, 193, 274)) # Explicitly cast to integer
+)
+survey
+```
+```{r}
+nordics_revenue <- candles_data %>%
+filter(Country %in% c('Denmark', 'Finland', 'Iceland', 'Norway', 'Sweden')) %>%
+select('Country', 'X2015') %>% right_join(survey)
+```
+```{r}
+(nordics_all <- sum(nordics_revenue$`X2015`))
+```
+```{r}
+(nordics_revenue <- nordics_revenue %>%
+mutate(prc = `X2015`/nordics_all) %>%
+mutate(expected = prc * 1000))
+```
+4. Get the expected count for each category
+Denmark: 207.73609
+Finland: 160.96290
+Iceland: 12.00192
+Norway: 272.61505
+Sweden: 346.68404
+
+5. Calculate test statistic 
+
+```{r}
+chisq.test(nordics_revenue$n, p=nordics_revenue$prc)
+```
+
+6. Calculate p - value
+The p-value is less than 2.2e-16
+
+7. Form conclusions
+```{r}
+2.2e-16 > 0.05
+```
+We reject null hypothesis in favour of alternative. Distribution of surveyed customers within nordic countries
+is not the same as distribution of revenue
+
+# Students expenses.
+
+```{r}
+head(University_data,5)
+```
+```{r}
+colnames(University_data)
+```
+"Gender" possible                  
+"Age" pssible                      
+"Study_year" not usefull             
+"Living" usefull                
+"Scholarship" possible             
+"Part_time_job" usefull          
+"Transporting" usefull            
+"Smoking" usefull                 
+"Drinks" usefull                 
+"Games_and_Hobbies" usefull      
+"Cosmetics_and_Self_care" usefull 
+"Monthly_Subscription" usefull   
+"Monthly_expenses_USD" To predict  ¨
+
+```{r}
+(ggplot(University_data)+
+   geom_density(aes(x=`Monthly_expenses_USD`)))
+```
+```{r}
+University_data %>% arrange(desc(Monthly_expenses_USD))
+```
+## R^2 backward elimination model tuning
+```{r}
+ggplot(University_data, aes(y = `Monthly_expenses_USD`, x =Gender)) +
+geom_point()
+```
+```{r}
+fit <- lm(Monthly_expenses_USD ~ Gender + 
+            Age +
+            Study_year+
+            Living+
+            Scholarship+
+            Part_time_job+
+            Transporting+
+            Smoking +
+            Drinks +
+            Games_and_Hobbies+
+            Cosmetics_and_Self_care+
+            Monthly_Subscription,
+          data = University_data)
+            
+summary(fit)
+```
+###Ireration 1
+All- 0.4107 
+###Ireration 2
+No Gender - 0.4145 
+###Iteration 3
+No age - 0.4185 
+###Iteration 4
+Study_year - 0.4154 
+###Iteration 5
+Living - 0.4203 
+###Iteration 6
+Scholarship - 0.4185 
+###Iteration 7
+Part_Time_job - 0.4121 
+###Iteration 8
+Transport - 0.2651 
+###Iteration 9
+Smoking - 0.4227 
+###Iteration 10
+Drinks - 0.4203 
+###Iteration 11
+Games_and_hobby - 0.3807 
+###Iteration 12
+Cosmetics_and_Self_care - 0.4428
+###Iteration 13
+Monthly_Subscription - 0.3655 
+
+```{r}
+fit <- lm(`Monthly_expenses_USD` ~ Gender + 
+            Study_year+
+            Part_time_job+
+            Transporting+
+            Games_and_Hobbies+
+            Cosmetics_and_Self_care+
+            Monthly_Subscription,
+          data = University_data)
+            
+summary(fit)
+```
+```{r}
+plot(fit)
+```
+## Is the model Valid?
+
+• Linearity - already checked
+• independence - we assume it’s independently sampled
+• constant distrubution of residuals
+• Normal distribution of residuals.
+
+## Predict monthly expenses for student 17721
+
+

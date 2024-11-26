@@ -88,6 +88,8 @@ body{
 
 .header {
     display: flex;
+    position: absolute;
+
     align-items: center;
     background-color: var(--background-color-primary);
 }

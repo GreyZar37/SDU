@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:controllers\\usercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
       "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:wwwroot\\js\\site.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\models\\errorviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -33,10 +37,6 @@
     {
       "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\home\\delivery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:views\\home\\delivery.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|solutionrelative:models\\users.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{67F45942-FF48-4318-9DA7-BF3A69AAF8AA}|WebApplication1.csproj|c:\\users\\olegs\\documents\\sdu\\sdu\\web programming 2024\\fuld .net mvc applikation 2024\\webapplication1\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
@@ -144,50 +144,50 @@
         },
         {
           "DockedWidth": 341,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "Controllers\\HomeController.cs",
               "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Controllers\\HomeController.cs",
               "RelativeToolTip": "Controllers\\HomeController.cs",
-              "ViewState": "AgIAABwAAAAAAAAAAAAkwBsAAAAoAAAAAAAAAA==",
+              "ViewState": "AgIAABcAAAAAAAAAAAAgwBsAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-30T11:59:47.083Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 3,
               "Title": "site.js",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\js\\site.js",
               "RelativeDocumentMoniker": "wwwroot\\js\\site.js",
               "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\wwwroot\\js\\site.js",
               "RelativeToolTip": "wwwroot\\js\\site.js",
-              "ViewState": "AgIAADoAAAAAAAAAAAAQwEoAAAAsAAAAAAAAAA==",
+              "ViewState": "AgIAADoAAAAAAAAAAAAQwE8AAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
               "WhenOpened": "2024-10-30T12:12:59.513Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "UserController.cs",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Controllers\\UserController.cs",
               "RelativeDocumentMoniker": "Controllers\\UserController.cs",
               "ToolTip": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Controllers\\UserController.cs",
               "RelativeToolTip": "Controllers\\UserController.cs",
-              "ViewState": "AgIAAGIAAAAAAAAAAAAswHAAAAANAAAAAAAAAA==",
+              "ViewState": "AgIAAGoAAAAAAAAAAAA/wHAAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-10-30T14:52:31.93Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "Delivery.cshtml",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Home\\Delivery.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Delivery.cshtml",
@@ -195,12 +195,11 @@
               "RelativeToolTip": "Views\\Home\\Delivery.cshtml",
               "ViewState": "AgIAAAMAAAAAAAAAAAAAABMAAABKAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-30T12:21:17.576Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T12:21:17.576Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "UserContext.cs",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Models\\UserContext.cs",
               "RelativeDocumentMoniker": "Models\\UserContext.cs",
@@ -208,12 +207,11 @@
               "RelativeToolTip": "Models\\UserContext.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T12:34:35.243Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T12:34:35.243Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "ErrorViewModel.cs",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Models\\ErrorViewModel.cs",
               "RelativeDocumentMoniker": "Models\\ErrorViewModel.cs",
@@ -221,12 +219,11 @@
               "RelativeToolTip": "Models\\ErrorViewModel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-30T12:30:46.052Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T12:30:46.052Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 0,
               "Title": "Users.cs",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Models\\Users.cs",
               "RelativeDocumentMoniker": "Models\\Users.cs",
@@ -239,7 +236,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Index.cshtml",
@@ -247,12 +244,11 @@
               "RelativeToolTip": "Views\\Home\\Index.cshtml",
               "ViewState": "AgIAAAwAAAAAAAAAAAAAAAsAAAAPAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-11-05T07:39:21.156Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-11-05T07:39:21.156Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "Views\\Home\\Privacy.cshtml",
@@ -260,8 +256,7 @@
               "RelativeToolTip": "Views\\Home\\Privacy.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-29T15:47:36.898Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:47:36.898Z"
             },
             {
               "$type": "Document",
@@ -273,8 +268,7 @@
               "RelativeToolTip": "Views\\Shared\\_Layout.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-29T14:57:58.797Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T14:57:58.797Z"
             },
             {
               "$type": "Document",
@@ -286,8 +280,7 @@
               "RelativeToolTip": "Views\\_ViewImports.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-29T14:57:48.034Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T14:57:48.034Z"
             },
             {
               "$type": "Document",
@@ -299,8 +292,7 @@
               "RelativeToolTip": "Views\\_ViewStart.cshtml",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-29T14:57:47.305Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T14:57:47.305Z"
             },
             {
               "$type": "Document",
@@ -312,8 +304,7 @@
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAFAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2024-10-30T12:39:01.759Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T12:39:01.759Z"
             },
             {
               "$type": "Document",
@@ -325,8 +316,7 @@
               "RelativeToolTip": "Program.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABsAAAALAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-10-29T15:06:17.874Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-29T15:06:17.874Z"
             },
             {
               "$type": "Document",
@@ -338,8 +328,7 @@
               "RelativeToolTip": "Views\\Home\\Information.cshtml",
               "ViewState": "AgIAABUAAAAAAAAAAAAAABcAAAAyAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-10-30T11:58:15.761Z",
-              "EditorCaption": ""
+              "WhenOpened": "2024-10-30T11:58:15.761Z"
             },
             {
               "$type": "Document",
