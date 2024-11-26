@@ -47,11 +47,11 @@ This summary shows the minimum, maximum, median, and mean values of each column 
 skewness_value <- skewness(data$Cost.of.Living.Plus.Rent.Index)
 skewness_value
 ``` 
-The skewness value is not above 1 or below -1, so the distribution is not strongly skewed. Below is a histogram of the Cost of Living Plus Rent Index.
+The skewness value is not above 1 or below -1, so the distribution is not strongly skewed. Below is a density of the Cost of Living Plus Rent Index. But as we can see, the graph shows us that it is strongly skewed. The assumption is that the data set is 8 column with 440 rows, which makes the skewness less important.
 
 ```{r}
 ggplot(data, aes(x=Cost.of.Living.Plus.Rent.Index)) +
-  geom_histogram()
+  geom_density()
 ```
 #### Set-up hypothesis
 Now, we want to check if the mean Cost of Living Plus Rent Index in the world is 40 Before checking it for each country, we will check it for the whole world.
@@ -100,7 +100,7 @@ $t = \frac{\bar{x} - \mu}{SE}$
 t_statistic_Cost_Of_Living_Plus_Rent <-  (pe_Cost_Of_Living_Plus_Rent - H0)/SE_Cost_Of_Living_Plus_Rent
 t_statistic_Cost_Of_Living_Plus_Rent
 ```
-The t-statistic is -70.96696 which means that the sample mean is 70.96696 standard errors below the hypothesized population mean.Vizualization of the t-distribution is shown below.
+The t-statistic is -0.04808515 which means that the sample mean is 0.04808515 standard errors below the hypothesized population mean.Vizualization of the t-distribution is shown below.
 
 ```{r}
 x_values <- seq(-4, 4, length = 100)
