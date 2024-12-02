@@ -174,7 +174,8 @@ To further investigate which countries have significantly different Cost of Livi
 tukey_results <- TukeyHSD(anova_results)
 head(tukey_results$Country)
 ```
-The Tukey HSD test results show that there are significant differences in the Cost of Living Plus Rent Index among different countries. The top 6 countries with significantly different Cost of Living Plus Rent Index values are: Switzerland, Bermuda, Norway, Iceland, Bahamas, and Luxembourg.
+The Tukey HSD test results show that there are significant differences in the Cost of Living Plus Rent Index among different countries.
+
 
 
 #### Conclusion
