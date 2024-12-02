@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "ypgbC5mcOeY=",
+  "dgSpecHash": "9Q/frJdd6Zw=",
   "success": true,
-  "projectFilePath": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\WebApplication1.csproj",
+  "projectFilePath": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Web programming 2024\\fuld .NET MVC applikation 2024\\WebApplication1\\WebApplication1.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\olegs\\.nuget\\packages\\azure.core\\1.35.0\\azure.core.1.35.0.nupkg.sha512",
     "C:\\Users\\olegs\\.nuget\\packages\\azure.identity\\1.10.3\\azure.identity.1.10.3.nupkg.sha512",

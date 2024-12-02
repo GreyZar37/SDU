@@ -106,7 +106,13 @@ namespace WebApplication1.Controllers
         [HttpGet]
         public async Task<IActionResult> GetDeliveryInfo()
         {
-            var user = await _context.Users.FindAsync(14);
+
+            if (!HttpContext.Session.TryGetValue("UserId", out var userIdBytes))
+            {
+                return Unauthorized();
+            }
+            var userId = int.Parse(System.Text.Encoding.UTF8.GetString(userIdBytes));
+            var user = await _context.Users.FindAsync(userId);
             if (user == null)
             {
                 return NotFound();
