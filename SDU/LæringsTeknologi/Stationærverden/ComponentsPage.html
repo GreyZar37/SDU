@@ -60,6 +60,39 @@
                
                 </div>
             </div>
+
+            <section class="components-section">
+                <div class="filter-container">
+                    <h2 class="title">Search for Components</h2>
+                    <form id="componentFilterForm">
+                        <label for="componentType">Component Type:</label>
+                        <select id="componentType">
+                            <option value="CPU">CPU</option>
+                            <option value="Cpu Cooler">CPU Cooler</option>
+                            <option value="RAM">RAM</option>
+                            <option value="Case">Case</option>
+                            <option value="GPU">GPU</option>
+                            <option value="PSU">PSU</option>
+                            <option value="Storage">Storage</option>
+                            <option value="Motherboard">Motherboard</option>
+                        </select>
+            
+                        <label for="manufacturer">Manufacturer:</label>
+                        <input type="text" id="manufacturer" placeholder="e.g., Intel, AMD">
+            
+                        <label for="priceRange">Price Range:</label>
+                        <input type="number" id="minPrice" placeholder="Min Price">
+                        <input type="number" id="maxPrice" placeholder="Max Price">
+            
+                        <button type="button" id="searchButton">Search</button>
+                    </form>
+                </div>
+            
+                <div id="resultsContainer">
+                    <ul id="resultsList"></ul>
+                </div>
+            </section>
+
         </section>
 
         <footer class="Footer">

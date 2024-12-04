@@ -32,7 +32,8 @@
         </header>
 
 
-        <section class="hero-section" style="background-image: url(/Assets/Images/K20bwtB-5zVbi0k2dhw79NkUHySNjtw89q8QUlI-Lk8.webp)">
+        <section class="hero-section"
+            style="background-image: url(/Assets/Images/K20bwtB-5zVbi0k2dhw79NkUHySNjtw89q8QUlI-Lk8.webp)">
             <div class="hero-container">
                 <h1 class="title">Master the Art of PC Building</h1>
                 <h2 class="subtitle">Learn the Essentials of PC Building</h2>
@@ -40,7 +41,7 @@
             </div>
         </section>
 
-         <section class="about-website-section">
+        <section class="about-website-section">
             <div class="two-column-container">
 
                 <div class="left-column">
@@ -48,18 +49,18 @@
                 </div>
                 <div class="right-column">
                     <h1 class="title">About lessons</h1>
-                    <p class="paragraph"> Our lessons are designed to provide you with comprehensive 
-                        knowledge and hands-on experience in PC 
-                        building. Whether you're a beginner looking to 
-                        understand the basics or an advanced user aiming to 
-                        refine your skills, our step-by-step guides and 
-                        tutorials cover all aspects of the process. From 
-                        selecting the right components to assembling and 
-                        troubleshooting, you'll gain the confidence and 
-                        expertise needed to build your own custom PC. 
-                        Join our community of learners and start your 
+                    <p class="paragraph"> Our lessons are designed to provide you with comprehensive
+                        knowledge and hands-on experience in PC
+                        building. Whether you're a beginner looking to
+                        understand the basics or an advanced user aiming to
+                        refine your skills, our step-by-step guides and
+                        tutorials cover all aspects of the process. From
+                        selecting the right components to assembling and
+                        troubleshooting, you'll gain the confidence and
+                        expertise needed to build your own custom PC.
+                        Join our community of learners and start your
                         journey towards becoming a master PC builder today!</p>
-               
+
                 </div>
             </div>
         </section>
@@ -69,29 +70,29 @@
                 <div class="two-column-container">
                     <div class="left-column">
                         <div class="lessons-menu">
-                           <h1>Lessons</h1>
-                           <div class="dropdown">
-                            <button class="dropbtn">Introduction</button>
-                            <div class="dropdown-content">
-                                <a href="#">What is a PC?</a>
-                                <a href="#">Why Build a PC?</a>
-                                <a href="#">Benefits of Building a PC</a>
-                           </div>
-                        </div>
-
+                            <h1>Lessons</h1>
                             <div class="dropdown">
-                             <button class="dropbtn">Components</button>
-                             <div class="dropdown-content">
-                                  <a href="#">CPU</a>
-                                  <a href="#">GPU</a>
-                                  <a href="#">Motherboard</a>
-                                  <a href="#">RAM</a>
-                                  <a href="#">Storage</a>
-                                  <a href="#">Power Supply</a>
-                                  <a href="#">Cooling</a>
+                                <button class="dropbtn">Introduction</button>
+                                <div class="dropdown-content">
+                                    <a  onclick="changeContent('what-is-a-pc')">What is a PC?</a>
+                                    <a  onclick="changeContent('why-build-a-pc')">Why Build a PC?</a>
+                                    <a  onclick="changeContent('benefits-of-building-a-pc')">Benefits of Building a PC</a>
                                 </div>
                             </div>
-                             
+
+                            <div class="dropdown">
+                                <button class="dropbtn">Components</button>
+                                <div class="dropdown-content">
+                                    <a href="#">CPU</a>
+                                    <a href="#">GPU</a>
+                                    <a href="#">Motherboard</a>
+                                    <a href="#">RAM</a>
+                                    <a href="#">Storage</a>
+                                    <a href="#">Power Supply</a>
+                                    <a href="#">Cooling</a>
+                                </div>
+                            </div>
+
                             <div class="dropdown">
                                 <button class="dropbtn">Assembly</button>
                                 <div class="dropdown-content">
@@ -106,7 +107,7 @@
                                     <a href="#">Testing and Booting</a>
                                 </div>
                             </div>
-                             
+
                             <div class="dropdown">
                                 <button class="dropbtn">Troubleshooting</button>
                                 <div class="dropdown-content">
@@ -115,37 +116,233 @@
                                     <a href="#">Resources</a>
                                 </div>
                             </div>
+                        </div>
                     </div>
-                </div>
                     <div class="right-column">
-                        <h1 class="title">Introduction</h1>
-                        <h2 >Building your very first pc</h2>
-                        <p class="paragraph">Building your 
-                            first PC can be an exciting and 
-                            rewarding experience. In this section, 
-                            we will guide you through the basics of 
-                            PC building, including understanding the 
-                            essential components, choosing the right 
-                            parts, and assembling your PC step-by-step.
-                             By the end of this lesson, you will have a 
-                             solid foundation to start your PC building 
-                             journey.</p>
-                    </div>
-                </div>
-                 
-            </div>
-        </section>
+                    
+                        <div class="lessons-content-show" id="what-is-a-pc">
+                            <h1>What is a PC</h1>
+                            <h3>Understanding the Basics</h3>
+                            <p>A PC, or Personal Computer, is a versatile and powerful device used for a wide range of
+                                tasks.
+                                It consists of various components such as
+                                the CPU, GPU, motherboard, RAM, storage, and power supply, all working together to
+                                perform
+                                computing tasks. PCs are used for gaming, work, education, and entertainment, making
+                                them an essential part of modern life.</p>
 
-        <footer class="Footer">
-            <img class="logo" src="/Assets/Images/Logo.png" alt="logo">
-            <h1 class="footer-title">Trolden Creations</h1>
-    
-            <div class="footer-content"> 
-                <h2 id="footer-contact">Contact us: 123-456-7890</h1>
-                <h2 id="footer-email">Email: TroldenGames@gmail.com</h1>
-                <h2 id="Copyrigth">© 2024 Trolden Creations. All rights reserved.</h1>
+                            <h3>Different types of PC's</h3>
+                            <p>There are different types of PCs designed for
+                                specific purposes, such as gaming PCs, workstations, and home PCs. Each type is
+                                optimized for its intended use, with gaming PCs focusing on high performance and
+                                graphics,
+                                workstations on processing power and multitasking, and home PCs on general use and
+                                affordability.</p>
+
+                            <h3>Component Focus</h3>
+                            <p>Different types of PCs emphasize various components based on their primary use:</p>
+                            <ul>
+                                <li><strong>Gaming PCs:</strong> Focus heavily on high-performance GPUs (Graphics
+                                    Processing Units) to handle demanding graphics and provide smooth gameplay
+                                    experiences.</li>
+                                <li><strong>Workstations:</strong> Prioritize powerful CPUs (Central Processing Units)
+                                    and large amounts of RAM to manage intensive tasks such as video editing, 3D
+                                    rendering, and software development.</li>
+                                <li><strong>Home PCs:</strong> Balance between CPU and GPU performance, often with an
+                                    emphasis on affordability and general-purpose use, such as web browsing, office
+                                    applications, and media consumption.</li>
+                            </ul>
+
+                            <h1>Quiz</h1>
+                            <form class="questions-quiz" action="submit-quiz" method="post">
+                                <!-- Optional form wrapper for submission -->
+                                <div class="questions-container">
+                                    <h3>What are the key components in a PC?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="A">
+                                                <span>CPU (Central Processing Unit)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="B">
+                                                <span>GPU (Graphics Processing Unit)</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="C">
+                                                <span>Motherboard</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="D">
+                                                <span>RAM (Random Access Memory)</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="questions-container">
+                                    <h3>What should you prioritize when building a Gaming PC?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="A">
+                                                <span>High-performance GPU</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="B">
+                                                <span>Large amounts of RAM</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="C">
+                                                <span>High-end CPU</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="D">
+                                                <span>Expensive Monitor</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="form-button" type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                        <div class="lessons-content" id="why-build-a-pc">
+                            <h1>Why build a PC?</h1>
+                            <h3>Customization</h3>
+                            <p>Building a PC allows you to customize every aspect of your machine, from the components
+                                to the
+                                aesthetics. You can choose the best parts that suit your needs and preferences, whether
+                                you're
+                                a gamer, content creator, or professional.</p>
+
+                            <h3>Performance</h3>
+                            <p>Custom-built PCs offer superior performance compared to pre-built systems. You can
+                                select high-quality
+                                components that deliver exceptional speed, power, and efficiency, tailored to your
+                                specific
+                                requirements.</p>
+
+                            <h3>Cost-Effectiveness</h3>
+                            <p>Building a PC can be more cost-effective than buying a pre-built system. By selecting
+                                individual
+                                components, you can optimize your budget and allocate resources to the parts that matter
+                                most to
+                                you, saving money in the long run.</p>
+                                  
+                            <h3>Learning Experience</h3>
+                            <p>Building a PC is a valuable learning experience that allows you to understand how
+                                computers work,
+                                how components interact, and how to troubleshoot issues. It's a hands-on way to gain
+                                knowledge
+                                and skills in technology and hardware.</p>
+                                 
+                            <h3>Community</h3>
+                            <p>PC building is a popular hobby with a vibrant community of enthusiasts, creators, and
+                                experts. By
+                                building your own PC, you can connect with like-minded individuals, share your
+                                experiences, and
+                                learn from others in the community.</p>
+
+                            <h1>Quiz</h1>
+                             
+                            <form class="questions-quiz" action="submit-quiz" method="post">
+                                <!-- Optional form wrapper for submission -->
+                                <div class="questions-container">
+                                    <h3>What is one benefit of building a PC?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="questions-container">
+                                    <h3>What is one reason to build a PC instead of buying a pre-built system?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="form-button" type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                        <div class="page-indicator">
+                            <button onclick="previousPage()" class="page-button" id="previous-page-btn">revious Page</button>
+                            <button onclick="nextPage()" class="page-button" id="next-page-btn">Next Page</button>
+                        </div>
+                    </div>
+                  
+                </div>
             </div>
-        </footer>
+
+    </div>
+    </section>
+
+    <footer class="Footer">
+        <img class="logo" src="/Assets/Images/Logo.png" alt="logo">
+        <h1 class="footer-title">Trolden Creations</h1>
+
+        <div class="footer-content">
+            <h2 id="footer-contact">Contact us: 123-456-7890</h1>
+                <h2 id="footer-email">Email: TroldenGames@gmail.com</h1>
+                    <h2 id="Copyrigth">© 2024 Trolden Creations. All rights reserved.</h1>
+        </div>
+    </footer>
     </div>
 
 </body>
