@@ -184,4 +184,9 @@ function displayResults(components) {
   });
 }
 
+
+function goToPage(page) {
+  window.location.href = page;
+}
+
 document.getElementById("searchButton").addEventListener("click", filterComponents);
