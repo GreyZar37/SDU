@@ -25,7 +25,6 @@
                     <li class="nav-button-highlighted"><a href="LessonsPage.html">Lessons</a></li>
                     <li class="nav-button"><a href="DiscoverPage.html">Discover</a></li>
                     <li class="nav-button"><a href="ComponentsPage.html">Components</a></li>
-                    <li class="nav-button"><a href="ContactPage.html">Contact</a></li>
 
                 </ul>
             </nav>
@@ -37,7 +36,6 @@
             <div class="hero-container">
                 <h1 class="title">Master the Art of PC Building</h1>
                 <h2 class="subtitle">Learn the Essentials of PC Building</h2>
-                <a href="Builder.html" class="link-button">Read more</a>
             </div>
         </section>
 
@@ -154,8 +152,7 @@
                             </ul>
 
                             <h1>Quiz</h1>
-                            <form class="questions-quiz" action="submit-quiz" method="post">
-                                <!-- Optional form wrapper for submission -->
+                            <form class="questions-quiz" id="quiz-form">
                                 <div class="questions-container">
                                     <h3>What are the key components in a PC?</h3>
                                     <ul class="Choices">
@@ -185,6 +182,7 @@
                                         </li>
                                     </ul>
                                 </div>
+                            
                                 <div class="questions-container">
                                     <h3>What should you prioritize when building a Gaming PC?</h3>
                                     <ul class="Choices">
@@ -214,8 +212,10 @@
                                         </li>
                                     </ul>
                                 </div>
+                            
                                 <button class="form-button" type="submit">Submit</button>
                             </form>
+                            
                         </div>
 
                         <div class="lessons-content" id="why-build-a-pc">
@@ -322,7 +322,7 @@
                         </div>
 
                         <div class="page-indicator">
-                            <button onclick="previousPage()" class="page-button" id="previous-page-btn">revious Page</button>
+                            <button onclick="previousPage()" class="page-button" id="previous-page-btn">Previous Page</button>
                             <button onclick="nextPage()" class="page-button" id="next-page-btn">Next Page</button>
                         </div>
                     </div>

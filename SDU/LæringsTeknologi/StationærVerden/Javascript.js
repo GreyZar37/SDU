@@ -154,33 +154,30 @@ function filterComponents() {
 
 function displayResults(components) {
   const resultsList = document.getElementById("resultsList");
-  resultsList.innerHTML = ""; // Clear previous results
+  resultsList.innerHTML = ""; 
 
   if (components.length === 0) {
-      resultsList.innerHTML = "<li>No components found</li>";
-      return;
+    resultsList.innerHTML = "<li>No components found</li>";
+    return;
   }
 
-  components.forEach(component => {
-      const listItem = document.createElement("li");
-      listItem.style.display = "flex";
-      listItem.style.alignItems = "center";
-      listItem.style.gap = "10px";
 
-      listItem.innerHTML = `
-          <img src="${component.image}" alt="${component.name}" style="width: 100px; height: auto; border-radius: 4px;">
-          <div id="component-item">
-              <strong>${component.name}</strong> 
-              
-              (${component.type}) - ${component.price}kr.<br>
-              
-              Manufacturer: ${component.manufacturer}<br>
-              
-              <a href="${component.link}" target="_blank" style="">View Product</a>
-              
-              <button onclick="alert('Added to build')">Add to build</button>
-          </div>`;
-      resultsList.appendChild(listItem);
+ components.forEach(component => {
+    const listItem = document.createElement("li");
+    listItem.style.display = "flex";
+    listItem.style.alignItems = "center";
+    listItem.style.gap = "10px";
+
+    listItem.innerHTML = `
+      <img src="${component.image}" alt="${component.name}" style="width: 100px; height: auto; border-radius: 4px;">
+      <div id="component-item">
+        <strong>${component.name}</strong> 
+        (${component.type}) - ${component.price}kr.<br>
+        Manufacturer: ${component.manufacturer}<br>
+        <a href="${component.link}" target="_blank" style="">View Product</a>
+        <button onclick="addToBuild('${component.type}', '${component.name}', '${component.image}')">Add to build</button>
+      </div>`;
+    resultsList.appendChild(listItem);
   });
 }
 
@@ -189,4 +186,71 @@ function goToPage(page) {
   window.location.href = page;
 }
 
+
+function addToBuild(type, name, image) {
+  const selectedComponents = JSON.parse(localStorage.getItem("selectedComponents")) || {};
+  selectedComponents[type] = { name, image };
+  localStorage.setItem("selectedComponents", JSON.stringify(selectedComponents));
+
+  window.location.href = "BuildPage.html";
+}
+document.addEventListener("DOMContentLoaded", () => {
+  const selectedComponents = JSON.parse(localStorage.getItem("selectedComponents")) || {};
+
+  for (const [type, component] of Object.entries(selectedComponents)) {
+    const slotId = `${type.replace(/\s+/g, '')}-slot`;
+    const slot = document.getElementById(slotId);
+
+    if (slot) {
+      const addedComponentDiv = slot.querySelector("#added-component");
+      addedComponentDiv.innerHTML = `
+        <div style="display: flex; align-items: center; gap: 10px;">
+          <img src="${component.image}" alt="${component.name}" style="width: 80px; height: auto; border-radius: 4px;">
+          <span>${component.name}</span>
+          <button onclick="removeFromBuild('${type}')">Remove</button>
+        </div>`;
+    }
+  }
+});
+
+function removeFromBuild(type) {
+  const selectedComponents = JSON.parse(localStorage.getItem("selectedComponents")) || {};
+
+  delete selectedComponents[type];
+
+  localStorage.setItem("selectedComponents", JSON.stringify(selectedComponents));
+
+  window.location.href = "BuildPage.html";
+}
+
 document.getElementById("searchButton").addEventListener("click", filterComponents);
+
+function goToComponentFilter(componentType) {
+  localStorage.setItem("selectedFilterType", componentType);
+
+  window.location.href = "ComponentsPage.html";
+}
+
+document.getElementById("CPU-slot-button").addEventListener("click", () => goToComponentFilter("CPU"));
+document.getElementById("GPU-slot-button").addEventListener("click", () => goToComponentFilter("GPU"));
+document.getElementById("RAM-slot-button").addEventListener("click", () => goToComponentFilter("RAM"));
+document.getElementById("Motherboard-slot-button").addEventListener("click", () => goToComponentFilter("Motherboard"));
+document.getElementById("Storage-slot-button").addEventListener("click", () => goToComponentFilter("Storage"));
+document.getElementById("PSU-slot-button").addEventListener("click", () => goToComponentFilter("PSU"));
+document.getElementById("Case-slot-button").addEventListener("click", () => goToComponentFilter("Case"));
+document.getElementById("CpuCooler-slot-button").addEventListener("click", () => goToComponentFilter("Cpu Cooler"));
+
+document.addEventListener("DOMContentLoaded", () => {
+  const selectedFilterType = localStorage.getItem("selectedFilterType");
+
+  if (selectedFilterType) {
+    const componentTypeDropdown = document.getElementById("componentType");
+    componentTypeDropdown.value = selectedFilterType;
+
+    localStorage.removeItem("selectedFilterType");
+
+    filterComponents();
+  }
+});
+
+

@@ -24,18 +24,16 @@
                     <li class="nav-button"><a href="LessonsPage.html">Lessons</a></li>
                     <li class="nav-button"><a href="DiscoverPage.html">Discover</a></li>
                     <li class="nav-button"><a href="ComponentsPage.html">Components</a></li>
-                    <li class="nav-button"><a href="ContactPage.html">Contact</a></li>
 
                 </ul>
             </nav>
         </header>
 
 
-        <section class="hero-section" style="background-image: url(/Assets/Images//pexels-photo-2582932.jpeg)">
+        <section class="hero-section" style="background-image: url(/Assets/Images/corsair_650d_obsidian_pc_case.jpeg.webp)">
             <div class="hero-container">
                 <h1 class="title">Build Your Own Power Machine</h1>
                 <h2 class="subtitle">Unleash the Power of Customization</h2>
-                <a href="Builder.html" class="link-button">Read more</a>
             </div>
         </section>
 
@@ -43,7 +41,7 @@
             <div class="two-column-container">
 
                 <div class="left-column">
-                    <img src="/Assets/Images/31zJ0a6Vdgmd.jpg" alt="logo">
+                    <img src="/Assets/Images/PC-Assembly-Service-Build-A-PC-Parts-1.png" alt="logo">
                 </div>
                 <div class="right-column">
                     <h1 class="title">About building</h1>
@@ -66,51 +64,68 @@
         <section class="build-section">
             <div class="three-column-container">
              <div class="left-column">
-                <div class="build-slot">
+                <div class="build-slot" id="Motherboard-slot">
                      <h2>Motherboard</h2>
-                     <img src="/Assets/Images/Intel-Core-i9-11900K.jpg" alt="">
-                     <button onclick="location.href='ComponentsPage.html'">Add component</button>
+                     <div id="added-component">
+                        <!-- Added components will appear here -->
+                      </div>
+                     <button id="GPU-slot-button" onclick="goToComponentFilter('Motherboard')">Add GPU</button>
+
                 </div>
-                <div class="build-slot">
+                <div class="build-slot" id="CPU-slot">
                     <h2>CPU</h2>
-                    <img src="/Assets/Images/Intel-Core-i9-11900K.jpg" alt="">
-                    <button onclick="location.href='ComponentsPage.html'">Add component</button>
-               </div>
-               <div class="build-slot">
+                    <div id="added-component">
+                        <!-- Added components will appear here -->
+                      </div>
+                      <button id="CPU-slot-button" onclick="goToComponentFilter('CPU')">Add CPU</button>
+                    </div>
+               <div class="build-slot" id="GPU-slot">
                 <h2>GPU</h2>
-                <img src="/Assets/Images/Intel-Core-i9-11900K.jpg" alt="">
-                <button onclick="location.href='ComponentsPage.html'">Add component</button>
-           </div>
+                <div id="added-component">
+                    <!-- Added components will appear here -->
+                  </div>
+                  <button id="GPU-slot-button" onclick="goToComponentFilter('GPU')">Add GPU</button>
+                </div>
              </div>
              <div class="middle-column">
-                <div class="build-slot">
+                <div class="build-slot" id="RAM-slot">
                     <h2>RAM</h2>
-                    <img src="/Assets/Images/Intel-Core-i9-11900K.jpg" alt="">
-                    <button onclick="location.href='ComponentsPage.html'">Add component</button>
-               </div>
+                    <div id="added-component">
+                        <!-- Added components will appear here -->
+                      </div>
+                      <button id="GPU-slot-button" onclick="goToComponentFilter('RAM')">Add RAM</button>
+                    </div>
                 <img src="/Assets/Images/PcBlue.png" alt="logo">
-           <div class="build-slot">
+           <div class="build-slot" id="Storage-slot">
             <h2>HDD/SSD</h2>
-            <img src="/Assets/Images/Intel-Core-i9-11900K.jpg" alt="">
-            <button onclick="location.href='ComponentsPage.html'">Add component</button>
-       </div>
+            <div id="added-component">
+                <!-- Added components will appear here -->
+              </div>
+              <button id="GPU-slot-button" onclick="goToComponentFilter('Storage')">Add Storage</button>
+            </div>
              </div>
                 <div class="right-column">
-                    <div class="build-slot">
+                    <div class="build-slot" id="PSU-slot">
                         <h2>PSU</h2>
-                           <img src="/Assets/Images/Intel-Core-i9-11900K.jpg" alt="">
-                           <button onclick="location.href='ComponentsPage.html'">Add component</button>
-                   </div>
-                   <div class="build-slot">
+                        <div id="added-component">
+                            <!-- Added components will appear here -->
+                          </div>
+                          <button id="GPU-slot-button" onclick="goToComponentFilter('PSU')">Add PSU</button>
+                        </div>
+                   <div class="build-slot" id="CpuCooler-slot">
                     <h2>CPU Cooler</h2>
-                    <img src="/Assets/Images/Intel-Core-i9-11900K.jpg" alt="">
-                    <button onclick="location.href='ComponentsPage.html'">Add component</button>
-               </div>
-               <div class="build-slot">
+                    <div id="added-component">
+                        <!-- Added components will appear here -->
+                      </div>
+                      <button id="GPU-slot-button" onclick="goToComponentFilter('CpuCooler')">Add CPU Cooler</button>
+                    </div>
+               <div class="build-slot" id="Case-slot">
                 <h2>CASE</h2>
-                <img src="/Assets/Images/Intel-Core-i9-11900K.jpg" alt="">
-                <button onclick="location.href='ComponentsPage.html'">Add component</button>
-           </div>
+                <div id="added-component">
+                    <!-- Added components will appear here -->
+                  </div>
+                  <button id="GPU-slot-button" onclick="goToComponentFilter('Case')">Add case</button>
+                </div>
                 </div>
             </div>
         </section>
