@@ -645,6 +645,14 @@ body{
     margin: var(--spacing-medium);
 }
 
+.added-part{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: var(--spacing-small);
+    margin: var(--spacing-small);
+}
+
 .three-column-container .left-column, .three-column-container .middle-column, .three-column-container .right-column {
 
     display: flex;
@@ -660,7 +668,7 @@ body{
     border: 1px solid var(--text-color-primary-on-white);
     border-radius: 4px;
     margin: var(--spacing-small);
-    width: 30%;
+    width: 300px;
     padding: var(--spacing-medium);
 
 }
