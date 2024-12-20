@@ -81,13 +81,13 @@
                             <div class="dropdown">
                                 <button class="dropbtn">Components</button>
                                 <div class="dropdown-content">
-                                    <a href="#">CPU</a>
-                                    <a href="#">GPU</a>
-                                    <a href="#">Motherboard</a>
-                                    <a href="#">RAM</a>
-                                    <a href="#">Storage</a>
-                                    <a href="#">Power Supply</a>
-                                    <a href="#">Cooling</a>
+                                    <a onclick="changeContent('Central_processing_unit')">CPU</a>
+                                    <a onclick="changeContent('GPU')">GPU</a>
+                                    <a onclick="changeContent('Motherboard')">Motherboard</a>
+                                    <a onclick="changeContent('RAM')">RAM</a>
+                                    <a onclick="changeContent('Long_term_storage')">Long Term Storage</a>
+                                    <a onclick="changeContent('PSU')">Power Supply</a>
+                                    <a onclick="changeContent('what-is-a-pc')">Cooling</a>
                                 </div>
                             </div>
 
@@ -254,6 +254,528 @@
                                 building your own PC, you can connect with like-minded individuals, share your
                                 experiences, and
                                 learn from others in the community.</p>
+
+                            <h1>Quiz</h1>
+                             
+                            <form class="questions-quiz" action="submit-quiz" method="post">
+                                <!-- Optional form wrapper for submission -->
+                                <div class="questions-container">
+                                    <h3>What is one benefit of building a PC?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="questions-container">
+                                    <h3>What is one reason to build a PC instead of buying a pre-built system?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="form-button" type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                        <div class="lessons-content" id="Central_processing_unit">
+                            <h1>CPU</h1>
+                            <h3>What is a CPU (Central processing unit)</h3>
+                            <p>The central processing unit (CPU) is the control center of the computer. The main job of the CPU is to interpret, process and execute instructions from the hardware and software programs on the device. 
+                                The CPU performs arithmetic, logic and other operations to transform data input into more useable information output. 
+                                CPUs have three main metrics to consider. These being Cores, Threads and clock speeds. </p>
+
+                            <h3>Cores</h3>
+                            <p>A core is a single processor within the CPU that can execute instruction by itself. This in toe means that the 
+                                more cores the CPU has, the more multitasking capabilities the CPU has.  </p>
+
+                            <h3>Threads</h3>
+                            <p>A thread is a sequence of instructions given to the CPU by programs of applications. The more threads a CPU can execute at once the more task can be completed. </p>
+                                  
+                            <h3>Clock speeds</h3>
+                            <p>Clock speeds are the rate at which the CPU can execute instructions. Clock speeds are measured in hertz and indicate how many cycles the a single core can complete per second. </p>
+                                 
+                            <h3>Naming convention on CPU</h3>
+                            <p>The CPU market is dominated to two main corporations, AMD and Intel.</p>
+
+                            <h3>AMD</h3>
+                            <p>Example: Core i5 13600KF / Core i5 | 13 | 600 | KF 
+
+                                Intel does 4 types of CPUs for desktops, these are named Core i3, i5, i7 and i9 respectively. The example above would be a i5. The numbers are the different tiers of CPUs and reflect the quality of the CPU, the main difference being the number of cores the CPU has. 
+                                The next digits in the name is the CPUs generation, meaning it shows from which generation this the CPU comes. In the example the CPU would from the thirteenth generation of Intel core CPUs.  
+                                The last three digits in the name is model number. It shows the performance quality of the CPU within the series. The higher the number, the better quality of CPU. In the example above this would be six hundred, meaning that any number below that would perform worse, and any number higher would perform better.  
+                                The last letters in the name is the suffix of the CPU. These have specific meanings depending on the letters used. In the example above, KF would mean K and F, meaning that the CPU would be unlocked for overclocking and it would be a high-performance processor used with discrete graphics cards-   
+                                 </p>
+
+                                 <h3>Intel</h3>
+                            <p>Example: Ryzen 7 7700X / Ryzen 7 | 7 | 700 | X  
+
+                                AMD does 4 types of CPUs for desktops, these are named Ryzen 3,5,7 and 9 respectively. The example above would be a Ryzen 7. The numbers are the different tiers of CPUs and reflect the quality of the CPU, the main difference being the number of cores the CPU has.  
+                                The next digits in the name is the CPUs series, meaning it shows from which series this the CPU comes. In the example the CPU would from the seventh series of AMD Ryzen CPUs.  
+                                The last three digits in the name is model number. It shows the performance quality of the CPU within the series. The higher the number, the better quality of CPU. In the example above this would be seven hundred, meaning that any number below that would perform worse, and any number higher would perform better.  
+                                The last digits in the name is the suffix of the CPU. These have specific meanings depending on the digits used. In the example above, the X would mean that this CPU has a higher clock speed and power consumption.  
+                                 </p>
+                            <h1>Quiz</h1>
+                             
+                            <form class="questions-quiz" action="submit-quiz" method="post">
+                                <!-- Optional form wrapper for submission -->
+                                <div class="questions-container">
+                                    <h3>What is one benefit of building a PC?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="questions-container">
+                                    <h3>What is one reason to build a PC instead of buying a pre-built system?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="form-button" type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                        <div class="lessons-content" id="Motherboard">
+                            <h1>Motherboard</h1>
+                            <h3>What is a Motherboard</h3>
+                            <p>The motherboard is the structural back bone of the computer. the mother board houses all the connections and interfaces for the hardware within the computer. One the key features of a motherboard is many and which types of connections the computer will have.  
+                                Each motherboard has a chipset produced be either AMD or Intel. The chipset are a collection of electronic components that act as a traffic controller for the flow of data between all connected components. </p>
+
+                            <h3>Compatibility</h3>
+                            <p>It is important to know that not all components are compatible with all motherboards. This can come in many forms ranging from incompatible hardware connection types to incompatible software within the components.  
+                                Depending on the chipset used for the motherboard (either AMD or Intel) the motherboard will be incompatible with CPUs from the other. </p>
+
+                            <h1>Quiz</h1>
+                             
+                            <form class="questions-quiz" action="submit-quiz" method="post">
+                                <!-- Optional form wrapper for submission -->
+                                <div class="questions-container">
+                                    <h3>What is one benefit of building a PC?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="questions-container">
+                                    <h3>What is one reason to build a PC instead of buying a pre-built system?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="form-button" type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                        <div class="lessons-content" id="GPU">
+                            <h1>GPU</h1>
+                            <h3>What is a GPU (Graphic processing unit)</h3>
+                            <p>The GPU is what calculate and display all the visual from your computer to your monitor. There is a GPU inside every graphics card. The function the GPU is comparable that of the CPU but solely targeted towards the graphics card instead of the computer as a whole. The main difference between a GPU and a CPU is in how many cores they have. The GPU has thousands of smaller cores instead of few big cores. This works because the CPU has less but large calculations and the GPU need to solve many small calculations. 
+                                Video RAM (VRAM) 
+                                Like regular RAM, VRAM stores data. The data stored in VRAM is data that is used regularly by the GPU making so that the GPU does not have to do the calculation all over again but can draw on the data stored in the VRAM.</p>
+
+                            <h3>Cooling system</h3>
+                            <p>Within a computer every component heats up when it is executing a task. It is important to have a cooling system for the components to avoid thermal throttling, overheating or breakage. The base of the cooling system is the outer fans. These make sure that there is a constant circulation of fresh cooled air into the computer and dispersal of heated air out of the computer. This provides a minor cooling for the components but more importantly gives the other cooling systems new air to work with. 
+
+                                Components mostly have two different main cooling systems. 
+                                Fan cooling systems has a heat sync directly attached to the component which in turn is connected to a fan. When a component heats up, most of the heat is absorbed into the heat sync which in turn is cooled by the fan and cooling the component. The fan then disperses the heat from the component into the air, that is then cycled out through the outer fans.   
+                                Water cooling uses a radiator, pump and a water block to cycle cooling liquid through the system and cool the components. The heat from the components is absorbed into the cooling liquid within the water block. The heated cooling liquid is then with help of the pump and tubes cycled into the radiator. The radiator uses a series of fans to cool down the liquid again and cycle the cooled liquid back to the water block. </p>
+
+                            <h1>Quiz</h1>
+                             
+                            <form class="questions-quiz" action="submit-quiz" method="post">
+                                <!-- Optional form wrapper for submission -->
+                                <div class="questions-container">
+                                    <h3>What is one benefit of building a PC?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="questions-container">
+                                    <h3>What is one reason to build a PC instead of buying a pre-built system?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="form-button" type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                        <div class="lessons-content" id="RAM">
+                            <h1>RAM</h1>
+                            <h3>What is RAM (Random-access memory)</h3>
+                            <p>RAM is a hardware component used for temporary storage of a program while the program is being executed. The CPU fetches the instruction for the program from the RAM end executes it accordingly.  </p>
+
+                            <h3>Double Date Rate (DDR)</h3>
+                            <p>DDR within Ram is what transfers data between the CPU and stored memory. It transfers data on the up and downbeat meaning twice per cycle. The newest and by far best version of DDR is DDR5.</p>
+                            
+                            <h3>Gigabyte (GB)</h3>
+                            <p>GB within RAM mean how much data con be stored and quickly accessed by the CPU.</p>
+
+                            <h1>Quiz</h1>
+                             
+                            <form class="questions-quiz" action="submit-quiz" method="post">
+                                <!-- Optional form wrapper for submission -->
+                                <div class="questions-container">
+                                    <h3>What is one benefit of building a PC?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="questions-container">
+                                    <h3>What is one reason to build a PC instead of buying a pre-built system?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="form-button" type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                        <div class="lessons-content" id="Long_term_storage">
+                            <h1>Long term storage</h1>
+                            <h3>Interfaces</h3>
+                            <p>Interfaces are the connecting part between the computer and the hard drive. There are currently 4 types of interfaces used.</p>
+
+                            <h3>Parallel Advanced Technology Attachment (PATA)</h3>
+                            <p>First introduced in 1987, the PATA interface can have up to 80GB capacity and transfer data as fast as 133MB/S 
+                                These are name PATA because they use a parallel ATA interface to connect to the computer. Apart from PATA, these are also called Integrated Drive Electronics (IDE) and Enhanced Integrated Electronics (EIDE) 
+                                PATA interfaces are made of mechanical moving parts and are capable of transmitting multiple bits of data simultaneously.</p>
+                            
+                            <h3>Serial Advanced Technology Attachment (SATA)</h3>
+                            <p>First introduced in 2000 the SATA interface superseded the PATA interfaces in size, power consumption and better pricing.  
+                                The mode of connection remains the same as PATA but instead of parallel signaling technology for data transmission they use serial signaling technology meaning that they transfer data one bit at a time.  
+                                A notable advantage SATA have over PATA interfaces is the transmission of data at a rate of 150-300 MB/S with thinner cables and a longer range.</p>
+
+                            <h3>Small Computer System interface (SCSI)</h3>
+                             <p>SCSI is an upgrade over PATA and SATA interfaces for many reasons such as round-the-clock operations, data transfer speed, storage capacity. 
+                             SCSI use a small computer system interface which is standard for connecting other peripherals such as printers and scanners. 
+                              They allow connection of other peripherals such as printer, scanners or other hard drives. They are able to transmit data at a rate of 320MB/S and can be connected internally or externally.  
+                               In modern times, SCSI have been replaced on personal computers by the Universal Serial Bus (USB), meaning that they are no longer used in consumer hardware.</p>
+
+                               <h3>Non-Volatile Memory Express (NVMe)</h3>
+                               <p>The NVMe interface is the most modern interface. It is built for high demanding and computing intensive task. 
+                                Because of the high performance and scalability, they are mostly used in data centers and newer computers. Most newer SSDs are now using NVMe interface.  
+                                The many advantages over other interfaces are lower power consumption, multiple command queues, reduced latency and input/output overhead and utilization of CPU to full potential. 
+                                The biggest disadvantage is the steep pricing compared to other interfaces.</p>
+      
+                                <h3>Hard disk drives (HDD)</h3>
+                                <p>HDDs are most commonly found in older computers. They consist of a moving part that rotates during reading and writing operations.  
+                                    HDDs are slower at reading and writing compared to SSDs but also come at a much lower price. Because of this, they remain popular for storage of files that are less time dependent when reading and writing.  
+                                    The storage capacity ranges from 16GB to 4TB of storage. </p>
+      
+                                 <h3>Solid state dives (SSD)</h3>
+                                 <p>SSDs are the latest in hard drive technology. Most newer computers use SSDs instead of  HDDs.  
+                                    Unlike the hard drive technologies that came before SSDs they do not use moving parts or magnetism for storing data. Instead they use integrated circuits (ICs) just like third-generation computers. This makes them more durable, faster and less prone to damage and corruption of data.  
+                                    SSDs have a notable advantage of transferring data at a speed of 550 MB/S and allow faster boot times compared to the hard drives that came before them.  
+                                    SSDs like HDDs have a wide range of storage capacity, but they come at a much higher price. </p>
+    
+
+                            <h1>Quiz</h1>
+                             
+                            <form class="questions-quiz" action="submit-quiz" method="post">
+                                <!-- Optional form wrapper for submission -->
+                                <div class="questions-container">
+                                    <h3>What is one benefit of building a PC?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question1" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <div class="questions-container">
+                                    <h3>What is one reason to build a PC instead of buying a pre-built system?</h3>
+                                    <ul class="Choices">
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="A">
+                                                <span>Customization</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="B">
+                                                <span>Performance</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="C">
+                                                <span>Cost-Effectiveness</span>
+                                            </label>
+                                        </li>
+                                        <li>
+                                            <label>
+                                                <input type="checkbox" name="question2" value="D">
+                                                <span>Learning Experience</span>
+                                            </label>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button class="form-button" type="submit">Submit</button>
+                            </form>
+                        </div>
+
+                        <div class="lessons-content" id="PSU">
+                            <h1>PSU</h1>
+                            <h3>What is PSU (Power supply unit)</h3>
+                            <p>PSUs is the power supply for the computer. The primary function of a PSU is to convert electricity into the specific voltages the computer needs. PSUs comes in many different wattages, so it is important to know how many watts a computer needs when choosing a PSU. The rule of thumb within PSUs is that you need the computers total wattage consumption plus 30%.</p>
+
+                            <h3>Non-modular</h3>
+                            <p>A non-modular PSU comes with many different power connections preinstalled within the PSU. This makes them plug and play compared to other types of PSUs but also makes them very rigid. The computer simply can’t have more connection than the PSU allows, and repairs are nearly impossible.</p>
+                            
+                            <h3>Semi-modular</h3>
+                            <p>A semi-modular PSU comes with the most used cables preinstalled with the PSU but also has added connection ports for more connections. This makes them more customizable compared to non-modular PSUs without loosing much of the plug and play factor.</p>
+
+                            <h3>Fully modular </h3>
+                             <p>Fully modular PSUs has no preinstalled connection cables but instead has many connection ports. This makes them fully customizable for the computer’s needs but in turn also makes them require some preplanning for the connection cables needed.</p>
+
 
                             <h1>Quiz</h1>
                              
