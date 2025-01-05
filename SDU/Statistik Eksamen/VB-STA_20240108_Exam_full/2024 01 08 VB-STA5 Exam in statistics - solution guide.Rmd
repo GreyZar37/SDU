@@ -1,0 +1,369 @@
+---
+title: "2024 01 08 VB-STA5 Exam in statistics - Solution Guide"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE}
+suppressPackageStartupMessages(library(tidyverse))
+```
+
+# 1. Math and Statistics exam performance
+
+Dataset *data/students_exam_performance.csv* contains information about students that participated both in Mathematics and Statistics class.
+
+a) Recreate the plot:
+
+```{r}
+students <- readr::read_csv('data/students_exam_performance.csv')
+
+ggplot(students) + 
+  geom_boxplot(aes(y = major, x = statistics_score))+
+  labs(x = 'Statistics Exam Scores',
+       y = 'Major',
+       title = 'Results of Statistics exam',
+       subtitle = 'Divided according to Major') 
+```
+
+
+b) Describe the plot.
+
+* boxplot presenting statistics exam score according to the students major
+
+* mean score per major are in order (from lowest to highest) Social Sciences, Political Science, Economics and Finance, Environmental Sciences, Biology and last Mathematics and Statistics.
+
+* social sciences lowest score ranging from 30-60 points.
+
+* ... for the rest of majors
+
+* Mathematics and Statistics highest score ranging from 75 to 97-8. Also with narrowest distribution. Except for few outliers students scored in 80-100 points range. 
+
+
+c) Check whether there is a significant difference between a Mathematics Exam score for *Economics and Finance* major students with minor in *Mathematics and Statistics*, and *Economics and Finance* major students with other minors. Conduct an appropriate test for this situation.    
+
+
+Difference of means t-test.
+
+$H_0:\mu_{m\_minor_ms} - \mu_{m\_minor_not_ms}=0$
+
+$H_A:\mu_{m\_minor_ms} - \mu_{m\_minor_not_ms}=0 \neq0$
+
+H0: There is no difference between mean Math exam score for *Economics and Finance* major students with minor in *Mathematics and Statistics*, and *Economics and Finance* major students with other minors
+
+HA: There is difference between mean Math exam score for *Economics and Finance* major students with minor in *Mathematics and Statistics*, and *Economics and Finance* major students with other minors
+
+alpha significance level - 0.05
+
+onditions check:
+
+Normality:
+
+```{r}
+students_b_m <- students %>% 
+  filter(major == 'Economics and Finance') %>% 
+  filter(minor == 'Mathematics and Statistics')
+students_b_nm <- students %>% 
+  filter(major == 'Economics and Finance') %>% 
+  filter(minor != 'Mathematics and Statistics')
+
+ggplot(students_b_m) + 
+  geom_histogram(aes(x = math_score))
+ggplot(students_b_nm) + 
+  geom_histogram(aes(x = math_score))
+```
+
+The variables distributions look normal.
+
+We assume that observations are independent.
+
+* short version
+
+```{r}
+t.test(students_b_m$math_score, students_b_nm$math_score)
+```
+
+p-value is smaller than alpha significance level, thus we reject null hypothesis in favour of the alternative. There is statistically significant difference between mean Math exam score for *Economics and Finance* major students with minor in *Mathematics and Statistics*, and *Economics and Finance* major students with other minors
+
+* long version
+
+```{r}
+(point_estimate <- mean(students_b_m$math_score) - 
+   mean(students_b_nm$math_score))
+(nrow(students_b_m))
+(nrow(students_b_nm))
+```
+
+```{r}
+dof <- 152
+```
+
+```{r}
+(SE <- sqrt((sd(students_b_m$math_score)^2/nrow(students_b_m)) + 
+              (sd(students_b_nm$math_score)^2/nrow(students_b_nm))))
+```
+
+```{r}
+(t_score <- (point_estimate - 0)/SE)
+```
+
+```{r}
+ggplot(data.frame(x = seq(-5, 5, length=100)), aes(x = x)) +
+  stat_function(fun = dt, args = list(df = dof), color = 'blue') +
+  geom_vline(aes(xintercept = t_score),  color = 'red')
+```
+
+```{r}
+(p_value <- 2 * (1- pt(t_score, df = dof)))
+```
+p-value is smaller than alpha significance level, thus we reject null hypothesis in favour of the alternative. There is statistically significant difference between mean Math exam score for *Economics and Finance* major students with minor in *Mathematics and Statistics*, and *Economics and Finance* major students with other minors
+
+
+# Childs seatbelt - car seat legislation
+
+```{r}
+accidents <- readr::read_csv("data/CarSeatLegislation.csv")
+```
+
+
+a) Present the number and proportion of 'No Injury' accidents divided according to the implemented protection.
+
+```{r}
+accidents %>% 
+  filter(Injury == 'No Injury') %>% 
+  group_by(Restraint) %>% 
+  tally() %>% 
+  mutate(Proportion = n/sum(n)) %>% 
+  knitr::kable()
+```
+
+b) Is there a correlation in between type of Injury and Implemented protection? Form hypothesis, check for conditions, and conduct a statistical test.  
+
+```{r}
+(two_way_table <- accidents %>% 
+  group_by(Injury, Restraint) %>% 
+  tally() %>% 
+  ungroup() %>% 
+  spread(Restraint, n))
+```
+
+Chi square test for independence. 
+
+Conditions for the test:
+
+* dataset is independent
+
+* expected cases should be more than 5
+
+
+H0: There is no correlation in between type of injury and Implemented protection in car accidents where children were passengers.
+
+H0: There is correlation in between type of injury and Implemented protection in car accidents where children were passengers.
+
+alpha significance level - 0.05
+
+```{r}
+colnames(two_way_table)
+```
+
+
+```{r}
+sum_all <- sum(two_way_table$`Car Seat`) + 
+  sum(two_way_table$`Lap and Shoulder Belt`) + 
+  sum(two_way_table$`Lap-Only Belt`) +
+  sum(two_way_table$`No Restraint`)
+
+two_way_table %>% mutate(CS_exp = (`Car Seat` + 
+                                     `Lap and Shoulder Belt` + 
+                                     `Lap-Only Belt` + 
+                                     `No Restraint`)*sum(two_way_table$`Car Seat`)/sum_all) %>% 
+  mutate(LSB_exp = (`Car Seat` + 
+                      `Lap and Shoulder Belt` + 
+                      `Lap-Only Belt` + 
+                      `No Restraint`)*sum(two_way_table$`Lap and Shoulder Belt`)/sum_all) %>%
+  mutate(LOB_exp = (`Car Seat` + 
+                      `Lap and Shoulder Belt` + 
+                      `Lap-Only Belt` + 
+                      `No Restraint`)*sum(two_way_table$`Lap-Only Belt`)/sum_all) %>%
+  mutate(NR_exp = (`Car Seat` + 
+                     `Lap and Shoulder Belt` + 
+                     `Lap-Only Belt` + 
+                     `No Restraint`)*sum(two_way_table$`No Restraint`)/sum_all)
+  
+```
+
+All expected values are above 5.
+
+* short version
+
+```{r}
+two_way_table %>% select(-1) %>% 
+chisq.test()
+```
+
+We reject null hypothesis in favour of the alternative. There is correlation in between type of injury and Implemented protection in car accidents where children were passengers.
+
+
+* long version
+
+```{r}
+two_way_table <- two_way_table %>% 
+  mutate(CS_exp = (`Car Seat` + 
+                     `Lap and Shoulder Belt` + 
+                     `Lap-Only Belt` + 
+                     `No Restraint`)*sum(two_way_table$`Car Seat`)/sum_all) %>% 
+  mutate(LSB_exp = (`Car Seat` + 
+                      `Lap and Shoulder Belt` + 
+                      `Lap-Only Belt` + 
+                      `No Restraint`)*sum(two_way_table$`Lap and Shoulder Belt`)/sum_all) %>%
+  mutate(LOB_exp = (`Car Seat` + 
+                      `Lap and Shoulder Belt` + 
+                      `Lap-Only Belt` + 
+                      `No Restraint`)*sum(two_way_table$`Lap-Only Belt`)/sum_all) %>%
+  mutate(NR_exp = (`Car Seat` + 
+                     `Lap and Shoulder Belt` + 
+                     `Lap-Only Belt` + 
+                     `No Restraint`)*sum(two_way_table$`No Restraint`)/sum_all)
+
+```
+
+
+
+```{r}
+(chi2_stat <- sum(((two_way_table$`Car Seat` - two_way_table$CS_exp)/ two_way_table$CS_exp^0.5)^2) +
+   sum(((two_way_table$`Lap and Shoulder Belt` - two_way_table$LSB_exp)/ two_way_table$LSB_exp^0.5)^2) +
+   sum(((two_way_table$`Lap-Only Belt` - two_way_table$LOB_exp)/ two_way_table$LOB_exp^0.5)^2) +
+   sum(((two_way_table$`No Restraint` - two_way_table$NR_exp)/ two_way_table$NR_exp^0.5)^2))
+```
+
+```{r}
+(dof <- 4*3)
+```
+
+```{r}
+ggplot(data.frame(x = seq(0, 25, length=100)), aes(x = x)) +
+  stat_function(fun = dchisq, args = list(df = dof), color = 'blue') + 
+  geom_vline(aes(xintercept = chi2_stat),  color = 'red')
+```
+
+```{r}
+(p_value <- 1 - pchisq(chi2_stat, df = dof))
+```
+
+We reject null hypothesis in favour of the alternative. There is correlation in between type of injury and Implemented protection in car accidents where children were passengers.
+
+
+\pagebreak
+
+# 3.Wild blueberries yield prediction
+
+
+
+
+Three datasets about wild blueberry farming are provided: 
+
+* *data/blueberries_insects.csv* contains information about pollinating insects presence
+
+* *data/blueberries_weather.csv* contains information about weather (temperature and rain)
+
+* *data/blueberries_yield.csv* contains information about size of the fruit, seeds, and final yield. 
+
+a) Join all three datasets.
+
+```{r}
+blue_insects <- readr::read_csv("data/blueberries_insects.csv")
+blue_weather <- readr::read_csv("data/blueberries_weather.csv")
+blue_size <- readr::read_csv("data/blueberries_yield.csv")
+```
+
+```{r}
+blue <- blue_insects %>% left_join(blue_size, by = join_by(plotID)) %>% left_join(blue_weather, by = join_by(plotID))
+```
+
+b) Which variables have statistically significant influence on the blueberry yield? Create multiple regression model and tune it.
+
+
+```{r}
+fit <- lm(yield ~ clonesize+
+            honeybee+
+            bumbles+
+            andrena+
+            osmia+              
+            MaxTemp+ 
+            MinTemp+ 
+            AverageTemp+
+            # RainingDays+ 1st and only removed      
+            AverageRainingDays+
+            fruitset+
+            fruitmass+        
+            seeds, 
+          data = blue)
+```
+
+
+
+```{r}
+summary(fit)
+```
+
+
+yield = -12670.617 + clonesize* (-8.068) + honeybee * 50.382 + bumbles * 232.006 + andrena * 354.130 + osmia * 557.956 + MaxTemp * -3357.676 + 
+MinTemp * -4052.480 + AverageTemp * 7213.292 + AverageRainingDays * -937.701 + fruitset * 8835.374 + fruitmass * -26593.008 + seeds * 349.116
+
+
+Following variables have statistically significant influence on the bluberry yield:
+clonesize, honeybee, bumbles, andrena, osmia, MaxTemp, MinTemp, AverageTemp, AverageRainingDays, fruitset, fruitmass, seeds.
+
+
+c) What should be satisfied for model (3b) to be valid. Check if the model you created is valid?
+
+* linearity
+
+* nearly normal residuals
+
+* constant variability
+
+* independent observations
+
+
+```{r}
+blue %>% select(-1) %>% 
+  gather(-yield, key = "var", value = "value") %>% 
+  ggplot(aes(x = value, y = yield, )) +
+    geom_point() +
+    facet_wrap(~ var, scales = "free") +
+    theme_bw()
+```
+
+All numerical variables, with continous scale have clear linear trend. 
+'AverageTemp' has a more quadratic function tendency, however it's hard to pinpoint.
+
+```{r}
+plot(fit)
+```
+
+No trend visible in the first plot. There seems to be consant variability to residuals.
+q-q plot also suggests that there is normal distribution to residuals. 
+
+We assume observations are independent. 
+
+
+
+d) Construct confidence interval for multiplication parameter of 'seeds' variable.
+
+We are 95% confident that 'seeds' multiplier value for linear regression fit is between:
+
+```{r}
+summary(fit)$coefficients[13] - 1.96 * summary(fit)$coefficients[26]
+```
+
+and
+
+```{r}
+summary(fit)$coefficients[13] + 1.96 * summary(fit)$coefficients[26]
+
+```
+
+

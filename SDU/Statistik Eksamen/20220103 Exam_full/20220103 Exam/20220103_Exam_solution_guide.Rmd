@@ -1,0 +1,299 @@
+---
+title: "20220103 VB-STA5 Exam Solution Guide"
+author: "E. Pastucha"
+date: "11/22/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r echo=FALSE}
+suppressPackageStartupMessages(library(tidyverse))
+```
+
+# 1. North America Rodents.
+
+Dataset *data/surveys.csv* contains information about rodents sightings in North America from 1977 to 2002.
+Dataset *data/species.csv* contains information about species acronyms and their Genus.
+
+a) Join two datasets.
+
+```{r}
+surveys <- readr::read_csv("data/surveys.csv")
+species <- readr::read_csv("data/species.csv")
+rodents <- surveys %>% left_join(species, by = 'species_id')
+```
+
+b) Present 5 heaviest rodents - their mean weight and mean hindfoot lenght in the format shown below.
+
+```{r}
+rodents %>% 
+  group_by(species) %>% 
+  summarise(`Mean Weight [g]` = mean(weight), `Mean Hindfoot Length [mm]` = mean(hindfoot_length)) %>% 
+  arrange(desc(`Mean Weight [g]`)) %>% 
+  head(5) %>% 
+  knitr::kable()
+
+```
+
+c) Recreate the plot.
+
+```{r}
+rodents %>%  
+  filter(year >= 1980 & year < 1990) %>% 
+  filter(genus == 'Dipodomys') %>%
+  ggplot() + 
+  geom_point(aes(y = weight, x = hindfoot_length, color = species)) + 
+  labs(title = 'Dipodomys - Kangooro Rats',
+       subtitle = 'Cought in years 1980-1989',
+       x = 'Hindfoot Length [mm]',
+       y = 'Weight [g]')
+```
+
+d) Describe the plot.
+
+* The plot presents relationship between Kangooro Rats hindfoot length and their weight. 
+* There are 3 species within this genom. Merriami, ordii and spectabilis. 
+* Spectabilis species is heavier and has bigger feet than the other species.
+* Ordii seems slightly heavier than merriami.
+* There are multiple outliers - maybe due to mislabeling.
+* There seems to be linear relationship in between 2 variables, but not very strong.
+
+e) Kangooro Rats (genom *Dipodomys*) are small rodents moving similarily to kangooros using jumping steps. Is the mean male hindfoot length different between *ordii* and *merriami* species. Comment on the results.
+
+Difference of means t-test.
+
+$H_0:\mu_{ordii} - \mu_{merriami}=0$
+
+$H_A:\mu_{ordii} - \mu_{merriami}=0 \neq0$
+
+H0: There is no difference between mean ordii and mean merriami mean hindfoot length.
+
+HA: There is difference between mean ordii and mean merriami mean hindfoot length.
+
+alpha significance level - 0.05
+
+Conditions check:
+
+Normality:
+
+```{r}
+rodents %>% 
+  filter(species == 'ordii') %>% 
+  filter(sex == 'M') %>% 
+  ggplot() + 
+  geom_histogram(aes(x = hindfoot_length))
+rodents %>% 
+  filter(species == 'merriami') %>% 
+  filter(sex == 'M') %>% 
+  ggplot() + 
+  geom_histogram(aes(x = hindfoot_length))
+```
+
+There are multiple outliers, but it seems that most variables follow normal distribution.
+
+We assume that observations are independent.
+
+* short version
+
+```{r}
+rodents %>% 
+  filter(species == 'ordii' | species == 'merriami') %>% 
+  filter(sex == 'M') %>% 
+  t.test(hindfoot_length~species, data = .)
+```
+
+p-value is smaller than alpha significance level, thus we reject null hypothesis and accept the alternative. The mean male hindfoot length in between ordii and merriami species is not the same. Howeve rhe difference is 0.5 mm, which is statistically significant but practically insignificant.
+
+* long version
+
+```{r}
+ordii <- rodents %>% 
+  filter(species == 'ordii') %>% 
+  filter(sex == 'M')
+merriami <- rodents %>% 
+  filter(species == 'merriami') %>% 
+  filter(sex == 'M')
+
+(point_estimate <- mean(ordii$hindfoot_length) - mean(merriami$hindfoot_length))
+nrow(ordii)
+nrow(merriami)
+
+```
+
+```{r}
+dof <- 1569
+```
+
+```{r}
+(SE <- sqrt((sd(ordii$hindfoot_length)^2/nrow(ordii)) + (sd(merriami$hindfoot_length)^2/nrow(merriami))))
+```
+
+```{r}
+(t_score <- (point_estimate - 0)/SE)
+```
+
+```{r}
+ggplot(data.frame(x = seq(-5, 5, length=100)), aes(x = x)) +
+  stat_function(fun = dt, args = list(df = dof), color = 'blue') +
+  geom_vline(aes(xintercept = t_score),  color = 'red')
+```
+
+```{r}
+(p_value <- pt(t_score, df = dof))
+```
+
+p-value is smaller than alpha significance level, thus we reject null hypothesis and accept the alternative. The mean male hindfoot length in between ordii and merriami species is not the same. Howeve rhe difference is 0.5 mm, which is statistically significant but practically insignificant.
+
+# 2. Medical students smoking habits.
+
+A study was conducted on various Medical Universities within Germany and Hungary. The students were asked about their smoking habits. 2883 students took part, *44%* of them were German, *36%* were Hungarian and *20%* other nationalities. The table below lists number of students per nationality declaring daily smoking habit. 
+
+```{r, message=FALSE, echo = FALSE}
+smokers <- tribble(
+  ~Nationality, ~n,
+  #--|--|----
+  "German", 91,
+  "Hungarian", 78,
+  "Multinational",51 
+)
+smokers %>% knitr::kable()
+```
+
+a) Are the proportions of nationalities within smoking students a true representation of proportions of whole student body? Conduct a suitable test to check this hypothesis.
+
+Chi square test for goodness of fit. 
+
+H0: Distribution of nationalities within smoking students is the same as distribution of whole student body.
+
+HA: Distribution of nationalities within smoking students is not the same as distribution of whole student body.
+
+alpha significance level - 0.05
+
+Conditions check:
+
+* we assume that the dataset is independent
+
+* expected cases should be more than 5
+
+```{r}
+all_smoking <- 91+78+51
+(expected_G <- 0.44 * all_smoking)
+(expected_H <- 0.36 * all_smoking)
+(expected_M <- 0.20 * all_smoking)
+```
+
+All expected values are above 5.
+
+* short version
+
+```{r}
+chisq.test(c(91,78,51), p=c(0.44,0.36,0.20))
+```
+
+We accept null hypothesis. The distribution of smoking students nationalities is not significantly different from all students nationalities distribution.
+
+* long version
+
+```{r}
+(chi2_stat <- ((91 - expected_G)^2/expected_G) + 
+              ((78 - expected_H)^2/expected_H) + 
+              ((51 - expected_M)^2/expected_M))
+```
+
+```{r}
+dof <- 2
+```
+
+```{r}
+ggplot(data.frame(x = seq(0, 10, length=100)), aes(x = x)) +
+  stat_function(fun = dchisq, args = list(df = dof), color = 'blue') + 
+  geom_segment(aes(x = chi2_stat, y = 0, xend = chi2_stat, yend = dchisq(chi2_stat, df = dof)),  color = 'red')
+```
+
+```{r}
+(p_value <- 1 - pchisq(chi2_stat, df = dof))
+```
+
+We accept null hypothesis. The distribution of smoking students nationalities is not significantly different from all students nationalities distribution.
+
+
+# 3. University salaries.
+
+Dataset *data/salaries.csv* contains data about yearly salaries of random 52 academic workers at one of the U.S. Universities.
+Your friend has been working there for the past *10 years*. He achieved his doctorate *12 years ago*, and is an *associate professor* in the Geology Department. He wants to know, if his salary is appropriate, higher than expected, or lower than expected.
+
+a) Create a model to predict salaries at this University. Tune it, so that it is most statisticaly significant.
+
+```{r}
+salaries <- readr::read_csv('data/salaries.csv')
+```
+
+```{r}
+colnames(salaries)
+```
+
+
+```{r}
+fit <- lm(sl~ sx +
+            rk +
+            dg + 
+            yr + 
+            yd,
+          data = salaries)
+summary(fit)
+fit <- lm(sl~ #sx +
+            rk +
+            dg + 
+            yr + 
+            yd,
+          data = salaries)
+summary(fit)
+fit <- lm(sl~ #sx +
+            rk +
+            #dg + 
+            yr + 
+            yd,
+          data = salaries)
+summary(fit)
+fit <- lm(sl~ #sx +
+            rk +
+            #dg + 
+            yr #+ 
+            #yd
+          ,data = salaries)
+summary(fit)
+```
+
+b) Are the conditions for a valid linear fit fulfilled in this case?
+
+* constant residuals and normal distribution of residuals
+
+```{r}
+plot(fit)
+```
+
+As seen at the first two plots, there are some outliers from normal distribution of the residuals, however majority of points follow theoretical line. The residuals also seem to be evanly distributed.
+
+* we assume independence
+
+* linearity
+
+```{r}
+ggplot(salaries) + 
+  geom_point(aes(x = rk, y = sl))
+ggplot(salaries) + 
+  geom_point(aes(x = yr, y = sl))
+```
+
+There seems to be some linear corelation visible on the plots.
+
+c) Predict your friends' salary. Help him to make a decission - contact HR or stay quiet.
+
+```{r}
+(predicted_salary <- 16203.27 + 4262.28 + 375.70*10)
+```
+
+This friend earns more than predicted in the model. I would not contact HR.

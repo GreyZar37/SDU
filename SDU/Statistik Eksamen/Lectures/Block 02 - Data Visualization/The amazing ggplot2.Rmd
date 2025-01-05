@@ -1,0 +1,73 @@
+---
+title: "The amazing ggplot2"
+author: "Jeppe Matzen"
+date: "8/28/2020"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+library(ggtext) # for text on plot
+library(forcats) # for fct_reorder
+library(png) # for image as background
+library(grid)# for image as background
+library(jpeg)
+```
+
+This document is to show you how much you can do with just a few extra lines.
+The first example will take some time to compile and for the 2. you will need to download this image ( https://media2.fdncms.com/orlando/imager/u/original/14977752/gal_jaws.jpg ) and name it shark_background.png and place it in the same folder as the RMD.
+At the bottom of the RMD  there are a few links for inspiration. 
+
+# Iris with image as label. 
+
+
+```{r}
+labels <- c(
+  versicolor = "<img src ='https://upload.wikimedia.org/wikipedia/commons/2/27/Blue_Flag%2C_Ottawa.jpg' width='100' /><br>*I. versicolor*", 
+  virginica = "<img src ='https://upload.wikimedia.org/wikipedia/commons/f/f8/Iris_virginica_2.jpg' 
+  width='100' /><br>*I. virginica*",
+  setosa = "<img src='https://upload.wikimedia.org/wikipedia/commons/thumb/5/56/Kosaciec_szczecinkowaty_Iris_setosa.jpg/800px-Kosaciec_szczecinkowaty_Iris_setosa.jpg'
+    width='100' /><br>*I. setosa*"
+) # This is a vector of the URL for the pictures. size and title is added by the end. 
+
+
+ggplot(data = iris) +
+    geom_boxplot(mapping = aes(x = fct_reorder(Species, Sepal.Width), y = Sepal.Width, fill = Species)) +
+  scale_x_discrete(
+    name = NULL,
+    labels = labels # Here we add the images. 
+  ) +
+  theme(
+    axis.text.x = element_markdown(color = "black", size = 11)
+  )
+```
+
+# add image to plot
+
+To add a background to the plot we need to  combine the annotation_custom-function of the ggplot2 package and the rasterGrob-function of the grid package.
+
+With 
+```{r}
+url = 'https://upload.wikimedia.org/wikipedia/commons/2/27/Blue_Flag%2C_Ottawa.jpg'
+download.file(url, destfile = "versicolor.jpg", mode = 'wb')
+
+versicolor <- jpeg::readJPEG("versicolor.jpg")
+
+ggplot(data = iris) +
+  ggtitle("Iris flowers") + # add title
+  annotation_custom(rasterGrob(versicolor, #Choose picture
+                               width = unit(1,"npc"), #Scale picture
+                               height = unit(1,"npc")), #Scale picture
+                    -Inf, Inf, -Inf, Inf) + #Placement of picture
+  geom_boxplot(mapping = aes(x = Species, y = Sepal.Width, fill = Species))
+```
+
+
+
+
+
+

@@ -1,0 +1,354 @@
+---
+title: "2022 02 23 VB-STA5 Reexam Solution Guide"
+output: pdf_document
+---
+
+```{r echo=FALSE}
+suppressPackageStartupMessages(library(tidyverse))
+```
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# 1. Mind the gap.
+
+a) Join the two datasets.
+
+```{r, message=FALSE}
+L_transport <- readr::read_csv('data/London_transport_passengers.csv')
+L_ID <- readr::read_csv('data/London_transport_codes.csv')
+transport <- L_transport %>% left_join(L_ID, by = c('Transportation_ID'='Transportation code'))
+```
+
+
+b) Present average number of passengers on all modes of transport in Reporting period *11* through the years in descending order.
+
+```{r}
+transport %>% 
+  filter(`Reporting Period` == 11) %>% 
+  group_by(`Transportation`) %>% 
+  summarise(`Mean number of passengers [mln]` = mean(`Passengers [mln]`)) %>% 
+  arrange(desc(`Mean number of passengers [mln]`)) %>% 
+  knitr::kable()
+```
+
+c) Recreate the plot.
+
+```{r}
+transport %>%  
+  ggplot() + 
+  geom_line(aes(x = `Period beginning`, y = `Passengers [mln]`, color = Transportation)) + 
+  labs(title = 'London Travel in numbers',
+       subtitle = 'Number of registered passengers through time',
+       x = 'Time')
+```
+
+d) Describe the plot.
+
+- presents number of registered passenger in different modes of transport in London in years 2010 - 2021
+- data points are connected lineary
+- there are visible variations in number of passengers through time.
+- most passengers travel on bus, then underground. remaining 3 take much smaller part of share
+- there is vissible drop in travels at the beginning of 2020 - most likely due to the global pandemic
+- the transport is slowly recovering, but the numbers are nowhere near the numbers before pandemic
+
+e) In 2017 a group of students at Imperial College London conducted a survey of 927 London commuters. The survey asked questions about service satisfaction using a couple of carefully formed questions. The students asked random travelers to answer the questions. Here is a summary of how many people were surveyed in the different modes of transport:
+
+```{r}
+transport_2017 <- transport %>% filter(Year == 2017)
+all_passengers <- sum(transport_2017$`Passengers [mln]`)
+(proportions <- transport_2017 %>% 
+  group_by(Transportation) %>% 
+  summarize(sum = sum(`Passengers [mln]`)) %>% 
+  mutate(proportion = sum/all_passengers))
+
+```
+
+```{r}
+(students <- tribble(
+  ~`Mode of Transport`, ~`No. of passengers interviewed`,
+  "Bus",   461,
+  "Underground",   347,
+  "DLR",   26,
+  "Tram",   25,
+  "Overground", 68
+) )
+```
+
+Chi square test for goodness of fit. 
+
+H0: Distribution of passengers intervied within different modes of transport is the same as distribution of whole passengers in 2017.
+
+HA: Distribution of passengers intervied within different modes of transport is not the same as distribution of whole passengers in 2017.
+
+alpha significance level - 0.05
+
+Conditions check:
+
+* we assume that the dataset is independent
+
+* expected cases should be more than 5
+
+```{r}
+students <- students %>%  left_join(proportions, by=c('Mode of Transport'='Transportation'))
+
+(students <- students %>% mutate(expected = proportion*927))
+```
+
+All expected values are above 5.
+
+* short version
+
+```{r}
+chisq.test(students$`No. of passengers interviewed`, p=students$proportion)
+```
+
+We reject null hypothesis in favour of alternative. Distribution of passengers intervied within different modes of transport is not the same as distribution of whole passengers in 2017.
+
+* long version
+
+```{r}
+(chi2_stat <- sum(((students$`No. of passengers interviewed` - students$expected)^2)/students$expected))
+```
+
+
+```{r}
+dof <- 4
+```
+
+```{r}
+ggplot(data.frame(x = seq(0, 100, length=100)), aes(x = x)) +
+  stat_function(fun = dchisq, args = list(df = dof), color = 'blue') + 
+  geom_vline(aes(xintercept = chi2_stat),  color = 'red')
+```
+
+```{r}
+(p_value <- 1 - pchisq(chi2_stat, df = dof))
+```
+
+We reject null hypothesis in favour of alternative. Distribution of passengers intervied within different modes of transport is not the same as distribution of whole passengers in 2017.
+
+# 2. Ice cream
+
+Dataset *data/ice_cream.csv* contains information from an experiment, where a group of people were asked to choose in between three flavours of ice cream - strawberry, chocolate, and vanilla. Subsequently, they have been evaluated in playing video games and doing puzzles. 
+
+a) Present distribution function of video games scores divided according to ice cream flavour.
+
+```{r, message=FALSE}
+ice_cream <- readr::read_csv('data/ice_cream.csv')
+ice_cream %>% 
+  ggplot() + 
+  geom_density(aes(x = video, color = flavour))
+```
+
+b) Is there a statistically significant difference between the mean puzzle score for males with vanilla preference vs. males with strawberry preference? Conduct a suitable test. 
+
+Difference of means t-test.
+
+$H_0:\mu_{male_vanilla} - \mu_{male_strawberry}=0$
+
+$H_A:\mu_{male_vanilla} - \mu_{male_strawberry}=0 \neq0$
+
+H0: There is no difference between mean puzzle score for male prefering vanilla and strawberry flavours.
+
+HA: There is a difference between mean puzzle score for male prefering vanilla and strawberry flavours.
+
+alpha significance level - 0.05
+
+Conditions check:
+
+Normality:
+
+```{r}
+ice_cream %>% 
+  filter(flavour == 'vanilla') %>% 
+  filter(sex == 'M') %>% 
+  ggplot() + 
+  geom_histogram(aes(x = puzzle))
+ice_cream %>% 
+  filter(flavour == 'strawberry') %>% 
+  filter(sex == 'M') %>% 
+  ggplot() + 
+  geom_histogram(aes(x = puzzle))
+```
+
+Hard to say with samples so small (strawberry), but it seems that most variables follow normal distribution.
+
+We assume that observations are independent.
+
+* short version
+
+```{r}
+ice_cream %>% 
+  filter(sex == 'M', flavour %in% c('vanilla', 'strawberry')) %>% 
+  t.test(puzzle~flavour, data = .)
+```
+
+p-value is smaller than alpha significance level, thus we reject null hypothesis and accept the alternative. There is statistically significant difference between mean puzzle score for male prefering vanilla and strawberry flavours.
+
+* long version
+
+```{r}
+m_v <- ice_cream %>% 
+  filter(flavour == 'vanilla') %>% 
+  filter(sex == 'M')
+m_s <- ice_cream %>% 
+  filter(flavour == 'strawberry') %>% 
+  filter(sex == 'M')
+
+(point_estimate <- mean(m_v$puzzle) - mean(m_s$puzzle))
+(nrow(m_v))
+(nrow(m_s))
+
+```
+
+```{r}
+dof <- 28
+```
+
+```{r}
+(SE <- sqrt((sd(m_v$puzzle)^2/nrow(m_v)) + (sd(m_s$puzzle)^2/nrow(m_s))))
+```
+
+```{r}
+(t_score <- (point_estimate - 0)/SE)
+```
+
+```{r}
+ggplot(data.frame(x = seq(-5, 5, length=100)), aes(x = x)) +
+  stat_function(fun = dt, args = list(df = dof), color = 'blue') +
+  geom_vline(aes(xintercept = t_score),  color = 'red')
+```
+
+```{r}
+(p_value <- 2 * pt(t_score, df = dof))
+```
+
+p-value is smaller than alpha significance level, thus we reject null hypothesis and accept the alternative. There is statistically significant difference between mean puzzle score for male prefering vanilla and strawberry flavours.
+
+# 3. Health insurance
+
+Dataset *data/insurance.csv* contains information about over 1000 randomly chosen U.S. participants. Their insurance packages range in between low-cost insurance - up to \$15.000 per year, medium-cost insurance \$15.000 - \$30.000 per year, and high-cost insurance - above \$30.000 per year.
+
+a) What are statistically significant predictors of the high-cost insurance? Create a model and tune it.
+
+```{r}
+insurance <- readr::read_csv('data/insurance.csv')
+```
+
+```{r}
+insurance_high <- insurance %>%  filter(charges>30000)
+colnames(insurance_high)
+```
+
+To tune the model to get the most statistically significant model we use p-value approach. In this case backwareds elimination. 
+
+```{r}
+fit <- lm(charges ~ age + 
+            sex + 
+            bmi + 
+            children + 
+            region +
+            smoker
+          , data = insurance_high)
+summary(fit)
+```
+Remove region
+
+```{r}
+fit <- lm(charges ~ age + 
+            sex + 
+            bmi + 
+            children + 
+            #region +
+            smoker
+          , data = insurance_high)
+summary(fit)
+```
+Remove children.
+
+```{r}
+fit <- lm(charges ~ age + 
+            sex + 
+            bmi + 
+            #children + 
+            #region +
+            smoker
+          , data = insurance_high)
+summary(fit)
+```
+
+Remove sex.
+
+```{r}
+fit <- lm(charges ~ age + 
+            #sex + 
+            bmi + 
+            #children + 
+            #region +
+            smoker
+          , data = insurance_high)
+summary(fit)
+```
+
+
+b) Evaluate the model.
+
+* constant residuals and normal distribution of residuals
+
+```{r}
+plot(fit)
+```
+
+As seen at the first two plots, there are some outliers from normal distribution of the residuals, however majority of points follow theoretical line. The residuals also seem to be evanly distributed.
+
+* we assume independence
+
+* linearity
+
+```{r}
+ggplot(insurance_high) + 
+  geom_point(aes(x = age, y = charges))
+ggplot(insurance_high) + 
+  geom_point(aes(x = bmi, y = charges))
+ggplot(insurance_high) + 
+  geom_point(aes(x = smoker, y = charges))
+```
+
+There seems to be linear corelation visible for age and smoker, slightly vissible for bmi.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

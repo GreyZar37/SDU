@@ -1,0 +1,1052 @@
+---
+title: "Template"
+author: "Oleg Sechovcov"
+date: "2025-01-04"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# R Shortcuts
+
+- `Ctrl + Enter` - Run current line or selection
+- `Ctrl + Shift + Enter` - Run current chunk
+- `Ctrl + Alt + I` - Insert chunk
+- `Ctrl + Alt + C` - Comment/Uncomment line or selection
+- `Ctrl + Shift + M` - Insert pipe operator `%>%`
+
+# R Libraries
+
+```{r}
+library(tidyverse)
+library(ggtext) # for text on plot
+library(forcats) # for fct_reorder
+library(png) # for image as background
+library(grid)# for image as background
+library(jpeg)
+```
+
+# R Data
+
+## R Data insert
+
+```{r}
+#data <- read.csv("data.csv") # read data from csv
+```
+
+## Read data
+
+```{r}
+head(iris, 5) # show first 5 rows
+nrow(iris) # number of rows
+summary(iris) # summary of data
+```
+
+# Plots
+
+## Scatter plot
+
+```{r}
+ggplot(data = iris) + 
+  geom_point(mapping = aes(x = Petal.Length, y = Petal.Width, color = Species)) + 
+  labs(x = 'Petal Length [cm]',
+       y = 'Petal Width [cm]',
+       color = 'Iris Species',
+       title = 'Iris flowers - Petal Length vs Petal Width', 
+       subtitle = 'Colored by Species')
+```
+```{r}
+ggplot(data = iris) + 
+  geom_point(mapping = aes(x = Petal.Length, y = Petal.Width, 
+                           #shape = Species,
+                           #size = Species
+                           color = Species)) + 
+  labs(x = 'Petal Length [cm]',
+       y = 'Petal Width [cm]',
+       size = 'Iris Species',
+       title = 'Iris flowers - Petal Length vs Petal Width', 
+       subtitle = 'Colored by Species') + 
+  coord_fixed(ratio = 1) + 
+  geom_smooth(mapping = aes(x = Petal.Length, y = Petal.Width), method = lm)
+```
+```{r}
+ggplot(data = iris) + 
+  geom_point(mapping = aes(x = Petal.Length, y = Petal.Width, 
+                           color = Species)) + 
+  geom_smooth(mapping = aes(x = Petal.Length, y = Petal.Width), method = lm)+ 
+  geom_smooth(mapping = aes(x = Petal.Length, y = Petal.Width, color = Species), method = lm)
+```
+## Facet wrap and facet grid
+
+```{r}
+ggplot(data = iris) + 
+  geom_point(mapping = aes(x = Petal.Length, y = Petal.Width)) +
+  facet_wrap(~Species)
+```
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = cty, y = displ)) + 
+  facet_grid(class~factor(cyl))
+```
+
+## Naming
+
+
+```{r}
+ggplot(iris) + 
+  geom_point(aes(Petal.Length, Petal.Width, 
+                           #shape = Species,
+                           #size = Species
+                           color = Species)) + 
+  labs(x = 'Petal Length [cm]',
+       y = 'Petal Width [cm]',
+       size = 'Iris Species',
+       title = 'Iris flowers - Petal Length vs Petal Width', 
+       subtitle = 'Colored by Species') + 
+  coord_fixed(ratio = 1)
+```
+
+## Box Plots
+
+```{r}
+ggplot(iris) + 
+  geom_boxplot(mapping = aes(y = Species,
+                             x = Petal.Length,
+                             fill = Species),
+               alpha = 0.2,
+               color = 'darkred') + 
+  labs(x = 'Petal Length [cm]', 
+       y = 'Iris Species')
+```
+
+```{r}
+ggplot(mpg) + 
+  geom_boxplot(aes(x = class, y = hwy, color = class), show.legend = FALSE)
+```
+
+## Histogram and Density Plot
+
+```{r}
+ggplot(iris) + 
+  geom_histogram(aes(x = Petal.Length, fill = Species), binwidth = 0.2, position = 'dodge')
+```
+
+```{r}
+versicolor <- filter(iris, Species == 'versicolor')
+```
+
+```{r}
+ggplot(versicolor) + 
+  geom_histogram(aes(x = Petal.Length), color = 'black', fill ='limegreen', binwidth = 0.1)
+```
+```{r}
+ggplot(versicolor) + 
+  geom_density(aes(x = Petal.Length), fill = 'yellow', 
+               alpha = 0.3, 
+               color = 'red')
+```
+
+```{r}
+ggplot(versicolor) + 
+  geom_histogram(aes(x = Petal.Length, y = after_stat(density)), 
+                 fill = 'limegreen', binwidth = 0.1)+
+  geom_density(aes(x = Petal.Length), color = 'red', fill = 'yellow', alpha = 0.3)
+```
+
+```{r}
+ggplot(iris) + 
+  geom_density(aes(x = Petal.Length, fill = Species), alpha = 0.3)
+```
+```{r}
+ggplot(iris) + 
+  geom_density(aes(x = Petal.Length, fill = Species), alpha = 0.3) + 
+  geom_histogram(aes(x = Petal.Length, y = after_stat(density), fill = Species), 
+                 alpha = 0.3)
+```
+
+## Empirical cumulative distribution function - stat_ecdf
+
+```{r}
+ggplot(iris) + 
+  stat_ecdf(mapping = aes(x = Sepal.Length, color = Species))
+```
+
+## Barplots
+
+```{r}
+ggplot(mpg) + 
+  geom_bar(mapping = aes(x = class, fill = manufacturer), color = 'black')
+```
+
+# inference
+## Normal distribution
+
+dnorm(x, mean, sd) - distribution function
+pnorm(x, mean, sd) - probability, 
+qnorm(probability, mean, sd) - given probability what is the value
+rnorm(how_many, mean, sd) - generate data 
+
+default values: mean = 0, sd = 1
+
+```{r}
+ggplot(data.frame(x = seq(-10, 10, length = 100)), aes(x = x))+
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), color = 'blue') + 
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 2), color = 'green') + 
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 3), color = 'yellow') +
+  stat_function(fun = dnorm, args = list(mean = 2, sd = 1), color = 'orange')
+```
+
+```{r}
+ggplot(data.frame(x = seq(-5, 5, length = 100)), aes(x = x))+
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), color = 'blue') + 
+  geom_vline(xintercept = 1, color ='red')
+```
+
+```{r}
+ggplot(data.frame(x = seq(-5, 5, length = 100)), aes(x = x))+
+  stat_function(fun = dnorm, args = list(mean = 0, sd = 1), color = 'blue') + 
+  geom_segment(aes(x = 1, y = 0, 
+               xend = 1, yend = dnorm(1)), color ='red', linetype = 'dashed')
+```
+
+## ECDF
+
+```{r}
+sharks <- readr::read_csv('sharks.csv')
+```
+```{r}
+head(sharks, 5)
+```
+```{r}
+ggplot(sharks) + 
+  geom_point(aes(x = `Total Length`, y = `Fork Length`, color = `Fish Sex`))
+```
+
+```{r}
+ggplot(sharks) + 
+  geom_density(aes(x = `Total Length`, fill = `Fish Sex`), alpha = 0.3)
+```
+
+```{r}
+females <- filter(sharks, `Fish Sex` == 'Female')
+```
+
+```{r}
+mean_fs <- mean(females$`Total Length`)
+sd_fs <- sd(females$`Total Length`)
+ggplot(females) + 
+  geom_histogram(aes(x = `Total Length`, y = after_stat(density)), 
+                 fill = 'red', alpha = 0.3, binwidth = 1) + 
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = sd_fs), size = 1)
+```
+
+```{r}
+ggplot(females) + 
+  stat_ecdf(aes(x = `Total Length`), color = 'limegreen') + 
+  geom_line(stat = 'function', fun = pnorm, args = list(mean = mean_fs, sd = sd_fs), 
+            color = 'purple')
+```
+
+Q-Q plot 
+
+```{r}
+ggplot(females) + 
+  stat_qq_line(aes(sample = `Total Length`), color = 'red', size = 1) + 
+  stat_qq(aes(sample = `Total Length`))
+```
+
+## Z-scores
+
+150 inches long female shark.
+
+
+```{r}
+(z_score <- (150 - mean_fs)/sd_fs)
+```
+
+```{r}
+pnorm(z_score, mean = 0, sd = 1)
+pnorm(z_score)
+```
+
+```{r}
+pnorm(150, mean = mean_fs, sd = sd_fs)
+```
+
+```{r}
+ggplot(data.frame(x = seq(40, 220, length = 500)), aes(x=x)) + 
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = sd_fs)) + 
+  geom_segment(aes(x = 150, y = 0,
+                   xend = 150, yend = dnorm(150, mean = mean_fs, sd = sd_fs)), color = 'red') + 
+  geom_area(stat = 'function', fun = dnorm, args = list(mean = mean_fs, sd = sd_fs), 
+            fill = 'blue', xlim = c (40, 150), alpha = 0.3)
+```
+## SE
+
+Mean female shark Total Length. 
+1155 cases, 40-220 inches. 
+
+```{r}
+mean_fs
+```
+
+Central Limit Theorem:
+* Samples are independent
+* Sample size is bigger than 30 
+* Population distribution is not strongly skewed
+
+YES!
+
+$$SE = \frac{\sigma}{\sqrt{n}}$$
+```{r}
+(SE <- sd_fs/sqrt(nrow(females)))
+```
+
+95% confidence interval.
+
+1.96 
+qnorm()
+
+```{r}
+mean_fs - 1.96 *SE
+mean_fs + qnorm(0.025)*SE
+```
+
+```{r}
+mean_fs + 1.96*SE
+mean_fs + qnorm(0.975)*SE
+```
+
+We are 95% confident that population mean female shark total length is in between 115.54 inch
+and 118.18 inch.
+
+99% confidence interval
+
+```{r}
+mean_fs - 2.58 *SE
+mean_fs + qnorm(0.005)*SE
+```
+
+```{r}
+mean_fs + 2.58*SE
+mean_fs + qnorm(0.995)*SE
+```
+
+We are 99% confident that population mean total length of a female shark is between 115.12 inch and 118.6 inch.
+
+## Distribution of a sample - one sample (ONE!)
+```{r}
+ggplot(data.frame(x = seq(40, 220, length = 500)), aes(x = x)) + 
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = sd_fs))+
+labs(title = 'Distribution of a sample of female sharks ')
+```
+
+## Sampling Distribution - multiple samples.
+```{r}
+ggplot(data.frame(x = seq(40, 220, length = 500)), aes(x = x)) + 
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = SE))+
+labs(title = 'Distribution of a sample of female sharks ')
+```
+
+
+```{r}
+ggplot(data.frame(x = seq(40, 220, length = 500)), aes(x = x)) + 
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = sd_fs), color = 'red')+
+  stat_function(fun = dnorm, args = list(mean = mean_fs, sd = SE), color = 'green')+
+  labs(title = 'Distribution of a sample of female sharks ')
+```
+
+# Tests
+## One sample proportion test
+
+$$SE = \sqrt{\frac{p \cdot(1-p)}{n}}$$
+0) Check CLT conditions.
+1) Setup hypotheses
+2) Assume threshold for values
+* $\alpha = 0.05$ is common
+3) Calculate the results
+* point estimate: $\hat{p}$
+* standard error: $SE = \sqrt{\frac{p \cdot(1-p)}{n}}$
+* p-value: $2 \cdot P(Z > |z|)$
+4) Draw a conclusion
+
+$H_0$: 50% of NBA players is over 200 cm tall: $p = 0.5$
+
+$H_a$: More than 50% of NBA players is over 200 cm tall: $p > 0.5$
+
+```{r}
+alpha <- 0.05
+```
+
+```{r}
+nba <- readr::read_csv('nba_ht_wt.csv')
+```
+
+```{r}
+nba <- nba %>% mutate(Height = Height* 2.54)
+```
+
+```{r}
+n_success <- nba %>% filter(Height > 200) %>% nrow()
+
+```
+```{r}
+nba %>% filter(Height <= 200) %>% nrow()
+```
+```{r}
+n_sample <- nrow(nba)
+(point_estimate_nba <-  n_success / n_sample)
+```
+```{r}
+(SE_nba <- sqrt(0.5 * 0.5/n_sample))
+```
+```{r}
+ggplot(data.frame(x = seq(0.4,0.6, length = 100)), aes(x=x)) +
+  stat_function(fun = dnorm, args = list(mean = 0.5, sd = SE_nba)) +
+  geom_vline(xintercept = point_estimate_nba, color = "red") 
+```
+
+```{r}
+(p_value_nba <- (1-pnorm(point_estimate_nba, mean = 0.5, sd = SE_nba)))
+```
+We reject null hypothesis, because p-value is less than 0.05.
+
+
+## Difference of proportions test
+
+0) Check CLT conditions.
+1) Setup hypotheses
+2) Assume threshold for values
+* $\alpha = 0.05$ is common
+3) Calculate the results
+* point estimate: $\hat{p}$
+* standard error: $SE = \sqrt{\frac{p \cdot(1-p)}{n}}$
+* p-value: $2 \cdot P(Z > |z|)$
+4) Draw a conclusion
+
+A clothes producer is looking for a new supplier of zipppers.Two factories are
+frontrunners. The producer wants to decide based on one days production results.
+
+First factory produces 23 935 zippers, out of which 132 were faulty.
+Second factory produces 22 312 zippers, out of which 111 were faulty.
+We want to check if it's safe to assume that they have the same production of faulty
+zippers, and due to that we can choosed based squerly on price
+
+$H_0$: Proportion of faulty zippers is the same in both factories: $p_1 = p_2$
+
+$H_a$: Proportion of faulty zippers is different in both factories: $p_1 \neq p_2$
+
+
+Pooled proportion: $\hat{p} = \frac{x_1 + x_2}{n_1 + n_2}$
+```{r}
+(p_pooled <- (132 + 111) / (23935 + 22312))
+p_pooled * 23935
+p_pooled * 22312
+(1- p_pooled) * 23935
+(1- p_pooled) * 22312
+```
+```{r}
+alpha <- 0.05
+```
+
+```{r}
+proportion1 <- 132 / 23935
+proportion2 <- 111 / 22312
+(point_estimate_zippers <- proportion1 - proportion2)
+```
+$$SE = \sqrt{\hat{p} \cdot(1-\hat{p}) \cdot \left(\frac{1}{n_1} + \frac{1}{n_2}\right)}$$
+```{r}
+(SE_zippers <- sqrt(p_pooled * (1-p_pooled) * (1/23935 + 1/22312)))
+```
+```{r}
+ggplot(data.frame(x = seq(-0.0025,0.0025, length = 100)), aes(x=x)) +
+  stat_function(fun = dnorm, args = list(mean = 0, sd = SE_zippers)) +
+  geom_vline(xintercept = point_estimate_zippers, color = "red") 
+```
+
+```{r}
+(p_value_zippers <- 2 * (1 - pnorm(point_estimate_zippers, mean = 0, sd = SE_zippers)))
+```
+```{r}
+p_value_zippers > alpha
+```
+We accept Null hypothesis, because p-value is greater than 0.05. There is no evidence that the proportion of faulty zippers is different in both factories.
+
+
+## $\chi^2$ distribution
+
+```{r}
+ggplot(data.frame(x=seq(0,30,length=100)), aes(x=x))+
+  stat_function(fun = dchisq, args = list(df = 2), color = 'blue')+
+  stat_function(fun = dchisq, args = list(df = 3), color = 'green')+
+  stat_function(fun = dchisq, args = list(df = 5), color = 'yellow')+
+    stat_function(fun = dchisq, args = list(df = 7), color = 'orange')+
+      stat_function(fun = dchisq, args = list(df = 11), color = 'red')+
+        stat_function(fun = dchisq, args = list(df = 19), color = 'purple')
+
+
+
+
+```
+
+
+## $\chi^2$ goodness of fit test
+
+0) Check conditions.
+1) Setup hypotheses
+2) Setup threshold 
+* $\alpha = 0.05$ is common
+3) Calculate chi^2 statistic
+4) Calculate p-value
+5) Draw a conclusion
+
+Sample of 669 Haribo Gummy Bears
+```{r}
+(gummy_bears <- c(83, 142, 100, 103, 104, 137))
+```
+$H_0$: The distribution of flavors is equal
+
+$H_a$: The distribution of flavors is not equal
+
+```{r}
+alpha <- 0.05
+```
+
+```{r}
+(expected <- sum(gummy_bears) / length(gummy_bears))
+```
+$$Z_n = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}$$
+$$X^2 = \sum_{i=1}^{k} \frac{(O_i - E_i)^2}{E_i}$$
+```{r}
+(gummy_Z <- (gummy_bears - expected) / sqrt(expected))
+```
+
+```{r}
+(chi_score <- sum(gummy_Z^2))
+```
+degrees of freedom: df = 5
+
+```{r}
+ggplot(data.frame(x=seq(0,30,length=100)), aes(x=x))+
+  stat_function(fun = dchisq, args = list(df = 5), color = 'blue')+
+  geom_vline(xintercept = chi_score, color = "red")
+```
+```{r}
+(p_value <- 1 - pchisq(chi_score, df = 5))
+```
+```{r}
+p_value > alpha
+```
+We reject null hypothesis, because p-value is less than 0.05. There is evidence that the distribution of flavors is not equal.
+
+
+### Just run the test with no calculations
+
+```{r}
+chisq.test(x= gummy_bears, p = rep(c(expected), length(gummy_bears)), rescale.p = TRUE)
+```
+## $\chi^2$ test for Independence
+
+```{r}
+(movies_pizza <- tribble(
+  ~Movie, ~Pepperoni, ~Mushrooms, ~Kebab,
+  "Frozen 2", 20, 10, 5,
+  "Joker", 15, 12, 15,
+  "Someone Great", 8, 13,2
+))
+
+```
+0) Check conditions.
+1) Setup hypotheses
+2) Get the observed count for each category
+3) Calculate expected count for each category
+4) Calculate test statistic
+6) Calculate p-value
+5) Draw a conclusion
+
+$H_0$: There is no association between movie and pizza topping
+
+$H_a$: There is an association between movie and pizza topping
+
+```{r}
+p_total <- sum(movies_pizza$Pepperoni)
+m_total <- sum(movies_pizza$Mushrooms)
+k_total <- sum(movies_pizza$Kebab)
+total <- p_total + m_total + k_total
+```
+
+```{r}
+(movies_pizza <- movies_pizza %>% 
+        mutate(P_exp = (Pepperoni + Mushrooms + Kebab) * p_total/total)  %>% 
+        mutate(M_exp = (Pepperoni + Mushrooms + Kebab) * m_total/total) %>% 
+        mutate (K_exp = (Pepperoni + Mushrooms + Kebab) * k_total/total))
+```
+
+```{r}
+(movies_pizza <- movies_pizza %>% 
+  mutate(P_Z = ((Pepperoni - P_exp) / sqrt(P_exp))^2) %>% 
+  mutate(M_Z = ((Mushrooms - M_exp) / sqrt(M_exp))^2) %>%
+  mutate(K_Z = ((Kebab - K_exp) / sqrt(K_exp))^2))
+ 
+```
+```{r}
+(chi_score_mp <- sum(movies_pizza$P_Z) + sum(movies_pizza$M_Z) + sum(movies_pizza$K_Z))
+```
+df = 4
+
+```{r}
+ggplot(data.frame(x=seq(0,15,length=100)), aes(x=x))+
+  stat_function(fun = dchisq, args = list(df = 4), color = 'blue')+
+  geom_vline(xintercept = chi_score_mp, color = "red")
+```
+```{r}
+alpha <- 0.05
+
+```
+
+```{r}
+(p_value_mp <- 1 - pchisq(chi_score_mp, df = 4))
+```
+```{r}
+p_value_mp > alpha
+```
+We reject null hypothesis, because p-value is less than 0.05. There is evidence that there is an association between movie and pizza topping.
+
+
+
+### Just run the test with no calculations
+
+
+```{r}
+(movies_pizza <- tribble(
+  ~Movie, ~Pepperoni, ~Mushrooms, ~Kebab,
+  "Frozen 2", 20, 10, 5,
+  "Joker", 15, 12, 15,
+  "Someone Great", 8, 13,2
+))
+
+```
+
+
+```{r}
+movies_pizza %>% select(-Movie) %>% chisq.test()
+```
+
+
+
+
+# data Transformation
+
+## filter
+```{r}
+kiwi <- readr::read_csv('kiwi.csv')
+```
+
+```{r}
+kiwi %>% filter(Species_code == 'GS', Gender == 'M', `Weight(kg)` > 2.2)
+```
+
+```{r}
+kiwi %>% filter(Species_code == 'GS') %>% 
+  filter(Gender == 'M') %>% 
+  filter(`Weight(kg)` > 2.2)
+```
+
+```{r}
+kiwi %>% filter(Species_code != 'GS')
+
+```
+```{r}
+kiwi %>% filter(Species_code != 'Tok' | Species_code == 'NIBr')
+```
+Logical opperators
+& 
+| 
+>
+>=
+<
+<=
+!=
+==
+
+## Select
+
+```{r}
+head(kiwi, 5)
+```
+```{r}
+kiwi %>%  select(1:4)
+
+```
+```{r}
+kiwi %>% select(Species_code, Gender)
+```
+```{r}
+kiwi %>%  select(-Location)
+```
+
+## Mutate
+
+BMI = Weight(kg)/Height(m)^2 
+
+```{r}
+Kiwi_BMI <- kiwi %>%  
+  mutate(`Height(m)` = `Height(cm)` / 100) %>% 
+  mutate(BMI = `Weight(kg)` / `Height(m)`^2)
+
+Kiwi_BMI
+```
+
+## summarise(), arrange(), group_by()
+```{r}
+kiwi %>% 
+  group_by(Species_code) %>% 
+  tally()
+```
+```{r}
+kiwi %>% 
+  group_by(Species_code, Gender) %>% 
+  summarise(`mean weight` = mean(`Weight(kg)`), `mean height` = 
+              mean(`Height(cm)`)) %>% 
+  arrange(desc(`mean weight`)) %>% 
+  knitr::kable()
+```
+## Missing values
+
+```{r}
+svalbard <- readr::read_csv('svalbard-climate-1912-2017.csv')
+```
+
+```{r}
+svalbard %>% 
+  ggplot() +
+  geom_line(aes(x = YEAR, y = FEB), colour = 'blue') +
+  geom_line(aes(x = YEAR, y = AUG), colour = 'red') 
+```
+
+
+```{r}
+svalbard <- readr::read_csv('svalbard-climate-1912-2017.csv', na = c('NA','999.9'))
+```
+
+```{r}
+svalbard %>% 
+  ggplot() +
+  geom_line(aes(x = YEAR, y = FEB), colour = 'blue') +
+  geom_line(aes(x = YEAR, y = AUG), colour = 'red') 
+```
+```{r}
+mean(svalbard$FEB, na.rm = TRUE)
+sd(svalbard$JAN, na.rm = TRUE)
+median(svalbard$APR, na.rm = TRUE)
+```
+```{r}
+svalbard %>% 
+  filter(!is.na(JAN), YEAR >= 2000)
+```
+
+
+# Regression
+
+```{r}
+data <- readr::read_csv('weight-height.csv')
+```
+## Linear Regression for Weights and Heights
+
+```{r}
+data <- data %>% 
+  mutate(Height = Height * 2.54,
+         Weight = Weight * 0.453592)
+```
+
+
+```{r}
+ggplot(data) +
+  geom_point(aes(x = Height, y = Weight, color = Gender))+
+  geom_smooth(aes(x = Height, y = Weight), method = lm)+
+     geom_smooth(aes(x = Height, y = Weight, color = Gender), method = lm)
+
+
+```
+
+```{r}
+male <- data %>% filter(Gender == 'Male')
+```
+
+```{r}
+ggplot(male) + 
+  geom_point(aes(x = Height, y = Weight))+
+  geom_smooth(aes(x = Height, y = Weight), method = lm)
+```
+```{r}
+fit_males <- lm(Weight ~ Height, data = male)
+plot(fit_males)
+```
+```{r}
+summary(fit_males)
+```
+```{r}
+male$residuals <- residuals(fit_males)
+```
+
+```{r}
+ggplot(male) + 
+  geom_histogram(aes(x = residuals))
+```
+```{r}
+ggplot(male) +
+  geom_point(aes(x=Height, y=residuals))+
+  geom_hline(yintercept = 0, color = 'red', linetype = 'dashed')
+```
+```{r}
+cor(male$Height, male$Weight)
+```
+A male is 190 cm tall, now we can predict their weight
+
+```{r}
+summary(fit_males)$coefficients[1] + summary(fit_males)$coefficients[2] * 190
+
+```
+
+
+# Multiple Regression
+```{r}
+library(openintro)
+```
+```{r}
+mariokart
+```
+```{r}
+colnames(mariokart)
+```
+"id"  - Not usefull
+"duration" - possible    
+"n_bids" - Possible     
+"cond" - usefull        
+"start_pr" - Possible    
+"ship_pr"  - usefull    
+"total_pr" - TO PREDICT    
+"ship_sp" - Not usefull   
+"seller_rate" - usefull
+ "stock_photo" - Possible 
+ "wheels" - Usefull      
+ "title" - Not usefull
+ 
+```{r}
+ggplot(mariokart) + 
+  geom_histogram(aes(x = total_pr))
+```
+```{r}
+mariokart %>% arrange(desc(total_pr))
+```
+ 
+```{r}
+mk <- mariokart %>% filter(total_pr < 100)
+
+```
+```{r}
+ggplot(mk) +
+  geom_histogram(aes(x = total_pr))
+```
+
+"duration" - possible    
+"n_bids" - Possible     
+"cond" - usefull        
+"start_pr" - Possible    
+"ship_pr"  - usefull    
+"seller_rate" - usefull
+ "stock_photo" - Possible 
+ "wheels" - Usefull      
+```{r}
+ggplot(mk) + 
+  geom_point(aes(x = wheels, y = total_pr))
+```
+ 
+## R^2 Backward Elimination
+```{r}
+fit <- lm(total_pr ~ duration + 
+            n_bids + 
+            cond + 
+            start_pr + 
+            #ship_pr + 
+            seller_rate + 
+            #stock_photo +
+            wheels, 
+          data = mk)
+summary(fit)
+```
+### Iteration 1
+All - 0.7671 
+### Iteration 2
+No stock photo - 0.7678 
+### Iteration 3
+No ship_pr - 0.7683
+
+```{r}
+plot(fit)
+```
+
+total_pr =  3.860e+01 
+    + duration * -1.891e-01  
+    + n_bids * 1.737e-01  
+    + condused * -4.476e+00  
+    + start_pr * 1.527e-01  
+    + seller_rate * 1.796e-05  
+    + wheels * 7.117e+00  
+    
+## Exercise
+
+airq402.txt contains information about airfares and passengers for the U.S. Domestic Routes for 4th quarter of 2002. Ryanair wants
+to break into the U.S. market with a new route in between Casper, Nebraska and San Francisco, California. Currently there are no
+commercial flights from Casper, and due to that the city is not included in the database. The distance in between two cities is
+1200 miles, and is expected to have approximately 100 passengers per week.
+
+```{r}
+flights <- readr::read_delim('airq402.txt', delim = ',')
+```
+```{r}
+colnames(flights)
+
+```
+```{r}
+flights_SFO <- flights %>% 
+  filter(City1 == 'SFO' | City2 == 'SFO')
+flights_SFO
+```
+ "Average Fare" - Response variable
+ "Distance" - YES                 
+ "Average Weekly Passengers" - YES
+ "Market Share MLA"          
+ "Market Share LPA"          
+
+```{r}
+ggplot(flights_SFO) + 
+  geom_point(aes(x = `Market Share LPA`, y = `Average Fare`))
+```
+```{r}
+fit_flights <- lm(`Average Fare` ~ Distance + 
+                    `Market Share MLA`+
+                    `Average Weekly Passengers` #+ 
+                    #`Market Share LPA`
+                    , data = flights_SFO)
+summary(fit_flights)
+```
+### Iteration 1
+All - 0.733  
+### Iteration 2
+Remove Market Share LPA - 0.7414   
+
+### Prediction
+The distance in between two cities is
+1200 miles, and is expected to have approximately 100 passengers per week.
+
+```{r}
+fit_flights$coefficients[1] + 
+  fit_flights$coefficients[2] * 1200 + 
+  fit_flights$coefficients[3] * 100
+```
+
+
+
+# Data Conversion
+## Gather and spread commands
+
+```{r}
+wide_data <- tribble(
+  ~country,  ~price2000, ~price2005, ~price2010, ~price2015,
+  'Germany', 1001, 2001,1500,1700,
+  'Denmark', 1100, 2000,1600,1800,
+  'France', 999, 2000, 1550, 1820,
+  'Austria', 1010, 2000, 1500, 1700, 
+  'UK', 1050, 1950, 1600, 1200,
+  'Norway', 1150, 2050, 1599, 1600,
+  'Poland', 900, 1500, 1000, 1500,
+)
+```
+
+```{r}
+wide_data %>% gather(year, price, -country)
+```
+
+```{r}
+wide_data %>% gather(year, price, -country) %>% spread(year, price)
+```
+```{r}
+long_data <- wide_data %>% gather(year, price, price2000:price2015)
+```
+
+```{r}
+ggplot(long_data)+
+  geom_point(aes(x = year, y = price, color = country))
+```
+```{r}
+long_data %>% spread(year, price)
+```
+```{r}
+ggplot(wide_data)+
+  geom_bar(aes(x = country, y = price2010, fill = country), stat = 'identity')
+```
+```{r}
+long_data %>% 
+  filter(year == 'price2010') %>%
+  ggplot()+
+  geom_bar(aes(x = country, y = price, fill = country), stat = 'identity')
+```
+## Joins
+
+```{r}
+library(gapminder)
+```
+
+
+```{r}
+gapminder
+```
+
+```{r}
+country_population <- gapminder %>% filter(year == 1987) %>%  select(country, pop)
+```
+```{r}
+country_continent <- gapminder %>% select(country, continent) %>%  unique()
+```
+
+```{r}
+country_population %>% left_join(country_continent, by = 'country')
+```
+```{r}
+#country_population %>% left_join(country_continent, by = c('CTR' = 'country'))
+```
+
+## String operations
+
+str_view
+
+```{r}
+x <- c('one', 'lamp', 'table', 'tea', 'mug', 'couch', 'candle', 'spring')
+```
+
+```{r}
+str_view(x, 'e')
+```
+```{r}
+str_view(x, 'c...')
+```
+```{r}
+str_view(x, 'l..p')
+```
+```{r}
+str_view(x, '.n')
+```
+```{r}
+str_view(x, 't.*')
+```
+```{r}
+
+```
+
+
+
+

@@ -1,0 +1,237 @@
+---
+title: "tidy_data_2.0"
+author: "E. Pastucha"
+date: "4/8/2020"
+output: pdf_document
+---
+
+```{r}
+library(tidyverse)
+```
+
+# Gather & Spread commands
+
+```{r}
+wide_data <- tribble(
+  ~country, ~price2000, ~price2005, ~price2010, ~price2015, 
+  'Germany', 1001, 2001, 1500, 1700,
+  'Denmark', 1100, 2000, 1600, 1800,
+  'France', 999, 2000, 1550, 1820,
+  'Austria', 1010, 2000, 1500, 1700,
+  'UK', 1050, 1950, 1600, 1200,
+  'Norway', 1150, 2050, 1599, 1600,
+  'Poland', 900, 1500, 1000, 1500,
+)
+```
+
+```{r}
+wide_data %>% gather(year, price, -country)
+```
+
+```{r}
+wide_data %>% gather(year, price, price2000, price2005, price2010, price2015)
+```
+
+```{r}
+long_data <- wide_data %>%  gather(year, price, price2000:price2015)
+```
+
+```{r}
+ggplot(long_data) + 
+  geom_point(aes(x = year, y = price, color = country))
+```
+
+```{r}
+long_data %>% spread(year, price)
+```
+
+```{r}
+ggplot(wide_data) + 
+  geom_bar(aes(x = country, y = price2010, fill = country), stat = 'identity')
+```
+
+```{r}
+long_data %>% 
+  filter(year == 'price2010') %>% 
+  ggplot()+
+  geom_bar(aes(x = country, y = price, fill = country), stat = 'identity')
+```
+
+```{r}
+long_data
+```
+
+```{r}
+wide_data 
+```
+
+# Joins
+
+```{r}
+library(gapminder)
+```
+
+```{r}
+gapminder
+```
+
+```{r}
+country_population <- gapminder %>% filter(year == 1987) %>% select(country, pop)
+```
+
+```{r}
+country_continent <- gapminder %>% select(country, continent) %>% unique()
+```
+
+```{r}
+country_population %>% left_join(country_continent, by = 'country')
+```
+
+```{r}
+colnames(country_population) <- c('CTR', 'POP')
+```
+
+
+```{r}
+country_population
+```
+
+```{r}
+country_population %>% left_join(country_continent, by = c('CTR' = 'country'))
+```
+
+# String operations
+
+str_view
+
+```{r}
+(x <- c('one', 'lamp', 'table', 'tea', 'mug', 'couch', 'candle', 'spring'))
+```
+
+```{r}
+str_view(x, 'e')
+```
+
+```{r}
+str_view(x, 'c...')
+```
+```{r}
+str_view(x, 'l..p')
+```
+
+```{r}
+str_view(x, '.n')
+```
+```{r}
+str_view(x, 't.*')
+```
+
+```{r}
+country_continent %>% mutate(country = str_replace_all(country, 'ia', 'to'))
+```
+
+
+```{r}
+country_continent %>% filter(str_detect(country, 'ia'))
+```
+```{r}
+country_continent %>% filter(str_detect(country, 'ia$'))
+```
+
+```{r}
+country_continent %>% filter(str_detect(country, 'B.*a$'))
+```
+
+# Practical example
+
+market-prices-vegetable-products_en.csv
+country_codes.csv
+
+```{r}
+food <- readr::read_csv('market-prices-vegetable-products_en.csv')
+```
+
+```{r}
+ctr_cd <- readr::read_csv('country_codes.csv')
+```
+
+```{r}
+garlic <- food %>% 
+  filter(`Product desc`== 'Garlic') %>% 
+  select(-Category, -`Sector code`, 
+         -`Product code`, -`Product Brief Description`, 
+         -`Unit`, -`Product desc`)
+```
+
+```{r}
+garlic <- garlic %>% separate(Period, into=c('year', 'month'), sep = 4)
+```
+
+```{r}
+garlic %>% 
+  filter(Country == 'EU') %>% 
+  group_by(year) %>% 
+  summarise(mean_price = mean(`MP Market Price`)) %>% 
+  ggplot() + 
+  geom_point(aes(x = year, y = mean_price))
+```
+
+```{r}
+garlic %>% 
+  filter(Country == 'EU') %>% 
+  group_by(year) %>% 
+  summarise(mean_price = mean(`MP Market Price`)) %>% 
+  ggplot() + 
+  geom_line(aes(x = as.numeric(year), y = mean_price))
+```
+
+```{r}
+garlic %>% 
+  filter(Country == 'EU') %>% 
+  group_by(month) %>% 
+  summarise(mean_price = mean(`MP Market Price`)) %>% 
+  ggplot() + 
+  geom_point(aes(x = month, y = mean_price))
+```
+
+```{r}
+colnames(garlic)
+```
+
+```{r}
+colnames(ctr_cd)
+```
+
+```{r}
+ctr_cd %>% filter(str_detect(Code, 'EU'))
+```
+
+```{r}
+ctr_cd <- rbind(ctr_cd, c('European Union', 'EU'))
+```
+
+```{r}
+garlic <- garlic %>% left_join(ctr_cd, by = c('Country' = 'Code'))
+```
+
+```{r}
+garlic %>% 
+  filter(month == '08') %>% 
+  group_by(Name) %>% 
+  summarize(mean_garlic_price = mean(`MP Market Price`))
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

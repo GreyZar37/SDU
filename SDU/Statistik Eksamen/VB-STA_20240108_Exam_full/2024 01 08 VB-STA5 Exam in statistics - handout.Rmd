@@ -1,0 +1,128 @@
+---
+title: "2024 01 08 VB-STA5 Exam in statistics"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+Monday 8th of January, 14:00 - 18:00.
+
+The exam set consists of 3 main exercises with 9 sub exercises in total. 
+
+Each sub exercise is weighted equally when grading the hand ins.
+
+```{r echo=FALSE}
+suppressPackageStartupMessages(library(tidyverse))
+```
+
+
+\pagebreak
+
+# 1. Math and Statistics exam performance
+
+Dataset *data/students_exam_performance.csv* contains information about students that participated both in Mathematics and Statistics class.
+
+a) Recreate the plot:
+```{r}
+students <- readr::read_csv('data/students_exam_performance.csv')
+colnames(students)
+```
+
+
+```{r, echo = FALSE, message=FALSE}
+
+ggplot(students)+
+  geom_boxplot(aes(x=`statistics_score`, y=major))+
+  labs(x='Statistics Exam Scores', y='Major', title ='Results of Statistics exam', subtitle ='Divided according to major')
+```
+
+b) Describe the plot.
+
+The plot is a box plot showing the max, min and median. As we can see the Mathematics and Statistics Major show the best results inside the Statistics exam. While social sciences show the lowest average score. It shows a correlation between majors that focuses on mathematics and research, which has the best score.
+
+
+c) Check whether there is a significant difference between a Mathematics Exam score for *Economics and Finance* major students with minor in *Mathematics and Statistics*, and *Economics and Finance* major students with other minors.  Form hypothesis, check for conditions, and conduct a statistical test.    
+
+We will conduct a Difference of mean test.
+
+$H_0$: There is a significant mean difference between Exam score: $p_1 = p_2$
+
+$H_a$: There is no significant mean difference between Exam score: $p_1 \neq p_2$
+
+$\alpha = 0.05$
+
+
+Condition check
+
+```{r}
+students_b_m <- students %>% 
+  filter(major =='Economics and Finance') %>% 
+  filter(minor == 'Mathematics and Statistics')
+students_b_nm <- students %>% 
+  filter(major =='Economics and Finance') %>% 
+  filter(minor != 'Mathematics and Statistics')
+```
+
+```{r}
+ggplot(students_b_m)+
+  geom_histogram(aes(x= math_score))
+```
+```{r}
+ggplot(students_b_nm)+
+  geom_histogram(aes(x= math_score))
+```
+```{r}
+t.test(students_b_m$math_score, students_b_nm$math_score)
+
+```
+
+Draw a conclusion
+
+
+\pagebreak
+
+# 2.Childs seatbelt - car seat legislation
+
+The dataset *data/CarSeatLegislation.csv* contains information about car accidents with children passengers. 
+
+a) Present the number and proportion of 'No Injury' accidents divided according to the implemented restraint (protection). *The example shows similar table, but for 'Incapacitating' injury*
+
+```{r, echo = FALSE, message=FALSE}
+accidents <- readr::read_csv("data/CarSeatLegislation.csv")
+accidents %>% filter(Injury == 'Incapacitating') %>% group_by(Restraint) %>% tally() %>% mutate(Proportion = n/sum(n)) %>% knitr::kable()
+```
+
+
+b) Is there a correlation in between type of injury and implemented restraint? Form hypothesis, check for conditions, and conduct a statistical test.  
+
+```{r, echo = FALSE}
+tribble(~'Injury', ~'No Restraint', ~'Car Seat', ~'Lap and Shoulder Belt', ~'Lap-Only Belt',
+        'Fatal', 6201, 1241, 978, 772,
+        'Incapacitating', 6645, 1136, 1088, 1103,
+        'Non-Incapacitating', 468, 1610, 1233, 1190,
+        'Possible Injury', 1881, 1111, 772, 683,
+        'No Injury', 1769, 1532, 974, 871) %>% knitr::kable()
+```
+
+
+# 3.Wild blueberries yield prediction
+
+Three datasets about wild blueberry farming are provided: 
+
+* *data/blueberries_insects.csv* contains information about pollinating insects presence
+
+* *data/blueberries_weather.csv* contains information about weather (temperature and rain)
+
+* *data/blueberries_yield.csv* contains information about size of the fruit, seeds, and final yield. 
+
+a) Join all three datasets.
+
+b) Which variables have statistically significant influence on the blueberry yield? Create multiple regression model and tune it.
+
+c) What should be satisfied for model (3b) to be valid. Check if the model you created is valid?
+
+d) Construct a 95% confidence interval for the multiplication parameter of the '*seeds*' variable.
+
+

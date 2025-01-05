@@ -1,0 +1,237 @@
+---
+title: "Data Visualization"
+author: "E.Pastucha"
+date: "2024-07-12"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(tidyverse)
+```
+
+# Data sets
+
+IRIS, MPG
+
+```{r}
+head(iris, 5)
+nrow(iris)
+```
+
+```{r}
+head(mpg, 5)
+nrow(mpg)
+```
+
+# Scatter plot
+
+```{r}
+ggplot(data = iris) + 
+  geom_point(mapping = aes(x = Petal.Length, y = Petal.Width, color = Species)) + 
+  labs(x = 'Petal Length [cm]',
+       y = 'Petal Width [cm]',
+       color = 'Iris Species',
+       title = 'Iris flowers - Petal Length vs Petal Width', 
+       subtitle = 'Colored by Species')
+```
+
+```{r}
+ggplot(data = iris) + 
+  geom_point(mapping = aes(x = Petal.Length, y = Petal.Width, 
+                           #shape = Species,
+                           #size = Species
+                           color = Species)) + 
+  labs(x = 'Petal Length [cm]',
+       y = 'Petal Width [cm]',
+       size = 'Iris Species',
+       title = 'Iris flowers - Petal Length vs Petal Width', 
+       subtitle = 'Colored by Species') + 
+  coord_fixed(ratio = 1)
+```
+
+```{r}
+ggplot(data = iris) + 
+  geom_point(mapping = aes(x = Petal.Length, y = Petal.Width, 
+                           #shape = Species,
+                           #size = Species
+                           color = Species)) + 
+  labs(x = 'Petal Length [cm]',
+       y = 'Petal Width [cm]',
+       size = 'Iris Species',
+       title = 'Iris flowers - Petal Length vs Petal Width', 
+       subtitle = 'Colored by Species') + 
+  coord_fixed(ratio = 1) + 
+  geom_smooth(mapping = aes(x = Petal.Length, y = Petal.Width), method = lm)
+```
+
+```{r}
+ggplot(data = iris) + 
+  geom_point(mapping = aes(x = Petal.Length, y = Petal.Width, 
+                           color = Species)) + 
+  geom_smooth(mapping = aes(x = Petal.Length, y = Petal.Width), method = lm)+ 
+  geom_smooth(mapping = aes(x = Petal.Length, y = Petal.Width, color = Species), method = lm)
+```
+
+# Facet wrap and facet grid
+
+```{r}
+ggplot(data = iris) + 
+  geom_point(mapping = aes(x = Petal.Length, y = Petal.Width)) +
+  facet_wrap(~Species)
+```
+
+```{r}
+ggplot(data = mpg) + 
+  geom_point(mapping = aes(x = cty, y = displ)) + 
+  facet_grid(class~factor(cyl))
+```
+
+# Naming
+
+
+```{r}
+ggplot(iris) + 
+  geom_point(aes(Petal.Length, Petal.Width, 
+                           #shape = Species,
+                           #size = Species
+                           color = Species)) + 
+  labs(x = 'Petal Length [cm]',
+       y = 'Petal Width [cm]',
+       size = 'Iris Species',
+       title = 'Iris flowers - Petal Length vs Petal Width', 
+       subtitle = 'Colored by Species') + 
+  coord_fixed(ratio = 1)
+```
+
+# Box Plots
+
+```{r}
+ggplot(iris) + 
+  geom_boxplot(mapping = aes(y = Species,
+                             x = Petal.Length,
+                             fill = Species),
+               alpha = 0.2,
+               color = 'darkred') + 
+  labs(x = 'Petal Length [cm]', 
+       y = 'Iris Species')
+```
+
+```{r}
+ggplot(mpg) + 
+  geom_boxplot(aes(x = class, y = hwy, color = class), show.legend = FALSE)
+```
+
+# Histogram and Density Plot
+
+```{r}
+ggplot(iris) + 
+  geom_histogram(aes(x = Petal.Length, fill = Species), binwidth = 0.2, position = 'dodge')
+```
+
+```{r}
+versicolor <- filter(iris, Species == 'versicolor')
+```
+
+```{r}
+ggplot(versicolor) + 
+  geom_histogram(aes(x = Petal.Length), color = 'black', fill ='limegreen', binwidth = 0.1)
+```
+```{r}
+ggplot(versicolor) + 
+  geom_density(aes(x = Petal.Length), fill = 'yellow', 
+               alpha = 0.3, 
+               color = 'red')
+```
+
+```{r}
+ggplot(versicolor) + 
+  geom_histogram(aes(x = Petal.Length, y = after_stat(density)), 
+                 fill = 'limegreen', binwidth = 0.1)+
+  geom_density(aes(x = Petal.Length), color = 'red', fill = 'yellow', alpha = 0.3)
+```
+
+```{r}
+ggplot(iris) + 
+  geom_density(aes(x = Petal.Length, fill = Species), alpha = 0.3)
+```
+```{r}
+ggplot(iris) + 
+  geom_density(aes(x = Petal.Length, fill = Species), alpha = 0.3) + 
+  geom_histogram(aes(x = Petal.Length, y = after_stat(density), fill = Species), 
+                 alpha = 0.3)
+```
+
+# Empirical cumulative distribution function - stat_ecdf
+
+```{r}
+ggplot(iris) + 
+  stat_ecdf(mapping = aes(x = Sepal.Length, color = Species))
+```
+
+# Barplots
+
+```{r}
+ggplot(mpg) + 
+  geom_bar(mapping = aes(x = class, fill = manufacturer), color = 'black')
+```
+
+```{r}
+library(viridis)
+```
+
+
+
+```{r}
+ggplot(mpg) + 
+  geom_bar(mapping = aes(x = class, fill = manufacturer), color = 'black') + 
+  scale_fill_viridis(discrete = TRUE)
+```
+
+```{r}
+ggplot(mpg) + 
+  geom_bar(mapping = aes(x = manufacturer, fill = class), color = 'black') + 
+  scale_fill_brewer(palette = 'YlOrBr') + 
+  coord_flip()
+```
+
+BrBG, PiYG, PRGn, PuOr, RdBu, RdGy, RdYlBu, RdYlGn, Spectral
+Accent, Dark2, Paired, Pastel1, Pastel2, Set1, Set2, Set3
+Blues, BuGn, BuPu, GnBu, Greens, Greys, Oranges, 
+OrRd, PuBu, PuBuGn, PuRd, Purples, RdPu, Reds, YlGn, YlGnBu, YlOrBr, YlOrRd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

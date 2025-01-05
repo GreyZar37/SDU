@@ -1,0 +1,125 @@
+---
+title: "2024 02 21 VB-STA5 Reexam in Statistics"
+author: "Oleg Sechovcov"
+date: "2025-01-05"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+
+#1. Bananas
+Dataset data/bananas_dataset.csv contains information about five most popular banana varieties in the
+world.
+
+```{r}
+bananas <- readr::read_csv('data/banana_dataset.csv')
+colnames(bananas)
+```
+
+#a) Recreate the plot
+```{r}
+ggplot(bananas)+
+  geom_boxplot(mapping = aes(x=Species, y=Weight_g, fill = Origin), alpha = 0.1)+
+  labs(x='Banana Species', y='Weight [g]', title='Bananas', subtitle = 'Five most popular varieties in the world')
+```
+
+##b) Describe the plot. Include description of what is presented, how it is presented, is there grouping, andwhat information about those groups can be read.
+
+* The bananas that weight the most ranging from 80 to 150 has Cavendish origin. 
+* Some Banana Species has another categorical variable in play like the shape
+* Pisang Raja, only has one shape with median around 30
+* Apple bannana has three different shapes
+
+##c) For bananas grown in Southeast Asia, present the average length and average weight divided according to Species.
+The example shows similar table, but for ‘Australia’
+
+```{r}
+bananas %>%
+  group_by(Species) %>% 
+  filter(Origin == 'Southeast Asia')%>% 
+  summarise('Average Length [cm]' = mean(Length_cm), 'Average Weight [g]' = mean(Weight_g)) %>% 
+  head(5)  %>% 
+  arrange(desc('Average Weight [g]')) %>% knitr::kable()
+```
+##d) Banana plant originated in Southeast Asia, however Ecuador is the biggest producer of bananas in the world. Select a relevant statistical test and use it to test whether average Ecuadorian (South American) Cavendish bananas are bigger/heavier than average Southeast Asia Cavendish bananas. Form hypothesis, check for conditions, conduct a statistical test, and form conclusions.
+
+We will preform the difference of mean t-test
+
+H_0 The average Ecuadorian (South American) Cavendish bananas are significant bigger/heavier than average Southeast Asia Cavendish bananas.
+H_1 There is no significant difference in weight mean between the Ecuadorian (South American) Cavendish bananas and Southeast Asia Cavendish bananas
+
+```{r}
+Banana_Ecuadorian_American <- bananas %>% 
+  filter(Species == 'Cavendish') %>% 
+  filter(Origin == 'South America')
+
+Banana_Southeast_Asia <- bananas %>% 
+   filter(Species == 'Cavendish') %>% 
+  filter(Origin == 'Southeast Asia')
+```
+
+```{r}
+ggplot(Banana_Ecuadorian_American)+
+  geom_histogram(aes(x=Weight_g))
+```
+```{r}
+ggplot(Banana_Southeast_Asia)+
+  geom_histogram(aes(x=Weight_g))
+```
+```{r}
+t.test(Banana_Ecuadorian_American$Weight_g, Banana_Southeast_Asia$Weight_g)
+```
+#2. USA population in 2020
+```{r}
+US_state_capitol_population <- readr::read_csv('data/US_state_capitol_population_2020.csv')
+colnames(US_state_capitol_population)
+head(US_state_capitol_population, 5)
+```
+#a)Select a relevant statistical test, and use it to check, whether Race distribution of Atlanta populationis following the same distribution as Race distribution of the entire country. Form hypothesis, check for conditions, conduct a statistical test, and form conclusions.
+
+Chi square test for goodness of fit
+
+H_0 There is a significant distribution of Atlanta populations based on race distribution of the entire country
+H_1 There is no significant distribution of Atlanta populations based on race distribution of the entire country
+
+```{r}
+
+whole_population <- sum(US_state_capitol_population$USA)
+US_state_capitol_population %>% select(Race, USA) %>% mutate(proportion = USA/whole_population)
+
+
+Atlanta_all <- sum(US_state_capitol_population$Atlanta)
+Atlanta_pop <- US_state_capitol_population %>% 
+  select('Race',USA, Atlanta) %>% 
+  mutate(proportion = USA/whole_population) %>% 
+  mutate(expected = proportion*Atlanta_all)
+```
+
+```{r}
+chisq.test(Atlanta_pop$Atlanta, p=Atlanta_pop$proportion, rescale.p = FALSE)
+```
+We reject null hypothesis in favor of the alternative. The racial distribution of Atlanta’s population is
+statistically significantly different from racial distribution of the entire USA.
+
+#3. Airfares
+
+```{r}
+airq412 <- readr::read_csv('data/airq412.csv')
+```
+```{r}
+colnames(airq412)
+```
+```{r}
+fit <- lm(`Average Fare` ~ Distance, data = airq412)
+summary(fit)
+```
+```{r}
+plot(fit)
+```
+```{r}
+fit$coefficients[1] + 2260*fit$coefficients[2]
+```
+
