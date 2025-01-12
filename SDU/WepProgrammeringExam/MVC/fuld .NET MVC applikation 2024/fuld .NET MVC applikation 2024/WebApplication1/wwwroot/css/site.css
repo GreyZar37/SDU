@@ -1,0 +1,82 @@
+:root {
+    --background-teal: #008080;
+    --dialog-light-gray: #C0C0C0;
+    --dialog-dark-gray: #808080;
+    --top-bar-blue: #000080;
+    --text-black: #000000;
+    --button-gray: #E0E0E0;
+}
+
+@font-face {
+    font-family: 'OldFont'; /* Replace with your font name */
+    src: url('/Fonts/VCR_OSD_MONO_1.001.ttf') format('truetype'); /* Adjust the path as necessary */
+    font-weight: normal;
+    font-style: normal;
+}
+
+
+
+
+html {
+    font-size: 14px;
+}
+
+@media (min-width: 768px) {
+    html {
+        font-size: 16px;
+    }
+}
+
+.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
+  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+    margin-bottom: 60px;
+    background-color: var(--dialog-light-gray);
+    font-family: OldFont;
+}
+
+.container-fluid{
+    background-color: var(--background-teal);
+}
+
+.home-title-container {
+    background-color: var(--top-bar-blue);
+    color: var(--text-black);
+    padding: 2px;
+    padding-left : 20px;
+    color: white;
+}
+
+p {
+    border-radius: 1px; /* Rounded corners */
+    box-shadow: inset 1px 1px 1px var(--dialog-dark-gray), /* Inset light shadow */
+    inset -1px -1px 1px #a0a0a0; /* Inset dark shadow */
+
+    padding: 10px;
+}
+.forums-containers {
+    border-radius: 1px; /* Rounded corners */
+    box-shadow: inset 2px 2px 2px var(--dialog-dark-gray), /* Inset light shadow */
+    inset -1px -1px 1px #a0a0a0; /* Inset dark shadow */
+    padding: 10px;
+
+    margin-top : 30px;
+}
+
+.containers{
+    display: flex;
+    justify-content: space-around;
+}
+
+.add-image {
+    height: 820px;
+    margin: 20px;
+    object-fit: cover;
+}

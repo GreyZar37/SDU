@@ -1,0 +1,27 @@
+ /* CSS Challenges */
+
+  /* Challenge 1: Hover Effects */
+button{
+    color: white;
+    transition: color 0.1s;
+}
+
+button:hover{
+    color: aqua;
+}
+
+  /* Challenge 2: Center an Element */
+
+  div {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /*Challenge 3: Responsive Design*/
+
+  @media only screen and (max-width: 600px) {
+    html {
+        font-size: 62.5%; /* Converts 1rem to 10px for easier scaling */
+    }
+}
