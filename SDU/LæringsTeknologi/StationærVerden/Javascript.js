@@ -204,7 +204,7 @@ document.addEventListener("DOMContentLoaded", () => {
     if (slot) {
       const addedComponentDiv = slot.querySelector("#added-component");
       addedComponentDiv.innerHTML = `
-        <div style="display: flex; align-items: center; gap: 10px;">
+        <div class ="added-part" style="display: flex; align-items: center; gap: 10px;">
           <img src="${component.image}" alt="${component.name}" style="width: 80px; height: auto; border-radius: 4px;">
           <span>${component.name}</span>
           <button onclick="removeFromBuild('${type}')">Remove</button>
