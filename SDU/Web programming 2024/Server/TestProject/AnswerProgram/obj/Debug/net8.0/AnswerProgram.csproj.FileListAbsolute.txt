@@ -1,0 +1,15 @@
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\obj\Debug\net8.0\AnswerProgram.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\obj\Debug\net8.0\AnswerProgram.AssemblyInfoInputs.cache
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\obj\Debug\net8.0\AnswerProgram.AssemblyInfo.cs
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\obj\Debug\net8.0\AnswerProgram.csproj.CoreCompileInputs.cache
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\obj\Debug\net8.0\AnswerProgram.sourcelink.json
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\bin\Debug\net8.0\AnswerProgram.exe
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\bin\Debug\net8.0\AnswerProgram.deps.json
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\bin\Debug\net8.0\AnswerProgram.runtimeconfig.json
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\bin\Debug\net8.0\AnswerProgram.dll
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\bin\Debug\net8.0\AnswerProgram.pdb
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\obj\Debug\net8.0\AnswerProgram.dll
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\obj\Debug\net8.0\refint\AnswerProgram.dll
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\obj\Debug\net8.0\AnswerProgram.pdb
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\obj\Debug\net8.0\AnswerProgram.genruntimeconfig.cache
+C:\Users\olegs\Documents\SDU\SDU\Web programming 2024\Server\TestProject\AnswerProgram\obj\Debug\net8.0\ref\AnswerProgram.dll
