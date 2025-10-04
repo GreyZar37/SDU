@@ -1,0 +1,140 @@
+﻿
+body{
+    display: block;
+    margin: 0;
+    background-color: #000000;
+}
+
+
+/* Game view */
+.finish_row{
+    background-image: url("Images/grass.png");
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    
+
+    height: 50px;
+}
+.grass_row{
+    
+    background-image: url("Images/grass.png");
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    
+    height: 50px;
+}
+
+.start_row{
+    background-image: url("Images/grass.png");
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    height: 100px;
+}
+
+
+.road_row {
+    height: 150px;
+}
+
+.road{
+    background-image: url("Images/Road.png");
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    height: 50px;
+}
+
+.water_row{
+    height: 150px;
+}
+.water{
+    background-image: url("Images/water.png");
+    background-repeat: repeat;
+    background-size: 50px 50px;
+    
+    height: 50px;
+}
+
+/* Player view */
+
+
+#frog{
+    background-image: url("Images/Frog.png");
+    background-repeat: no-repeat;
+    background-size: 50px 50px;
+    height: 50px;
+    width: 50px;
+    z-index: 10;
+    position: absolute;
+    
+    will-change: transform;
+    transition: transform 90ms ease;
+}
+
+.car{
+    background-repeat: no-repeat;
+    background-size: 64px 32px;
+    height: 50px;
+    width: 50px;
+    position: absolute;
+}
+
+.log{
+    background-repeat: no-repeat;
+    background-size: 64px 16px;
+    height: 16px;
+    width: 64px;
+    position: absolute;
+}
+
+#log_small{
+    background-image: url("Images/Log.png");
+    top: 170px;
+}
+
+#log_large{
+    background-image: url("Images/Log.png");
+    top: 120px;
+
+    background-size: 128px 16px;
+    height: 16px;
+    width: 128px;
+}
+
+#log_medium {
+    background-image: url("Images/Log.png");
+    top: 70px;
+}
+
+#blue_car{
+    background-image: url("Images/CarBlue.png");
+    left: 220px;
+    top: 310px;
+}
+#orange_car{
+    background-image: url("Images/CarOrange.png");
+    left: 0;
+    top: 360px;
+}
+
+#red_car{
+    background-image: url("Images/CarRed.png");
+    left: 0;
+    top: 260px;
+}
+
+.stats{
+    color: white;
+    
+    font-family: Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+/* Add/adjust this */
+.game{
+    position: relative;
+    width: 700px;   
+    height: 500px;    
+    margin: 16px auto;
+    outline: 2px solid 
+}
+.game:focus{ outline: 3px solid #7bd; outline-offset: 3px; }

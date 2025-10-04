@@ -1,0 +1,15 @@
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\bin\Debug\net8.0\Opgave Primære.exe
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\bin\Debug\net8.0\Opgave Primære.deps.json
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\bin\Debug\net8.0\Opgave Primære.runtimeconfig.json
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\bin\Debug\net8.0\Opgave Primære.dll
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\bin\Debug\net8.0\Opgave Primære.pdb
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\obj\Debug\net8.0\Opgave Primære.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\obj\Debug\net8.0\Opgave Primære.AssemblyInfoInputs.cache
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\obj\Debug\net8.0\Opgave Primære.AssemblyInfo.cs
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\obj\Debug\net8.0\Opgave Primære.csproj.CoreCompileInputs.cache
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\obj\Debug\net8.0\Opgave Primære.sourcelink.json
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\obj\Debug\net8.0\Opgave Primære.dll
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\obj\Debug\net8.0\refint\Opgave Primære.dll
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\obj\Debug\net8.0\Opgave Primære.pdb
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\obj\Debug\net8.0\Opgave Primære.genruntimeconfig.cache
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Opgave Primære\Opgave Primære\obj\Debug\net8.0\ref\Opgave Primære.dll

@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v8.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v8.0": {
+      "Opgave Primære/1.0.0": {
+        "runtime": {
+          "Opgave Primære.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Opgave Primære/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
