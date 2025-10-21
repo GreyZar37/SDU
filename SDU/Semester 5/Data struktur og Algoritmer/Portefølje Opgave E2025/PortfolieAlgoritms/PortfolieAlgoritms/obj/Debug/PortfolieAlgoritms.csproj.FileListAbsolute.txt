@@ -4,3 +4,9 @@ C:\Users\olegs\Documents\SDU - Copy\SDU\Semester 5\Data struktur og Algoritmer\P
 C:\Users\olegs\Documents\SDU - Copy\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave E2025\PortfolieAlgoritms\PortfolieAlgoritms\obj\Debug\PortfolieAlgoritms.csproj.CoreCompileInputs.cache
 C:\Users\olegs\Documents\SDU - Copy\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave E2025\PortfolieAlgoritms\PortfolieAlgoritms\obj\Debug\PortfolieAlgoritms.exe
 C:\Users\olegs\Documents\SDU - Copy\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave E2025\PortfolieAlgoritms\PortfolieAlgoritms\obj\Debug\PortfolieAlgoritms.pdb
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave E2025\PortfolieAlgoritms\PortfolieAlgoritms\bin\Debug\PortfolieAlgoritms.exe
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave E2025\PortfolieAlgoritms\PortfolieAlgoritms\bin\Debug\PortfolieAlgoritms.pdb
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave E2025\PortfolieAlgoritms\PortfolieAlgoritms\obj\Debug\PortfolieAlgoritms.csproj.AssemblyReference.cache
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave E2025\PortfolieAlgoritms\PortfolieAlgoritms\obj\Debug\PortfolieAlgoritms.csproj.CoreCompileInputs.cache
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave E2025\PortfolieAlgoritms\PortfolieAlgoritms\obj\Debug\PortfolieAlgoritms.exe
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave E2025\PortfolieAlgoritms\PortfolieAlgoritms\obj\Debug\PortfolieAlgoritms.pdb

@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="78c72375-48ae-4e7c-b46c-2fd1d8823c2a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Calculator/Calculator/Index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Calculator/Calculator/calculator.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Calculator/Calculator/calculator.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Frogger/Project/Frogger.index.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Frogger/Project/Images/CarBlue.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Frogger/Project/Images/CarOrange.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Frogger/Project/Images/CarRed.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Frogger/Project/Images/Frog.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Frogger/Project/Images/Grass.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Frogger/Project/Images/Log.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Frogger/Project/Images/Road.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Frogger/Project/Images/Water.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Frogger/Project/script.js" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../Web Programmering/Excersice/Frogger/Project/stylesheet.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../../../Web programming 2024/Server/AvaloniaApplication1/global.json" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../../.." />
+  </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 6
+}]]></component>
+  <component name="ProjectId" id="32usJkYUQ9UcQJF1bK2zRJPnup8" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "main",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "stardust.markdown.MarkdownSplitEditorSuppressor:keyList": []
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="78c72375-48ae-4e7c-b46c-2fd1d8823c2a" name="Changes" comment="" />
+      <created>1758281723984</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1758281723984</updated>
+      <workItem from="1758281725580" duration="58000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityProjectConfiguration" hasMinimizedUI="false" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.OperationCanceledException" breakIfHandledByOtherCode="false" displayValue="System.OperationCanceledException" />
+          <option name="timeStamp" value="1" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.Tasks.TaskCanceledException" breakIfHandledByOtherCode="false" displayValue="System.Threading.Tasks.TaskCanceledException" />
+          <option name="timeStamp" value="2" />
+        </breakpoint>
+        <breakpoint enabled="true" type="DotNet_Exception_Breakpoints">
+          <properties exception="System.Threading.ThreadAbortException" breakIfHandledByOtherCode="false" displayValue="System.Threading.ThreadAbortException" />
+          <option name="timeStamp" value="3" />
+        </breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>
