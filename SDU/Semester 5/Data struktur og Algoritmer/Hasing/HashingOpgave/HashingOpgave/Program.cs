@@ -2,8 +2,8 @@
 using System.Collections;
 
 
-/* ====Opgave 1====
-int[] tabel =
+// ====Opgave 1====
+public int[] tabel =
 [
     22, 0, 0, 0,0,5,16,0,0,27,0
 ];
@@ -25,7 +25,7 @@ Console.WriteLine(HashFunction(27, tabel.Length));
 int HashFunction(int x, int tabelSize)
 {
     return x % tabelSize;
-}*/
+}
 
 /*
 // ====Opgave 2====
@@ -126,7 +126,7 @@ for (int t = 0; t < trials; t++)
 */
 
 //====Multiple Choice====
-
+/*
 int N = 10007, trials = 200;
 var rng = new Random();
 var bins = new int[N];
@@ -147,4 +147,4 @@ for (int t = 0; t < trials; t++)
         if (bins[i] > maxLoad) maxLoad = bins[i];
 
     Console.WriteLine($"Trial {t+1}: max = {maxLoad}");
-}
+}*/

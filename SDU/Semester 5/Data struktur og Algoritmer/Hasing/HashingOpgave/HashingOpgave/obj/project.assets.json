@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Semester 5\\Data struktur og Algoritmer\\Øvelser i Hasing\\HashingOpgave\\HashingOpgave\\HashingOpgave.csproj",
+      "projectUniqueName": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Semester 5\\Data struktur og Algoritmer\\Hasing\\HashingOpgave\\HashingOpgave\\HashingOpgave.csproj",
       "projectName": "HashingOpgave",
-      "projectPath": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Semester 5\\Data struktur og Algoritmer\\Øvelser i Hasing\\HashingOpgave\\HashingOpgave\\HashingOpgave.csproj",
+      "projectPath": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Semester 5\\Data struktur og Algoritmer\\Hasing\\HashingOpgave\\HashingOpgave\\HashingOpgave.csproj",
       "packagesPath": "C:\\Users\\olegs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Semester 5\\Data struktur og Algoritmer\\Øvelser i Hasing\\HashingOpgave\\HashingOpgave\\obj\\",
+      "outputPath": "C:\\Users\\olegs\\Documents\\SDU - Copy\\SDU\\Semester 5\\Data struktur og Algoritmer\\Hasing\\HashingOpgave\\HashingOpgave\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\olegs\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -67,7 +67,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.410/PortableRuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.403/PortableRuntimeIdentifierGraph.json"
       }
     }
   }
