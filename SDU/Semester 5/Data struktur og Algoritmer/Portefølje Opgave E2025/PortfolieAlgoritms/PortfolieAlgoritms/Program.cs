@@ -1,62 +1,43 @@
 ﻿ 
 using System;
+using System.Collections.Generic;
 
 namespace PortfolieAlgoritms
 {
     internal class Program
     {
+       
         public static void Main(string[] args)
         {
-            int[] numbers = { 24, 56, 22, 11, 65, 89, 3, 44, 87, 910, 45, 35, 98 };
-            var values = SumOfThreeNumbers(numbers);
-            foreach (var value in values)
+            int Z = 6561;
+            int[] result = PotentAlgorithm(Z);
+            
+            if (result[0] == -1 && result[1] == -1)
             {
-                Console.WriteLine(value + "\n");
+                Console.WriteLine($"No valid (x, y) found for Z={Z}");
+                return;
             }
+            Console.WriteLine($"Result for Z={Z}: x={result[0]}, y={result[1]}");
         }
 
-        private static int[] SumOfThreeNumbers(int[] numbers)
+        public static int[] PotentAlgorithm(int Z)
         {
-            int bestFirstNumber = 0, bestSecondNumber = 0, bestThirdNumber = 0, bestPowerNumber = 0;
-            int bestDiff = int.MaxValue;
-
-            for (int i = 0; i < numbers.Length - 2; i++)
+            int bestX = -1, bestY = -1;
+            for (int y = 2; y <= 10; y++)
             {
-                var fNumber = numbers[i];
-                for (int j = i + 1; j < numbers.Length - 1; j++)
-                {
-                    var sNumber = numbers[j];
-                    for (int k = j + 1; k < numbers.Length; k++)
-                    {
-                        var tNumber = numbers[k];
-                        int sum = fNumber + sNumber + tNumber;
-                        int nearestPowerOfTwo = NearestPowerOfTwo(sum);
-                        int difference = Math.Abs(nearestPowerOfTwo - sum);
+                int x = (int)Math.Round(Math.Pow(Z, 1.0 / y));
 
-                        if( difference < bestDiff)
-                        {
-                            bestDiff = difference;
-                            bestFirstNumber = fNumber;
-                            bestSecondNumber = sNumber;
-                            bestThirdNumber = tNumber;
-                            bestPowerNumber = nearestPowerOfTwo;
-                        }
+                if (Math.Pow(x, y) == Z)
+                {
+                    if (x > bestX)
+                    {
+                        bestX = x;
+                        bestY = y;
                     }
                 }
             }
-            return  new int[] { bestFirstNumber, bestSecondNumber, bestThirdNumber, bestPowerNumber };
-        }
-
-        private static int NearestPowerOfTwo(int number)
-        {
-
-            int power = 1;
-            while (power < number)
-            {
-                power *= 2;
-            }
-
-            return power;
+           
+            return new[] { bestX, bestY };
         }
     }
 }
