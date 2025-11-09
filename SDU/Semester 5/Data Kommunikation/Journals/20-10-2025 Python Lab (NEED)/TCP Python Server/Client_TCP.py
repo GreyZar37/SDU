@@ -1,9 +1,9 @@
-﻿
+﻿from socket import *
+import webbrowser
 
-from socket import *
-
-serverName = 'localhost'
+serverName = '127.0.0.1'
 serverPort = 11000
+fileName = 'HelloWorld.html'
 
 # Create a TCP socket
 clientSocket = socket(AF_INET, SOCK_STREAM)
@@ -11,16 +11,30 @@ clientSocket = socket(AF_INET, SOCK_STREAM)
 # Connect to the server
 clientSocket.connect((serverName, serverPort))
 
-message = input('Input lowercase sentence: ')
-clientSocket.send(message.encode())
+# Send a valid HTTP GET request
+request = f"GET /{fileName} HTTP/1.1\r\nHost: {serverName}\r\n\r\n"
+clientSocket.send(request.encode())
 
-for i in range(3):
-    wait_msg = clientSocket.recv(2048).decode()
-    print("From Server:", wait_msg)
-
-# Receive modified (uppercase) message
-modifiedMessage = clientSocket.recv(2048)
-print('From Server:', modifiedMessage.decode())
+# Receive the response
+response = b""
+while True:
+    data = clientSocket.recv(2048)
+    if not data:
+        break
+    response += data
 
 # Close the connection
 clientSocket.close()
+
+# Decode response and extract HTML body
+response_str = response.decode()
+header, _, body = response_str.partition("\r\n\r\n")
+print(f"Response header: {body}")
+
+# Save HTML to a temporary file
+output_file = "received_page.html"
+with open(output_file, "w", encoding="utf-8") as f:
+    f.write(body)
+
+print(f"Saved HTML content to {output_file}")
+webbrowser.open(output_file)
