@@ -6,38 +6,39 @@ namespace PortfolieAlgoritms
 {
     internal class Program
     {
-       
+
+
         public static void Main(string[] args)
         {
-            int Z = 6561;
-            int[] result = PotentAlgorithm(Z);
-            
-            if (result[0] == -1 && result[1] == -1)
-            {
-                Console.WriteLine($"No valid (x, y) found for Z={Z}");
-                return;
-            }
-            Console.WriteLine($"Result for Z={Z}: x={result[0]}, y={result[1]}");
-        }
+            int[] votes = { 7, 5, 3, 5, 5, 5, 6, 5, 5, 5, 7, 5 };
+            Dictionary<int, int> candidatesDic = new Dictionary<int, int>();
 
-        public static int[] PotentAlgorithm(int Z)
-        {
-            int bestX = -1, bestY = -1;
-            for (int y = 2; y <= 10; y++)
+            foreach (var vote in votes)
             {
-                int x = (int)Math.Round(Math.Pow(Z, 1.0 / y));
-
-                if (Math.Pow(x, y) == Z)
+                if (candidatesDic.ContainsKey(vote))
                 {
-                    if (x > bestX)
-                    {
-                        bestX = x;
-                        bestY = y;
-                    }
+                    candidatesDic[vote]++;
+                }
+                else
+                {
+                    candidatesDic[vote] = 0;
                 }
             }
-           
-            return new[] { bestX, bestY };
+            
+            int winner = CheckVotes(candidatesDic, votes.Length);
+            Console.WriteLine("The winner is candidate: " + winner);
+        }
+        public static int CheckVotes(Dictionary<int, int> candidates, int voteLength)
+        {
+            foreach (var candidate in candidates)
+            {
+                if(candidate.Value > voteLength / 2)
+                {
+                    return candidate.Key;
+                }
+
+            }
+            return -1;
         }
     }
 }
