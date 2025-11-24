@@ -1,0 +1,15 @@
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\bin\Debug\net9.0\QuickSelect.exe
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\bin\Debug\net9.0\QuickSelect.deps.json
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\bin\Debug\net9.0\QuickSelect.runtimeconfig.json
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\bin\Debug\net9.0\QuickSelect.dll
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\bin\Debug\net9.0\QuickSelect.pdb
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\obj\Debug\net9.0\QuickSelect.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\obj\Debug\net9.0\QuickSelect.AssemblyInfoInputs.cache
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\obj\Debug\net9.0\QuickSelect.AssemblyInfo.cs
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\obj\Debug\net9.0\QuickSelect.csproj.CoreCompileInputs.cache
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\obj\Debug\net9.0\QuickSelect.sourcelink.json
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\obj\Debug\net9.0\QuickSelect.dll
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\obj\Debug\net9.0\refint\QuickSelect.dll
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\obj\Debug\net9.0\QuickSelect.pdb
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\obj\Debug\net9.0\QuickSelect.genruntimeconfig.cache
+C:\Users\olegs\Documents\SDU\SDU\Semester 5\Data struktur og Algoritmer\Quick Sort\QuickSelect\QuickSelect\obj\Debug\net9.0\ref\QuickSelect.dll
