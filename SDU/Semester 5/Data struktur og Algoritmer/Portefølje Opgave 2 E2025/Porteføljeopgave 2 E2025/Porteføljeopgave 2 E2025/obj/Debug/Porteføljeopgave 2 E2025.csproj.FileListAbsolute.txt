@@ -1,0 +1,6 @@
+C:\Users\olegs\Documents\SDU - Copy\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave 2 E2025\Porteføljeopgave 2 E2025\Porteføljeopgave 2 E2025\bin\Debug\Porteføljeopgave_2_E2025.exe
+C:\Users\olegs\Documents\SDU - Copy\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave 2 E2025\Porteføljeopgave 2 E2025\Porteføljeopgave 2 E2025\bin\Debug\Porteføljeopgave_2_E2025.pdb
+C:\Users\olegs\Documents\SDU - Copy\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave 2 E2025\Porteføljeopgave 2 E2025\Porteføljeopgave 2 E2025\obj\Debug\Porteføljeopgave 2 E2025.csproj.AssemblyReference.cache
+C:\Users\olegs\Documents\SDU - Copy\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave 2 E2025\Porteføljeopgave 2 E2025\Porteføljeopgave 2 E2025\obj\Debug\Porteføljeopgave 2 E2025.csproj.CoreCompileInputs.cache
+C:\Users\olegs\Documents\SDU - Copy\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave 2 E2025\Porteføljeopgave 2 E2025\Porteføljeopgave 2 E2025\obj\Debug\Porteføljeopgave_2_E2025.exe
+C:\Users\olegs\Documents\SDU - Copy\SDU\Semester 5\Data struktur og Algoritmer\Portefølje Opgave 2 E2025\Porteføljeopgave 2 E2025\Porteføljeopgave 2 E2025\obj\Debug\Porteføljeopgave_2_E2025.pdb
