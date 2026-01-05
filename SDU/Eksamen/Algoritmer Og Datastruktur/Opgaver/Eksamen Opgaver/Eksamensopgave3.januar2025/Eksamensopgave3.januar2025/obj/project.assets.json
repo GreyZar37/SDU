@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\olegs\\Desktop\\Eksamen\\Algoritmer Og Datastruktur\\Opgaver\\Eksamen Opgaver\\Eksamensopgave3.januar2025\\Eksamensopgave3.januar2025\\Eksamensopgave3.januar2025.csproj",
+      "projectUniqueName": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Eksamen\\Algoritmer Og Datastruktur\\Opgaver\\Eksamen Opgaver\\Eksamensopgave3.januar2025\\Eksamensopgave3.januar2025\\Eksamensopgave3.januar2025.csproj",
       "projectName": "Eksamensopgave3.januar2025",
-      "projectPath": "C:\\Users\\olegs\\Desktop\\Eksamen\\Algoritmer Og Datastruktur\\Opgaver\\Eksamen Opgaver\\Eksamensopgave3.januar2025\\Eksamensopgave3.januar2025\\Eksamensopgave3.januar2025.csproj",
+      "projectPath": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Eksamen\\Algoritmer Og Datastruktur\\Opgaver\\Eksamen Opgaver\\Eksamensopgave3.januar2025\\Eksamensopgave3.januar2025\\Eksamensopgave3.januar2025.csproj",
       "packagesPath": "C:\\Users\\olegs\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\olegs\\Desktop\\Eksamen\\Algoritmer Og Datastruktur\\Opgaver\\Eksamen Opgaver\\Eksamensopgave3.januar2025\\Eksamensopgave3.januar2025\\obj\\",
+      "outputPath": "C:\\Users\\olegs\\Documents\\SDU\\SDU\\Eksamen\\Algoritmer Og Datastruktur\\Opgaver\\Eksamen Opgaver\\Eksamensopgave3.januar2025\\Eksamensopgave3.januar2025\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\olegs\\AppData\\Roaming\\NuGet\\NuGet.Config"
