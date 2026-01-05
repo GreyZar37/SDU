@@ -1,0 +1,6 @@
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\Opgaver\Eksamen Opgaver\Reksamensopgave27.februar2025\Reksamensopgave27.februar2025\bin\Debug\Reksamensopgave27.februar2025.exe
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\Opgaver\Eksamen Opgaver\Reksamensopgave27.februar2025\Reksamensopgave27.februar2025\bin\Debug\Reksamensopgave27.februar2025.pdb
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\Opgaver\Eksamen Opgaver\Reksamensopgave27.februar2025\Reksamensopgave27.februar2025\obj\Debug\Reksamensopgave27.februar2025.csproj.AssemblyReference.cache
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\Opgaver\Eksamen Opgaver\Reksamensopgave27.februar2025\Reksamensopgave27.februar2025\obj\Debug\Reksamensopgave27.februar2025.csproj.CoreCompileInputs.cache
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\Opgaver\Eksamen Opgaver\Reksamensopgave27.februar2025\Reksamensopgave27.februar2025\obj\Debug\Reksamensopgave27.februar2025.exe
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\Opgaver\Eksamen Opgaver\Reksamensopgave27.februar2025\Reksamensopgave27.februar2025\obj\Debug\Reksamensopgave27.februar2025.pdb

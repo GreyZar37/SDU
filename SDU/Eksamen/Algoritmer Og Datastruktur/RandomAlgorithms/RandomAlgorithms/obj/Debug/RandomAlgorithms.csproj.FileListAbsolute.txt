@@ -1,0 +1,6 @@
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\RandomAlgorithms\RandomAlgorithms\bin\Debug\RandomAlgorithms.exe
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\RandomAlgorithms\RandomAlgorithms\bin\Debug\RandomAlgorithms.pdb
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\RandomAlgorithms\RandomAlgorithms\obj\Debug\RandomAlgorithms.csproj.AssemblyReference.cache
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\RandomAlgorithms\RandomAlgorithms\obj\Debug\RandomAlgorithms.csproj.CoreCompileInputs.cache
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\RandomAlgorithms\RandomAlgorithms\obj\Debug\RandomAlgorithms.exe
+C:\Users\olegs\Documents\SDU - Copy\SDU\Eksamen\Algoritmer Og Datastruktur\RandomAlgorithms\RandomAlgorithms\obj\Debug\RandomAlgorithms.pdb
