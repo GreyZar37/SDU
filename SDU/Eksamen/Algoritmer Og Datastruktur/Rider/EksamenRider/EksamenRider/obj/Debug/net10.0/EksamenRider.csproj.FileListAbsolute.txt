@@ -1,0 +1,15 @@
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\bin\Debug\net10.0\EksamenRider.exe
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\bin\Debug\net10.0\EksamenRider.deps.json
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\bin\Debug\net10.0\EksamenRider.runtimeconfig.json
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\bin\Debug\net10.0\EksamenRider.dll
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\bin\Debug\net10.0\EksamenRider.pdb
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\obj\Debug\net10.0\EksamenRider.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\obj\Debug\net10.0\EksamenRider.AssemblyInfoInputs.cache
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\obj\Debug\net10.0\EksamenRider.AssemblyInfo.cs
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\obj\Debug\net10.0\EksamenRider.csproj.CoreCompileInputs.cache
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\obj\Debug\net10.0\EksamenRider.sourcelink.json
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\obj\Debug\net10.0\EksamenRider.dll
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\obj\Debug\net10.0\refint\EksamenRider.dll
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\obj\Debug\net10.0\EksamenRider.pdb
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\obj\Debug\net10.0\EksamenRider.genruntimeconfig.cache
+C:\Users\olegs\Documents\SDU\SDU\Eksamen\Algoritmer Og Datastruktur\Rider\EksamenRider\EksamenRider\obj\Debug\net10.0\ref\EksamenRider.dll

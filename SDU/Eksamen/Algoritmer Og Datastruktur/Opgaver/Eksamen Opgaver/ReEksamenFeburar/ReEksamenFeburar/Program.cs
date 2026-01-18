@@ -18,6 +18,8 @@ public class Program
 			}
 			arr[arr.Length - 1] = first;
 		}
+        
+		
 
 		Console.WriteLine("Rotate First array: ");
 		foreach (int i in arr)
