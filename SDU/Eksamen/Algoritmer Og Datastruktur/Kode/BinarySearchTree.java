@@ -1,4 +1,3 @@
-import java.lang.Math;
 /**
  * Implements an unbalanced binary search tree.
  * inspired by Mark Allen Weiss
