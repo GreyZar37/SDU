@@ -135,6 +135,8 @@ public static void main(String[] args)
     System.out.println("This is balls and bins.");
 
     int noOfBins = 5000000;
+
+
    
     int[] bins;
     bins = new int[noOfBins];
